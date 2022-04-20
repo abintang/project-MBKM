@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/dashboard"
+        android:enabled="true"
+        android:icon="@drawable/ic_round_dashboard_24"
+        android:title="@string/Dashboard_nav"
+        app:cnb_iconColor="@color/yellow_smooth"/>
+    <item
+        android:id="@+id/search"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_youtube_searched_for_24"
+        android:title="@string/Search_nav"
+        app:cnb_iconColor="@color/blue_smooth"/>
+    <item
+        android:id="@+id/about"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_info_24"
+        android:title="@string/About_nav"
+        app:cnb_iconColor="@color/green_smooth"/>
+
+
+</menu>

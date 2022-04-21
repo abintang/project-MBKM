@@ -29,7 +29,7 @@ public class DashboardFragment extends Fragment {
 
     SliderView sliderView;
     int[] banners = {
-            R.drawable.banner_1,
+            R.drawable.bappeda,
             R.drawable.banner_2
     };
 

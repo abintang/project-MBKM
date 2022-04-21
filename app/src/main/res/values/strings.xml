@@ -11,13 +11,24 @@
     <string name="Inovator_mn">Inovator</string>
     <string name="Peta_mn">Peta</string>
     <string name="Pendaftaran_mn">Pendaftaran</string>
-    <string name="latest_in">Update Inovasi Terakhir</string>
+    <string name="latest_in">Terbaru</string>
 
     <!--Strings that used-->
     <string name="greet_pagi">Halo,\nSelamat Pagi !</string>
     <string name="greet_siang">Halo,\nSelamat Siang !</string>
     <string name="greet_sore">Halo,\nSelamat Sore !</string>
     <string name="greet_malam">Halo,\nSelamat Malam !</string>
+
+    <string name="profile_about">Profile</string>
+    <string name="profile_title">Bappedalitbang Kabupaten Bogor</string>
+    <string name="profile_desc">Bappedalitbang Kabupaten Bogor merupakan salah satu lembaga teknis daerah di lingkungan Pemerintah Kabupaten Bogor yang dibentuk berdasarkan Peraturan Bupati (PerBup) Kabupaten Bogor Nomor 69 Tahun 2017 tentang Kedudukan, Susunan Organisasi, Tugas dan Fungsi Badan Perencanaan Pembangunan, Penelitian dan Pengembangan Daerah. Berdasarkan Perbup tersebut Bappedalitbang mempunyai tugas pokok membantu Bupati dalam melaksanakan penyusunan dan pelaksanaan kebijakan daerah di bidang perencanaan pembangunan daerah.</string>
+
+
+    <string name="tugas_pnf_about">Tugas Pokok dan Fungsi</string>
+    
+    <string name="empty_search">Hasil Pencarian Masih Kosong</string>
+    <string name="det_empty_search">Whoops… hasil pencarian masih belum bisa ditampilkan</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

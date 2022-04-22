@@ -2,6 +2,7 @@ package com.project.inovationmobile.fragments;
 
 import android.os.Bundle;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -9,15 +10,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.project.inovationmobile.adapters.ContentLatestAdapter;
 import com.project.inovationmobile.R;
+import com.project.inovationmobile.adapters.DividerDashboardAdapter;
 import com.project.inovationmobile.adapters.SliderAdapter;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 
 /**
@@ -36,6 +41,8 @@ public class DashboardFragment extends Fragment {
     RecyclerView recyclerView;
     ContentLatestAdapter contentLatestAdapter;
     ArrayList<String> items;
+
+    TextView greetText;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -80,12 +87,15 @@ public class DashboardFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         View rootView = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
+        greetText = rootView.findViewById(R.id.greeting);
         sliderView = rootView.findViewById(R.id.imageSlider);
         SliderAdapter sliderAdapter = new SliderAdapter(banners);
 
+        greetingDashboard();
+
+        // Component Image Slider pada Dashboard
         sliderView.setSliderAdapter(sliderAdapter);
         sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM);
         sliderView.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION);
@@ -96,13 +106,33 @@ public class DashboardFragment extends Fragment {
             items.add("Placeholder Title Text");
         }
 
-
+        // Component list Inovator pada Dashboard melalui Recycleview
         recyclerView = rootView.findViewById(R.id.recycleViewContentLatest);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         contentLatestAdapter = new ContentLatestAdapter(getActivity(),items);
         recyclerView.setAdapter(contentLatestAdapter);
+        RecyclerView.ItemDecoration dividerItemDecoration = new DividerDashboardAdapter(ContextCompat.getDrawable(requireContext(), R.drawable.divider_dashboard));
+        recyclerView.addItemDecoration(dividerItemDecoration);
 
         // Inflate the layout for this fragment
         return rootView;
+    }
+
+    // Function yang digunakan untuk menentukan greeting pada Dashboard
+    public void greetingDashboard(){
+        Date date = new Date();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);
+
+        if (hour >= 4 && hour < 11) {
+            greetText.setText(R.string.greet_pagi);
+        } else if(hour >= 11 && hour < 15) {
+            greetText.setText(R.string.greet_siang);
+        } else if(hour >= 15 && hour < 18) {
+            greetText.setText(R.string.greet_sore);
+        } else {
+            greetText.setText(R.string.greet_malam);
+        }
     }
 }

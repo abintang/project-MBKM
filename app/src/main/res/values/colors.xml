@@ -7,18 +7,23 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00ff0000</color>
     
     <!--Warna yang digunakan-->
-    <color name="background">#FBFBFB</color>
+    <color name="background">#F7F7F7</color>
     <color name="bg_green">#E5F6DF</color>
-    <color name="header_bg">#49ab81</color>
-    <color name="yellow_smooth">#e9d700</color>
-    <color name="green_smooth">#26cc00</color>
-    <color name="blue_smooth">#7ba4dd</color>
-    <color name="red_smooth">#ff5252</color>
-    <color name="tr_yellow">#fff9ae</color>
-    <color name="tr_green">#d2f2d4</color>
-    <color name="tr_blue">#accbff</color>
-    <color name="tr_red">#ffbaba</color>
+    <color name="header_bg">#5EDE99</color>
+    <color name="yellow_smooth">#EFBE24</color>
+    <color name="green_smooth">#5EDE99</color>
+    <color name="blue_smooth">#33CBD5</color>
+    <color name="red_smooth">#F26666</color>
+    <color name="tr_yellow">#FFFCE0</color>
+    <color name="tr_green">#E0FFF0</color>
+    <color name="tr_blue">#E0FDFF</color>
+    <color name="tr_red">#FFE0E0</color>
+
+    <color name="gray_text">#717171</color>
+    <color name="shadow">#EBEBEB</color>
+    <color name="black_opacity">#99000000</color>
 
 </resources>

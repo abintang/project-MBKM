@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".activities.ListInovatorActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/d"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_inovator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="0dp"
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_ios_new_24">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:fontFamily="@font/monstserrat_semibold"
+                android:layout_gravity="center"
+                android:textSize="@dimen/_16sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/Inovator_mn"/>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <View
+        android:id="@+id/bg_buttonsheet_categoryinovator"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@id/d"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/custom_buttonsheetinovator"/>
+
+    <ImageView
+        android:id="@+id/icon_category"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_baseline_category_24"
+        app:tint="@color/red_smooth"
+        app:layout_constraintTop_toTopOf="@+id/bg_buttonsheet_categoryinovator"
+        app:layout_constraintBottom_toBottomOf="@id/bg_buttonsheet_categoryinovator"
+        app:layout_constraintStart_toStartOf="@id/guideline1"/>
+
+    <ImageView
+        android:id="@+id/icon_next"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:src="@drawable/ic_baseline_navigate_next_24"
+        app:layout_constraintBottom_toBottomOf="@id/bg_buttonsheet_categoryinovator"
+        app:layout_constraintEnd_toStartOf="@id/guideline6"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/text_category_inovator"
+        app:layout_constraintTop_toTopOf="@+id/bg_buttonsheet_categoryinovator"
+        app:tint="@color/red_smooth" />
+
+    <TextView
+        android:id="@+id/text_category_inovator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/semua_kategori"
+        android:fontFamily="@font/montserrat_regular"
+        android:textColor="@color/black_opacity"
+        android:textSize="14sp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@id/icon_category"
+        app:layout_constraintTop_toTopOf="@id/bg_buttonsheet_categoryinovator"
+        app:layout_constraintBottom_toBottomOf="@id/bg_buttonsheet_categoryinovator"/>
+
+
+    <Button
+        android:id="@+id/buttonsheet_categoryinovator"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:alpha="0"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/d" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.92" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/bg_buttonsheet_categoryinovator">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/illust_inovator"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:adjustViewBounds="true"
+                android:background="@color/tr_red"
+                android:scaleType="fitCenter"
+                android:src="@drawable/illust_inovator"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.04" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.06" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.92" />
+
+            <ImageView
+                android:id="@+id/icon_list"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/list_icon"
+                app:layout_constraintEnd_toStartOf="@id/search_button_inovator"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/guideline2"
+                app:layout_constraintTop_toBottomOf="@id/illust_inovator"
+                app:tint="@color/black_opacity" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginTop="19dp"
+                android:fontFamily="@font/monstserrat_semibold"
+                android:text="@string/text_list_inovator"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@id/search_button_inovator"
+                app:layout_constraintHorizontal_bias="0.05"
+                app:layout_constraintStart_toEndOf="@id/icon_list"
+                app:layout_constraintTop_toBottomOf="@id/illust_inovator" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/search_button_inovator"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/monstserrat_semibold"
+                android:text="@string/btn_text_inovator_search"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                app:cornerRadius="4dp"
+                app:icon="@drawable/ic_baseline_youtube_searched_for_24"
+                app:layout_constraintEnd_toEndOf="@id/guideline4"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@id/guideline2"
+                app:layout_constraintTop_toBottomOf="@id/illust_inovator" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycleViewListInovator"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintStart_toStartOf="@id/guideline2"
+                app:layout_constraintEnd_toEndOf="@id/guideline4"
+                app:layout_constraintHeight_default="wrap"
+                app:layout_constraintTop_toBottomOf="@id/search_button_inovator"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

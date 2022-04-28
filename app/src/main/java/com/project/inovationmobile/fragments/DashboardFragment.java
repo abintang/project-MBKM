@@ -1,5 +1,6 @@
 package com.project.inovationmobile.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.core.content.ContextCompat;
@@ -12,6 +13,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.project.inovationmobile.activities.ListInovasiActivity;
+import com.project.inovationmobile.activities.ListInovatorActivity;
 import com.project.inovationmobile.adapters.ContentLatestAdapter;
 import com.project.inovationmobile.R;
 import com.project.inovationmobile.adapters.DividerDashboardAdapter;
@@ -43,6 +47,8 @@ public class DashboardFragment extends Fragment {
     ArrayList<String> items;
 
     TextView greetText;
+
+    FloatingActionButton btnInovasi,btnInovator,btnPeta,btnDaftar;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -111,9 +117,27 @@ public class DashboardFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         contentLatestAdapter = new ContentLatestAdapter(getActivity(),items);
         recyclerView.setAdapter(contentLatestAdapter);
-        RecyclerView.ItemDecoration dividerItemDecoration = new DividerDashboardAdapter(ContextCompat.getDrawable(requireContext(), R.drawable.divider_dashboard));
-        recyclerView.addItemDecoration(dividerItemDecoration);
 
+        // Intent button pada Dashboard
+        btnInovator = rootView.findViewById(R.id.button_inovator);
+        btnInovasi = rootView.findViewById(R.id.button_inovasi);
+        btnDaftar = rootView.findViewById(R.id.button_daftar);
+        btnPeta = rootView.findViewById(R.id.button_peta);
+
+
+        btnInovator.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), ListInovatorActivity.class));
+            }
+        });
+
+        btnInovasi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), ListInovasiActivity.class));
+            }
+        });
         // Inflate the layout for this fragment
         return rootView;
     }

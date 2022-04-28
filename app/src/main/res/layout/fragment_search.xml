@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/custom_bg">
+        android:background="@color/background">
 
         <View
             android:id="@+id/header_searchbg"
@@ -47,6 +47,7 @@
             app:layout_constraintGuide_percent="0.92" />
 
         <com.google.android.material.tabs.TabLayout
+            android:background="@color/background"
             android:id="@+id/tabHeader"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_50sdp"
@@ -96,7 +97,7 @@
             android:layout_height="@dimen/_35sdp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
-            android:backgroundTint="@color/blue_smooth"
+            android:backgroundTint="@color/header_bg"
             android:clickable="true"
             android:focusable="true"
             app:borderWidth="0dp"
@@ -110,43 +111,43 @@
 
         <ImageView
             android:id="@+id/temp_bg_search"
-            android:layout_width="232dp"
-            android:layout_height="603dp"
+            android:layout_width="287dp"
+            android:layout_height="259dp"
             android:src="@drawable/search_bg"
             app:layout_constraintBottom_toTopOf="@id/guideline5"
             app:layout_constraintEnd_toStartOf="@id/guideline4"
-            app:layout_constraintHorizontal_bias="0.447"
+            app:layout_constraintHorizontal_bias="0.417"
             app:layout_constraintStart_toStartOf="@id/guideline2"
             app:layout_constraintTop_toBottomOf="@id/tabHeader"
-            app:layout_constraintVertical_bias="0.535" />
+            app:layout_constraintVertical_bias="0.534" />
 
         <TextView
             android:id="@+id/text_empty_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/empty_search"
             android:fontFamily="@font/monstserrat_semibold"
+            android:text="@string/empty_search"
             android:textColor="@color/black"
             android:textSize="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_20sdp"
             app:layout_constraintBottom_toTopOf="@id/guideline5"
-            app:layout_constraintEnd_toStartOf="@id/guideline4"
-            app:layout_constraintHorizontal_bias="0.46"
-            app:layout_constraintStart_toEndOf="@id/guideline2"
-            app:layout_constraintTop_toBottomOf="@id/tabHeader"
-            app:layout_constraintVertical_bias="0.674" />
+            app:layout_constraintEnd_toEndOf="@id/temp_bg_search"
+            app:layout_constraintHorizontal_bias="0.521"
+            app:layout_constraintStart_toStartOf="@id/temp_bg_search"
+            app:layout_constraintTop_toBottomOf="@id/temp_bg_search"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:textAlignment="center"
+            android:id="@+id/textView"
             android:layout_width="304dp"
             android:layout_height="60dp"
             android:fontFamily="@font/monstserrat_semibold"
             android:text="@string/det_empty_search"
+            android:textAlignment="center"
             android:textSize="@dimen/_11sdp"
             app:layout_constraintBottom_toTopOf="@id/guideline5"
-            app:layout_constraintEnd_toStartOf="@id/guideline4"
+            app:layout_constraintEnd_toEndOf="@id/text_empty_search"
             app:layout_constraintHorizontal_bias="0.387"
-            app:layout_constraintStart_toEndOf="@id/guideline2"
+            app:layout_constraintStart_toStartOf="@id/text_empty_search"
             app:layout_constraintTop_toBottomOf="@id/text_empty_search"
             app:layout_constraintVertical_bias="0.064" />
 

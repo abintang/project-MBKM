@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">Inovation Mobile</string>
+    <string name="app_name">Bappedalitbang Kabupaten Bogor - Inovation Mobile Center</string>
 
     <!--Component Bottom Navigation Bar-->
     <string name="Dashboard_nav">Dashboard</string>
-    <string name="Search_nav">Search</string>
-    <string name="About_nav">About</string>
+    <string name="Search_nav">Pencarian</string>
+    <string name="About_nav">Tentang</string>
 
     <!--Dashboard Menu-->
     <string name="Inovasi_mn">Inovasi</string>
@@ -23,14 +23,31 @@
     <string name="profile_title">Bappedalitbang Kabupaten Bogor</string>
     <string name="profile_desc">Bappedalitbang Kabupaten Bogor merupakan salah satu lembaga teknis daerah di lingkungan Pemerintah Kabupaten Bogor yang dibentuk berdasarkan Peraturan Bupati (PerBup) Kabupaten Bogor Nomor 69 Tahun 2017 tentang Kedudukan, Susunan Organisasi, Tugas dan Fungsi Badan Perencanaan Pembangunan, Penelitian dan Pengembangan Daerah. Berdasarkan Perbup tersebut Bappedalitbang mempunyai tugas pokok membantu Bupati dalam melaksanakan penyusunan dan pelaksanaan kebijakan daerah di bidang perencanaan pembangunan daerah.</string>
 
-
-    <string name="tugas_pnf_about">Tugas Pokok dan Fungsi</string>
-    
     <string name="empty_search">Hasil Pencarian Masih Kosong</string>
     <string name="det_empty_search">Whoops… hasil pencarian masih belum bisa ditampilkan</string>
 
+    <string name="no_connection">Koneksi Internet Tidak Terdeteksi</string>
+    <string name="det_no_connection">Whoops… koneksi internet tidak terdeteksi. Periksa koneksi internet anda dan coba lagi</string>
+    <string name="coba_lagi">Coba lagi</string>
+
+    <string name="btn_text_inovator_search">Cari Inovator</string>
+    <string name="text_list_inovator">List Inovator</string>
+    <string name="btn_text_inovasi_search">Cari Inovasi</string>
+    <string name="text_list_inovasi">List Inovasi</string>
+
+    <string name="semua_kategori">Semua Kategori</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_list_inovator">ListInovatorActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
 
 </resources>

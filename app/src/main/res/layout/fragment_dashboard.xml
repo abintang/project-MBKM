@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/custom_bg">
+        android:background="@color/background">
 
         <View
             android:id="@+id/header_bg"
@@ -37,7 +37,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/monstserrat_semibold"
-            android:text="@string/greet_pagi"
             android:textColor="@color/white"
             android:textSize="@dimen/_13sdp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -94,7 +93,7 @@
             android:layout_height="@dimen/_40sdp"
             android:layout_marginStart="@dimen/_12sdp"
             android:layout_marginTop="@dimen/_20sdp"
-            android:backgroundTint="@color/tr_blue"
+            android:backgroundTint="@color/tr_green"
             android:clickable="true"
             android:focusable="true"
             app:borderWidth="0dp"
@@ -106,14 +105,14 @@
             app:maxImageSize="@dimen/_25sdp"
             app:shapeAppearanceOverlay="@style/shapeIcon"
             app:srcCompat="@drawable/bulb_icon"
-            app:tint="@color/blue_smooth" />
+            app:tint="@color/green_smooth" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/button_inovator"
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp"
             android:layout_marginTop="@dimen/_20sdp"
-            android:backgroundTint="@color/tr_yellow"
+            android:backgroundTint="@color/tr_red"
             android:clickable="true"
             android:focusable="true"
             app:borderWidth="0dp"
@@ -125,14 +124,14 @@
             app:maxImageSize="@dimen/_25sdp"
             app:shapeAppearanceOverlay="@style/shapeIcon"
             app:srcCompat="@drawable/ic_baseline_group_24"
-            app:tint="@color/yellow_smooth" />
+            app:tint="@color/red_smooth" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/button_peta"
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp"
             android:layout_marginTop="@dimen/_20sdp"
-            android:backgroundTint="@color/tr_green"
+            android:backgroundTint="@color/tr_blue"
             android:clickable="true"
             android:focusable="true"
             app:borderWidth="0dp"
@@ -144,14 +143,14 @@
             app:maxImageSize="@dimen/_25sdp"
             app:shapeAppearanceOverlay="@style/shapeIcon"
             app:srcCompat="@drawable/ic_baseline_map_24"
-            app:tint="@color/green_smooth" />
+            app:tint="@color/blue_smooth" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/button_daftar"
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp"
             android:layout_marginTop="@dimen/_20sdp"
-            android:backgroundTint="@color/tr_red"
+            android:backgroundTint="@color/tr_yellow"
             android:clickable="true"
             android:focusable="true"
             app:borderWidth="0dp"
@@ -163,7 +162,7 @@
             app:maxImageSize="@dimen/_25sdp"
             app:shapeAppearanceOverlay="@style/shapeIcon"
             app:srcCompat="@drawable/ic_baseline_app_registration_24"
-            app:tint="@color/red_smooth" />
+            app:tint="@color/yellow_smooth" />
 
         <TextView
             android:id="@+id/mn_inovasi"
@@ -229,7 +228,8 @@
             android:id="@+id/recycleViewContentLatest"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginStart="@dimen/_24sdp"
+            android:layout_marginStart="@dimen/_18sdp"
+            app:layout_constraintStart_toStartOf="@id/guideline2"
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_23sdp"
             app:layout_constraintHeight_default="wrap"

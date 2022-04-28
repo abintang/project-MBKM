@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.AboutFragment">
+    android:background="@color/background"
+    tools:context=".fragments.AboutFragment"
+   >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/custom_bg">
+        android:background="@color/background">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"

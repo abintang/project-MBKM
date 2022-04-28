@@ -6,19 +6,19 @@
         android:enabled="true"
         android:icon="@drawable/ic_round_dashboard_24"
         android:title="@string/Dashboard_nav"
-        app:cnb_iconColor="@color/yellow_smooth"/>
+        app:cnb_iconColor="@color/header_bg"/>
     <item
         android:id="@+id/search"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_youtube_searched_for_24"
         android:title="@string/Search_nav"
-        app:cnb_iconColor="@color/blue_smooth"/>
+        app:cnb_iconColor="@color/header_bg"/>
     <item
         android:id="@+id/about"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_info_24"
         android:title="@string/About_nav"
-        app:cnb_iconColor="@color/green_smooth"/>
+        app:cnb_iconColor="@color/header_bg"/>
 
 
 </menu>

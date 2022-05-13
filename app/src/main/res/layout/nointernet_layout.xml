@@ -3,18 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/white"
     android:layout_height="match_parent">
 
-    <ImageView
+
+    <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/illust_nointernet"
-        android:layout_width="291dp"
-        android:layout_height="300dp"
-        android:src="@drawable/no_connection_illust"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_230sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.368" />
+        app:layout_constraintVertical_bias="0.325"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="lf30_editor_mfcniooi.json"
+        app:lottie_loop="true" />
 
     <TextView
         android:id="@+id/text_no_connection"
@@ -29,16 +36,15 @@
         app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="@id/illust_nointernet"
         app:layout_constraintTop_toBottomOf="@id/illust_nointernet"
-        app:layout_constraintVertical_bias="0.0" />
-
+        app:layout_constraintVertical_bias="0.08" />
 
     <TextView
-        android:layout_width="354dp"
+        android:layout_width="300dp"
         android:layout_height="60dp"
         android:fontFamily="@font/monstserrat_semibold"
         android:text="@string/det_no_connection"
         android:textAlignment="center"
-        android:textSize="@dimen/_11sdp"
+        android:textSize="@dimen/_9sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/text_no_connection"
         app:layout_constraintHorizontal_bias="0.555"
@@ -46,20 +52,25 @@
         app:layout_constraintTop_toBottomOf="@id/text_no_connection"
         app:layout_constraintVertical_bias="0.024" />
 
-    <com.google.android.material.button.MaterialButton
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/button_tryagain"
         android:layout_width="@dimen/_220sdp"
         android:layout_height="@dimen/_40sdp"
-        android:text="@string/coba_lagi"
-        android:fontFamily="@font/monstserrat_semibold"
         android:backgroundTint="@color/header_bg"
-        android:textAllCaps="false"
-        app:cornerRadius="@dimen/_10sdp"
+        android:elevation="0dp"
+        app:elevation="0dp"
+        android:fontFamily="@font/monstserrat_semibold"
+        android:text="@string/coba_lagi"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/text_no_connection"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="@id/text_no_connection"
         app:layout_constraintTop_toBottomOf="@id/text_no_connection"
-        app:layout_constraintVertical_bias="0.223" />
+        app:layout_constraintVertical_bias="0.261"
+        app:shapeAppearanceOverlay="@style/shapeButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

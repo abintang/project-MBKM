@@ -1,8 +1,8 @@
 package com.project.inovationmobile.adapters;
 
+import android.view.LayoutInflater;
 import android.content.Context;
 import android.content.Intent;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -13,41 +13,40 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.project.inovationmobile.R;
 import com.project.inovationmobile.activities.InovasiDetailActivity;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
 
-public class ContentLatestAdapter extends RecyclerView.Adapter<ContentLatestAdapter.ViewHolder> {
-
+public class ContentInovasi_in_InovatorAdapter extends RecyclerView.Adapter<ContentInovasi_in_InovatorAdapter.ViewHolder> {
     private final LayoutInflater layoutInflater;
     private final List<String> data;
 
-    public ContentLatestAdapter(Context context, List<String> data){
+    public ContentInovasi_in_InovatorAdapter(Context context, List<String> data){
         this.layoutInflater = LayoutInflater.from(context);
         this.data = data;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = layoutInflater.inflate(R.layout.content_inovasi_layout,viewGroup,false);
-        return new ViewHolder(view);
+    public ContentInovasi_in_InovatorAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = layoutInflater.inflate(R.layout.content_inovasi_inside_inovator_layout,parent,false);
+        return new ContentInovasi_in_InovatorAdapter.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-
+    public void onBindViewHolder(@NonNull ContentInovasi_in_InovatorAdapter.ViewHolder holder, int position) {
         // bind the textview with data received
-        String title = data.get(i);
-        viewHolder.title_inovasi.setText(title);
+        String titleInovasi = data.get(position);
+        holder.title_inovasi.setText(titleInovasi);
         // similarly you can set new image for each card and descriptions
 
-        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), InovasiDetailActivity.class);
                 view.getContext().startActivity(intent);
             }
         });
-
 
     }
 
@@ -56,13 +55,12 @@ public class ContentLatestAdapter extends RecyclerView.Adapter<ContentLatestAdap
         return data.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView title_inovasi;
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            title_inovasi = itemView.findViewById(R.id.title_inovasi);
+            title_inovasi = itemView.findViewById(R.id.title_inovasi_inov);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

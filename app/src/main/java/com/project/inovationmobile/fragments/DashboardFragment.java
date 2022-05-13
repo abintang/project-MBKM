@@ -3,6 +3,7 @@ package com.project.inovationmobile.fragments;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,8 +15,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.project.inovationmobile.activities.InovasiDetailActivity;
 import com.project.inovationmobile.activities.ListInovasiActivity;
 import com.project.inovationmobile.activities.ListInovatorActivity;
+import com.project.inovationmobile.activities.PetaActivity;
 import com.project.inovationmobile.adapters.ContentLatestAdapter;
 import com.project.inovationmobile.R;
 import com.project.inovationmobile.adapters.DividerDashboardAdapter;
@@ -38,8 +41,12 @@ public class DashboardFragment extends Fragment {
 
     SliderView sliderView;
     int[] banners = {
-            R.drawable.bappeda,
-            R.drawable.banner_2
+            R.drawable.banner_1,
+            R.drawable.banner_2,
+            R.drawable.banner_3,
+            R.drawable.banner_4,
+            R.drawable.banner_5,
+            R.drawable.banner_6
     };
 
     RecyclerView recyclerView;
@@ -48,7 +55,7 @@ public class DashboardFragment extends Fragment {
 
     TextView greetText;
 
-    FloatingActionButton btnInovasi,btnInovator,btnPeta,btnDaftar;
+    FloatingActionButton btnInovasi,btnInovator,btnPeta;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -99,6 +106,7 @@ public class DashboardFragment extends Fragment {
         sliderView = rootView.findViewById(R.id.imageSlider);
         SliderAdapter sliderAdapter = new SliderAdapter(banners);
 
+
         greetingDashboard();
 
         // Component Image Slider pada Dashboard
@@ -108,8 +116,8 @@ public class DashboardFragment extends Fragment {
         sliderView.startAutoCycle();
 
         items = new ArrayList<>();
-        for (int i = 0; i < 3 ; i++) {
-            items.add("Placeholder Title Text");
+        for (int i = 0; i < 5 ; i++) {
+            items.add("Teh Pala (Limbah Kulit Pala)");
         }
 
         // Component list Inovator pada Dashboard melalui Recycleview
@@ -121,7 +129,6 @@ public class DashboardFragment extends Fragment {
         // Intent button pada Dashboard
         btnInovator = rootView.findViewById(R.id.button_inovator);
         btnInovasi = rootView.findViewById(R.id.button_inovasi);
-        btnDaftar = rootView.findViewById(R.id.button_daftar);
         btnPeta = rootView.findViewById(R.id.button_peta);
 
 
@@ -138,12 +145,19 @@ public class DashboardFragment extends Fragment {
                 startActivity(new Intent(getActivity(), ListInovasiActivity.class));
             }
         });
+
+        btnPeta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), PetaActivity.class));
+            }
+        });
         // Inflate the layout for this fragment
         return rootView;
     }
 
     // Function yang digunakan untuk menentukan greeting pada Dashboard
-    public void greetingDashboard(){
+    private void greetingDashboard(){
         Date date = new Date();
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);

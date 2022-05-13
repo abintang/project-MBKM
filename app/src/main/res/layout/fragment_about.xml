@@ -3,29 +3,34 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/background"
-    tools:context=".fragments.AboutFragment"
-   >
+    tools:context=".fragments.AboutFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/background">
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:layout_height="wrap_content">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.07" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.04" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.09" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.04" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline4"
@@ -34,40 +39,119 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.92" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.92" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="1.0" />
 
         <ImageView
             android:id="@+id/imageview_about"
-            android:layout_width="wrap_content"
-            android:layout_height="200dp"
-            android:layout_marginEnd="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp"
             android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
             android:fitsSystemWindows="false"
             android:scaleType="centerCrop"
             app:layout_constraintDimensionRatio="w,16:9"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/banner_2" />
+            app:srcCompat="@drawable/banner_about" />
 
         <ImageView
             android:id="@+id/imageview_logo"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_70sdp"
+            android:layout_height="@dimen/_60sdp"
             app:layout_constraintBottom_toBottomOf="@+id/imageview_about"
             app:layout_constraintDimensionRatio="w,400:576"
             app:layout_constraintEnd_toStartOf="@+id/guideline4"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageview_about"
             app:layout_constraintVertical_bias="0.593"
-            app:srcCompat="@drawable/lambang_kabupaten_bogor" />
+            app:srcCompat="@drawable/lambang_kabupaten_bogor"
+            />
 
-        <TextView
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardProfil"
+                android:layout_width="match_parent"
+                app:cardCornerRadius="@dimen/_3sdp"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:layout_marginEnd="@dimen/_3sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_height="@dimen/_80sdp"
+                app:layout_constraintTop_toBottomOf="@+id/imageview_logo"
+                app:cardElevation="@dimen/_1sdp"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardTugas"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_3sdp"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:layout_marginEnd="@dimen/_3sdp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                app:layout_constraintTop_toBottomOf="@+id/cardProfil"
+                app:cardElevation="@dimen/_1sdp"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardUnsur"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_3sdp"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:layout_marginEnd="@dimen/_3sdp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                app:layout_constraintTop_toBottomOf="@+id/cardTugas"
+                app:cardElevation="@dimen/_1sdp"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardStrategi"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_3sdp"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:layout_marginEnd="@dimen/_3sdp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                app:layout_constraintTop_toBottomOf="@+id/cardUnsur"
+                app:cardElevation="@dimen/_1sdp"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardKontak"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_width="match_parent"
+                app:cardCornerRadius="@dimen/_3sdp"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:layout_marginEnd="@dimen/_3sdp"
+                android:layout_height="@dimen/_80sdp"
+                app:layout_constraintTop_toBottomOf="@+id/cardStrategi"
+                app:cardElevation="@dimen/_1sdp"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardKontak" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardKontak" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+        <!--<TextView
             android:id="@+id/title_profile_about"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -105,8 +189,8 @@
             app:layout_constraintEnd_toStartOf="@id/guideline4"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@id/guideline2"
-            app:layout_constraintTop_toBottomOf="@id/title_bappeda" />
+            app:layout_constraintTop_toBottomOf="@id/title_bappeda" />-->
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </FrameLayout>

@@ -21,6 +21,10 @@
         <item name="cornerSize">20%</item>
     </style>
 
+    <style name="shapeButton" parent="Widget.MaterialComponents.ExtendedFloatingActionButton">
+        <item name="cornerSize">20%</item>
+    </style>
+
     <style name="tab_text" parent="@android:style/TextAppearance.Widget.TabWidget">
         <item name="android:fontFamily">@font/monstserrat_semibold</item>
     </style>
@@ -31,5 +35,18 @@
     <style name="Theme.InovationMobile.AppBarOverlay"
         parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.InovationMobile.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="customize_search" parent="@style/Widget.AppCompat.EditText">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:radius">5dp</item>
+        <item name="android:paddingStart">15dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:background">@drawable/custom_search</item>
+    </style>
+
+    <style name="ToolbarColoredBackArrow" parent="Theme.InovationMobile">
+        <item name="android:textColorSecondary">@color/white</item>
+    </style>
 
 </resources>

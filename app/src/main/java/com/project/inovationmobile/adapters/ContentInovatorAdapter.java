@@ -12,43 +12,41 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.project.inovationmobile.R;
 import com.project.inovationmobile.activities.InovasiDetailActivity;
+import com.project.inovationmobile.activities.InovatorDetailActivity;
 
 import java.util.List;
 
-public class ContentLatestAdapter extends RecyclerView.Adapter<ContentLatestAdapter.ViewHolder> {
+public class ContentInovatorAdapter extends RecyclerView.Adapter<ContentInovatorAdapter.ViewHolder> {
 
     private final LayoutInflater layoutInflater;
     private final List<String> data;
 
-    public ContentLatestAdapter(Context context, List<String> data){
+    public ContentInovatorAdapter(Context context, List<String> data) {
         this.layoutInflater = LayoutInflater.from(context);
         this.data = data;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = layoutInflater.inflate(R.layout.content_inovasi_layout,viewGroup,false);
-        return new ViewHolder(view);
+    public ContentInovatorAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        View view = layoutInflater.inflate(R.layout.content_inovator_layout,viewGroup,false);
+        return new ContentInovatorAdapter.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-
+    public void onBindViewHolder(@NonNull ContentInovatorAdapter.ViewHolder viewHolder, int i) {
         // bind the textview with data received
-        String title = data.get(i);
-        viewHolder.title_inovasi.setText(title);
+        String namaInovator = data.get(i);
+        viewHolder.namaInovator.setText(namaInovator);
         // similarly you can set new image for each card and descriptions
 
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), InovasiDetailActivity.class);
+                Intent intent = new Intent(view.getContext(), InovatorDetailActivity.class);
                 view.getContext().startActivity(intent);
             }
         });
-
-
     }
 
     @Override
@@ -58,11 +56,10 @@ public class ContentLatestAdapter extends RecyclerView.Adapter<ContentLatestAdap
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView title_inovasi;
-
+        TextView namaInovator;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            title_inovasi = itemView.findViewById(R.id.title_inovasi);
+            namaInovator = itemView.findViewById(R.id.nama_inovator);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -70,4 +67,6 @@ public class ContentLatestAdapter extends RecyclerView.Adapter<ContentLatestAdap
             });
         }
     }
+
 }
+

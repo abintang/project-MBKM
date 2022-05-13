@@ -10,7 +10,7 @@ import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 import com.project.inovationmobile.R;
 import com.project.inovationmobile.fragments.AboutFragment;
 import com.project.inovationmobile.fragments.DashboardFragment;
-import com.project.inovationmobile.fragments.SearchFragment;
+import com.project.inovationmobile.fragments.RegisterFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.dashboard:
                             fragment = new DashboardFragment();
                             break;
-                        case R.id.search:
-                            fragment = new SearchFragment();
+                        case R.id.register:
+                            fragment = new RegisterFragment();
                             break;
                         case R.id.about:
                             fragment = new AboutFragment();

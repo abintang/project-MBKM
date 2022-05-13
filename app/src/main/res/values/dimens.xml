@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<resources>
+    <dimen name="list_item_spacing">16dp</dimen>
+    <dimen name="list_item_spacing_half">8dp</dimen>
+
+    <dimen name="dimen_profile_header_view">215dp</dimen>
+    <dimen name="dimen_image_view">90dp</dimen>
+    <dimen name="dimen_header_background">145dp</dimen>
+    <dimen name="dimen_standard">16dp</dimen>
+    <dimen name="dimen_small">8dp</dimen>
+    <dimen name="dimen_x_small">4dp</dimen>
+    <dimen name="dimen_image_view_small">64dp</dimen>
+    <dimen name="dimen_backdrop_image">280dp</dimen>
+
+</resources>

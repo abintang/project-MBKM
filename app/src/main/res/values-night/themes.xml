@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.InovationMobile" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/blue_smooth</item>
+        <item name="colorPrimary">@color/header_bg</item>
         <item name="colorPrimaryVariant">@color/header_bg</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->

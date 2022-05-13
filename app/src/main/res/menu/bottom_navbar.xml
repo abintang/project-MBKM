@@ -8,10 +8,10 @@
         android:title="@string/Dashboard_nav"
         app:cnb_iconColor="@color/header_bg"/>
     <item
-        android:id="@+id/search"
+        android:id="@+id/register"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_youtube_searched_for_24"
-        android:title="@string/Search_nav"
+        android:icon="@drawable/ic_baseline_app_registration_24"
+        android:title="@string/Pendaftaran_mn"
         app:cnb_iconColor="@color/header_bg"/>
     <item
         android:id="@+id/about"

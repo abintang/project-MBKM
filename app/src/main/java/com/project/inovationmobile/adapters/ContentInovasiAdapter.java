@@ -15,12 +15,12 @@ import com.project.inovationmobile.activities.InovasiDetailActivity;
 
 import java.util.List;
 
-public class ContentLatestAdapter extends RecyclerView.Adapter<ContentLatestAdapter.ViewHolder> {
+public class ContentInovasiAdapter extends RecyclerView.Adapter<ContentInovasiAdapter.ViewHolder> {
 
     private final LayoutInflater layoutInflater;
     private final List<String> data;
 
-    public ContentLatestAdapter(Context context, List<String> data){
+    public ContentInovasiAdapter(Context context, List<String> data) {
         this.layoutInflater = LayoutInflater.from(context);
         this.data = data;
     }
@@ -34,10 +34,9 @@ public class ContentLatestAdapter extends RecyclerView.Adapter<ContentLatestAdap
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-
         // bind the textview with data received
-        String title = data.get(i);
-        viewHolder.title_inovasi.setText(title);
+        String titleInovasi = data.get(i);
+        viewHolder.title_inovasi.setText(titleInovasi);
         // similarly you can set new image for each card and descriptions
 
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -47,8 +46,6 @@ public class ContentLatestAdapter extends RecyclerView.Adapter<ContentLatestAdap
                 view.getContext().startActivity(intent);
             }
         });
-
-
     }
 
     @Override
@@ -59,7 +56,6 @@ public class ContentLatestAdapter extends RecyclerView.Adapter<ContentLatestAdap
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView title_inovasi;
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             title_inovasi = itemView.findViewById(R.id.title_inovasi);
@@ -70,4 +66,5 @@ public class ContentLatestAdapter extends RecyclerView.Adapter<ContentLatestAdap
             });
         }
     }
+
 }

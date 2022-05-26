@@ -69,7 +69,7 @@ public class ContentInovatorAdapter extends RecyclerView.Adapter<ContentInovator
             // variable yang udah di declare sesuai dengan id nya masing-masing
             namaInovator = itemView.findViewById(R.id.tv_nama_inovator);
             kategoriInovator = itemView.findViewById(R.id.tv_category_inovator);
-            alamatInovator = itemView.findViewById(R.id.alamat_inovator_detail);
+            alamatInovator = itemView.findViewById(R.id.tv_alamat_inovator_detail);
             fotoInovator = itemView.findViewById(R.id.iv_foto_inovator);
 
             itemView.setOnClickListener(new View.OnClickListener() {

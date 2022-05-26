@@ -21,6 +21,11 @@ public class ContentInovasi_in_InovatorAdapter extends RecyclerView.Adapter<Cont
     private final LayoutInflater layoutInflater;
     private final List<String> data;
 
+    /* adapter ini adalah adapter recyclerview yang ada di page detail inovator (isinya list
+    inovasi yang dibuat oleh inovator bersangkutan). adapter ini bisa diubah/diganti sesuai
+    dengan adapter yang di mau. lalu untuk id masing-masing isi/content nya itu ada dibawah
+    (ViewHolder) */
+
     public ContentInovasi_in_InovatorAdapter(Context context, List<String> data){
         this.layoutInflater = LayoutInflater.from(context);
         this.data = data;

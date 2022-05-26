@@ -30,16 +30,35 @@
     <string name="in">List Inovasi yang dibuat</string>
     <string name="kt">Kategori Inovator</string>
 
-    <string name="profil_desc">Bappedalitbang Kabupaten Bogor merupakan salah satu lembagateknis daerah di lingkungan\nPemerintah Kabupaten Bogor yang dibentuk berdasarkan Peraturan Bupati (PerBup) Kabupaten Bogor Nomor 69 Tahun 2017 tentang Kedudukan, Susunan Organisasi, Tugas dan Fungsi Badan Perencanaan Pembangunan, Penelitian dan Pengembangan Daerah.\n</string>
-    <string name="tugas_desc">Penyusunan, pelaksanaan, pemantauan, hingga pelaksanaan, dalam ruang lingkup kebijakan teknis di bidang perencanaan, penelitian, dan pengembangan daerah.</string>
-    <string name="strategi_desc">1). Menjalin kerja sama dengan instansi\n2). Meningkatkan intensitas social pada industry 4.0\n3). Mengajukan rancangan pembangungan daerah\n4). Optimalisasi anggaran dalam pencapaian visi misi kepala daerah</string>
+    <string name="profil_tl">Profil</string>
+    <string name="tugas_tl">Tugas Pokok dan Fungsi</string>
+    <string name="unsur_tl">Unsur dan Susunan Organisasi</string>
+    <string name="strategi_tl">Strategi</string>
+    <string name="kontak_tl">Kontak Kami</string>
+
+    <string name="fixed_profile_desc">Bappedalitbang Kabupaten Bogor merupakan salah satu lembagateknis daerah di lingkungan Pemerintah</string>
+    <string name="profil_desc">Kabupaten Bogor yang dibentuk berdasarkan Peraturan Bupati (PerBup) Kabupaten Bogor Nomor 69 Tahun 2017 tentang Kedudukan, Susunan Organisasi, Tugas dan Fungsi Badan Perencanaan Pembangunan, Penelitian dan Pengembangan Daerah.</string>
+    <string name="fixed_tugas_desc">Penyusunan, pelaksanaan, pemantauan, hingga pelaksanaan, dalam ruang lingkup kebijakan teknis di</string>
+    <string name="tugas_desc">bidang perencanaan, penelitian, dan pengembangan daerah.</string>
+    <string name="fixed_strategi_desc">1). Menjalin kerja sama dengan instansi\n2). Meningkatkan intensitas social pada industry 4.0</string>
+    <string name="strategi_desc">3). Mengajukan rancangan pembangungan daerah\n4). Optimalisasi anggaran dalam pencapaian visi misi kepala daerah</string>
+    <string name="fixed_kontak_desc">Jalan Segar III Kav 2 Komplek Perkantoran Pemda Bogor, Cibinong – Bogor, Jawa Barat 16914, Indonesia</string>
+    <string name="kontak_desc">Telepon: (021)87906240\nFax: 87906242\nEmail: bappedalitbang@bogorkab.go.id</string>
 
     <string name="empty_search">Hasil Pencarian Masih Kosong</string>
     <string name="det_empty_search">Whoops… hasil pencarian masih belum bisa ditampilkan</string>
 
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tellus nisi, porta a ex sit amet, vehicula hendrerit nibh.</string>
+
+    <string name="daftar_text">Kamu juga bisa mendaftarkan diri menjadi Inovator dan daftarkan Inovasi mu juga loh !</string>
+
     <string name="no_connection">Koneksi Internet Tidak Terdeteksi</string>
     <string name="det_no_connection">Whoops… koneksi internet anda tidak terdeteksi. Periksa koneksi internet anda dan coba lagi</string>
     <string name="coba_lagi">Coba lagi</string>
+
+    <string name="anggota_text">Anggota Kelompok</string>
+    <string name="inv_terkait">Inovasi Terkait</string>
+    <string name="asl_instansi">Asal Instansi</string>
 
     <string name="btn_text_inovator_search">Cari Inovator</string>
     <string name="text_list_inovator">List Inovator</string>
@@ -48,6 +67,15 @@
 
     <string name="semua_kategori">Semua Kategori</string>
     <string name="kategori">Kategori</string>
+
+    <string name="title_deskripsi">Deskripsi</string>
+    <string name="dummy_deskripsi">Minuman buah pala mengandung gizi buah pala yang terkandung di dalamnya, energi, protein lemak, karbohidrat,kalsium, fosfor, zat besi dan vitamin A selain itu kulit buah pala juga mengandung minyak atsiri dan zat samak</string>
+    <string name="title_manfaat">Manfaat</string>
+    <string name="dummy_manfaat">Teh pala ini untuk menambah pendapatan petani pala</string>
+
+    <string name="panduan">Panduan</string>
+    <string name="daftar">Daftar</string>
+    <string name="detail">Detail</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

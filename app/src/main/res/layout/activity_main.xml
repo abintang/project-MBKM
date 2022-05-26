@@ -7,14 +7,23 @@
     android:id="@+id/mainDisplay"
     tools:context=".activities.MainActivity">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.92" />
+
     <com.ismaeldivita.chipnavigation.ChipNavigationBar
         android:id="@+id/chipNavigationBar"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="@dimen/_55sdp"
         android:background="@color/white"
         android:elevation="17dp"
         app:cnb_menuResource="@menu/bottom_navbar"
         app:cnb_textAppearance="@font/montserrat_medium"
         app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!--70-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -41,7 +41,7 @@ public class ListInovasiActivity extends AppCompatActivity {
             items.add("Teh Pala (Limbah Kulit Pala)");
         }
 
-        // Component list Inovator pada Dashboard melalui Recycleview
+        // set up RecyclerView List Inovasi
         recyclerView = findViewById(R.id.recycleViewListInovasi);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         contentInovasiAdapter = new ContentInovasiAdapter(this,items);

@@ -25,6 +25,12 @@
         <item name="cornerSize">20%</item>
     </style>
 
+    <style name="shapeButton2" parent="Widget.MaterialComponents.ExtendedFloatingActionButton">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">4dp</item>
+        <item name="elevation">0dp</item>
+    </style>
+
     <style name="tab_text" parent="@android:style/TextAppearance.Widget.TabWidget">
         <item name="android:fontFamily">@font/monstserrat_semibold</item>
     </style>

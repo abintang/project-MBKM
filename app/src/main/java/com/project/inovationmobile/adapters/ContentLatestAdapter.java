@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,6 +20,10 @@ public class ContentLatestAdapter extends RecyclerView.Adapter<ContentLatestAdap
 
     private final LayoutInflater layoutInflater;
     private final List<String> data;
+
+    /* adapter ini adalah adapter recyclerview yang ada di page dashboard (Terbaru - Max 5 data)
+    , bisa diubah/diganti sesuai dengan adapter yang di mau. lalu untuk id masing-masing
+    isi/content nya itu ada dibawah (ViewHolder) */
 
     public ContentLatestAdapter(Context context, List<String> data){
         this.layoutInflater = LayoutInflater.from(context);
@@ -37,7 +42,7 @@ public class ContentLatestAdapter extends RecyclerView.Adapter<ContentLatestAdap
 
         // bind the textview with data received
         String title = data.get(i);
-        viewHolder.title_inovasi.setText(title);
+        viewHolder.namaInovasi.setText(title);
         // similarly you can set new image for each card and descriptions
 
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -58,11 +63,17 @@ public class ContentLatestAdapter extends RecyclerView.Adapter<ContentLatestAdap
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView title_inovasi;
+        TextView namaInovasi, namaInovator, kategoriInovasi;
+        ImageView fotoInovasi;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            title_inovasi = itemView.findViewById(R.id.title_inovasi);
+            // variable yang udah di declare sesuai dengan id nya masing-masing
+            namaInovasi = itemView.findViewById(R.id.tv_nama_inovasi);
+            namaInovator = itemView.findViewById(R.id.tv_nama_inovator);
+            fotoInovasi = itemView.findViewById(R.id.iv_foto_inovasi);
+            kategoriInovasi = itemView.findViewById(R.id.tv_category_inovasi);
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

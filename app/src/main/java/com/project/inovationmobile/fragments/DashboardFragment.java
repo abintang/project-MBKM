@@ -3,8 +3,6 @@ package com.project.inovationmobile.fragments;
 import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.cardview.widget.CardView;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,13 +13,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.project.inovationmobile.activities.InovasiDetailActivity;
 import com.project.inovationmobile.activities.ListInovasiActivity;
 import com.project.inovationmobile.activities.ListInovatorActivity;
 import com.project.inovationmobile.activities.PetaActivity;
 import com.project.inovationmobile.adapters.ContentLatestAdapter;
 import com.project.inovationmobile.R;
-import com.project.inovationmobile.adapters.DividerDashboardAdapter;
 import com.project.inovationmobile.adapters.SliderAdapter;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;

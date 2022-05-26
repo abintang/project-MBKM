@@ -15,10 +15,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.InovationMobile">
         <activity
+            android:name=".activities.InstansiDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.InovatorDetailActivity"
             android:exported="false"
             android:parentActivityName=".activities.ListInovatorActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.InovasiDetailActivity"
             android:exported="false"

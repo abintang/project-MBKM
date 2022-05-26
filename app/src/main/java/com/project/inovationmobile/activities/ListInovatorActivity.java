@@ -2,7 +2,6 @@ package com.project.inovationmobile.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,8 +14,6 @@ import android.widget.Button;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.project.inovationmobile.R;
 import com.project.inovationmobile.adapters.ContentInovatorAdapter;
-import com.project.inovationmobile.adapters.ContentLatestAdapter;
-import com.project.inovationmobile.adapters.DividerDashboardAdapter;
 import com.project.inovationmobile.fragments.KategoriInovasiFragment;
 
 import java.util.ArrayList;
@@ -40,7 +37,7 @@ public class ListInovatorActivity extends AppCompatActivity {
             items.add("Wirda Ningsih");
         }
 
-        // Component list Inovator pada Dashboard melalui Recycleview
+        // set up RecyclerView List Inovator
         recyclerView = findViewById(R.id.recycleViewListInovator);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         contentInovatorAdapter = new ContentInovatorAdapter(this, items);

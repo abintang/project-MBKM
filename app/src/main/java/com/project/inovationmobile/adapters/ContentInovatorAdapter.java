@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,6 +21,10 @@ public class ContentInovatorAdapter extends RecyclerView.Adapter<ContentInovator
 
     private final LayoutInflater layoutInflater;
     private final List<String> data;
+
+    /* adapter ini adalah adapter recyclerview yang ada di page list inovator
+    , bisa diubah/diganti sesuai dengan adapter yang di mau. lalu untuk id
+    masing-masing isi/content nya itu ada dibawah (ViewHolder) */
 
     public ContentInovatorAdapter(Context context, List<String> data) {
         this.layoutInflater = LayoutInflater.from(context);
@@ -56,10 +61,17 @@ public class ContentInovatorAdapter extends RecyclerView.Adapter<ContentInovator
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView namaInovator;
+        TextView namaInovator, kategoriInovator, alamatInovator;
+        ImageView fotoInovator;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            namaInovator = itemView.findViewById(R.id.nama_inovator);
+            // variable yang udah di declare sesuai dengan id nya masing-masing
+            namaInovator = itemView.findViewById(R.id.tv_nama_inovator);
+            kategoriInovator = itemView.findViewById(R.id.tv_category_inovator);
+            alamatInovator = itemView.findViewById(R.id.alamat_inovator_detail);
+            fotoInovator = itemView.findViewById(R.id.iv_foto_inovator);
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

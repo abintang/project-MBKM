@@ -23,14 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.01" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.96" />
+            app:layout_constraintGuide_percent="0.35" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline5"
@@ -38,6 +31,280 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.92" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/ani_regi"
+            android:layout_width="@dimen/_160sdp"
+            android:layout_height="@dimen/_160sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            app:layout_constraintBottom_toTopOf="@id/guideline3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="lf20_zwvtsgvl.json"
+            app:lottie_loop="true" />
+
+        <com.github.captain_miao.optroundcardview.OptRoundCardView
+            android:id="@+id/cardIsi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_180sdp"
+            app:optRoundCardBackgroundColor="@color/white"
+            app:optRoundCardCornerRadius="@dimen/_15sdp"
+            app:optRoundCardLeftBottomCorner="false"
+            app:optRoundCardRightBottomCorner="false"
+            app:layout_constraintTop_toBottomOf="@id/guideline3">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.07" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.85" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.02" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.93" />
+
+                <TextView
+                    android:id="@+id/text_up_register"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfpro"
+                    android:text="@string/daftar_text"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp"
+                    app:layout_constraintEnd_toEndOf="@id/guideline9"
+                    app:layout_constraintStart_toStartOf="@id/guideline8"
+                    app:layout_constraintTop_toBottomOf="@id/guideline7" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardInvs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_5sdp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toStartOf="@id/guideline9"
+                    app:layout_constraintStart_toStartOf="@id/guideline6"
+                    app:layout_constraintTop_toBottomOf="@id/text_up_register"
+                    app:strokeColor="@color/gray"
+                    app:strokeWidth="1dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            app:layout_constraintGuide_percent="0.10" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.63" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.04" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.96" />
+
+                        <TextView
+                            android:id="@+id/invs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="@string/Inovasi_mn"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            app:layout_constraintStart_toStartOf="@id/guideline13"
+                            app:layout_constraintTop_toTopOf="@id/guideline11" />
+
+                        <TextView
+                            android:layout_width="@dimen/_170sdp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="@string/lorem"
+                            android:textColor="@color/gray_text"
+                            android:textSize="@dimen/_10sdp"
+                            app:layout_constraintStart_toStartOf="@id/guideline13"
+                            app:layout_constraintTop_toBottomOf="@id/invs" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_80sdp"
+                            android:layout_height="@dimen/_80sdp"
+                            android:src="@drawable/rounded_inovasi"
+                            app:layout_constraintEnd_toStartOf="@id/guideline14"
+                            app:layout_constraintStart_toStartOf="@id/guideline12"
+                            app:layout_constraintTop_toTopOf="@id/guideline11" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardInvt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_5sdp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toStartOf="@id/guideline9"
+                    app:layout_constraintStart_toStartOf="@id/guideline6"
+                    app:layout_constraintTop_toBottomOf="@id/cardInvs"
+                    app:strokeColor="@color/gray"
+                    app:strokeWidth="1dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline21"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            app:layout_constraintGuide_percent="0.10" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline22"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.63" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline23"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.04" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline24"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.96" />
+
+                        <TextView
+                            android:id="@+id/invt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="@string/Inovator_mn"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            app:layout_constraintStart_toStartOf="@id/guideline23"
+                            app:layout_constraintTop_toTopOf="@id/guideline21" />
+
+                        <TextView
+                            android:layout_width="@dimen/_170sdp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="@string/lorem"
+                            android:textColor="@color/gray_text"
+                            android:textSize="@dimen/_10sdp"
+                            app:layout_constraintStart_toStartOf="@id/guideline23"
+                            app:layout_constraintTop_toBottomOf="@id/invt" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_80sdp"
+                            android:layout_height="@dimen/_80sdp"
+                            android:src="@drawable/rounded_inovator"
+                            app:layout_constraintEnd_toStartOf="@id/guideline24"
+                            app:layout_constraintStart_toStartOf="@id/guideline22"
+                            app:layout_constraintTop_toTopOf="@id/guideline21" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:id="@+id/button_daftar"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:backgroundTint="@color/header_bg"
+                    android:fontFamily="@font/monstserrat_semibold"
+                    android:text="@string/daftar"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp"
+                    app:borderWidth="0dp"
+                    app:elevation="0dp"
+                    app:layout_constraintBottom_toTopOf="@id/guideline6"
+                    app:layout_constraintEnd_toEndOf="@id/guideline9"
+                    app:layout_constraintHorizontal_bias="0.412"
+                    app:layout_constraintStart_toEndOf="@id/button_panduan"
+                    app:shapeAppearanceOverlay="@style/shapeButton2" />
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:id="@+id/button_panduan"
+                    android:layout_width="@dimen/_135sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/monstserrat_semibold"
+                    android:text="@string/panduan"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/header_bg"
+                    android:textSize="@dimen/_12sdp"
+                    app:elevation="0dp"
+                    app:layout_constraintBottom_toTopOf="@id/guideline6"
+                    app:layout_constraintEnd_toStartOf="@id/button_daftar"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toStartOf="@id/guideline8"
+                    app:shapeAppearanceOverlay="@style/shapeButton2"
+                    app:strokeColor="@color/header_bg"
+                    app:strokeWidth="@dimen/_1sdp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.github.captain_miao.optroundcardview.OptRoundCardView>
+
 
        <!-- <ImageView
             android:id="@+id/temp_bg_search"
@@ -51,7 +318,7 @@
             app:layout_constraintTop_toBottomOf="@id/tabHeader"
             app:layout_constraintVertical_bias="0.534" />-->
 
-        <com.airbnb.lottie.LottieAnimationView
+        <!--<com.airbnb.lottie.LottieAnimationView
             android:id="@+id/temp_bg_search"
             android:layout_width="287dp"
             android:layout_height="259dp"
@@ -65,9 +332,9 @@
             app:layout_constraintVertical_bias="0.405"
             app:lottie_autoPlay="true"
             app:lottie_fileName="44190-under-construction-1.json"
-            app:lottie_loop="true" />
+            app:lottie_loop="true" />-->
 
-        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        <!--<com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:id="@+id/button_daftar"
             android:layout_width="@dimen/_220sdp"
             android:layout_height="@dimen/_40sdp"
@@ -105,7 +372,7 @@
             app:layout_constraintEnd_toEndOf="@id/guideline4"
             app:layout_constraintHorizontal_bias="0.425"
             app:layout_constraintStart_toStartOf="@id/guideline2"
-            app:shapeAppearanceOverlay="@style/shapeButton" />
+            app:shapeAppearanceOverlay="@style/shapeButton" />-->
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

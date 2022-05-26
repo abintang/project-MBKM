@@ -20,7 +20,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.325"
         app:lottie_autoPlay="true"
-        app:lottie_fileName="lf30_editor_mfcniooi.json"
+        app:lottie_imageAssetsFolder="images"
+        app:lottie_fileName="lf20_w6hl2umg.json"
         app:lottie_loop="true" />
 
     <TextView
@@ -39,8 +40,9 @@
         app:layout_constraintVertical_bias="0.08" />
 
     <TextView
-        android:layout_width="300dp"
-        android:layout_height="60dp"
+        android:id="@+id/ee"
+        android:layout_width="@dimen/_230sdp"
+        android:layout_height="@dimen/_25sdp"
         android:fontFamily="@font/monstserrat_semibold"
         android:text="@string/det_no_connection"
         android:textAlignment="center"
@@ -58,18 +60,18 @@
         android:layout_height="@dimen/_40sdp"
         android:backgroundTint="@color/header_bg"
         android:elevation="0dp"
-        app:elevation="0dp"
         android:fontFamily="@font/monstserrat_semibold"
         android:text="@string/coba_lagi"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="@dimen/_12sdp"
+        app:elevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/text_no_connection"
-        app:layout_constraintHorizontal_bias="0.52"
-        app:layout_constraintStart_toStartOf="@id/text_no_connection"
-        app:layout_constraintTop_toBottomOf="@id/text_no_connection"
-        app:layout_constraintVertical_bias="0.261"
+        app:layout_constraintEnd_toEndOf="@id/ee"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="@id/ee"
+        app:layout_constraintTop_toBottomOf="@id/ee"
+        app:layout_constraintVertical_bias="0.115"
         app:shapeAppearanceOverlay="@style/shapeButton" />
 
 

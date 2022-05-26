@@ -2,14 +2,27 @@ package com.project.inovationmobile.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.codesgood.views.JustifiedTextView;
 import com.project.inovationmobile.R;
+import com.project.inovationmobile.adapters.ContentInovasi_in_InovatorAdapter;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class InovasiDetailActivity extends AppCompatActivity {
+    ArrayList<String> items;
+
+    // untuk kategori inovasi kemungkinan bakalan dibuat recyclerview
+    ImageView fotoInovasiDetail, fotoInovatorDet;
+    TextView kategoriInovasiDetail, namaInovasiDetail, alamatInovasiDetail, namaInovatorDet, kategoriInovatorDet;
+    JustifiedTextView deskripsiInovasi, manfaatInovasi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +33,31 @@ public class InovasiDetailActivity extends AppCompatActivity {
         setSupportActionBar(mToolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        items = new ArrayList<>();
+        for (int i = 0; i < 5 ; i++) {
+            items.add("Teh Pala (Limbah Kulit Pala)");
+        }
+
+        // variable yang udah di declare sesuai dengan id nya masing-masing
+        fotoInovasiDetail = findViewById(R.id.iv_foto_inovasi_detail);
+        fotoInovatorDet = findViewById(R.id.iv_foto_inovator_det);
+        kategoriInovasiDetail = findViewById(R.id.tv_category_inovasi_detail);
+        namaInovasiDetail = findViewById(R.id.tv_nama_inovasi_detail);
+        alamatInovasiDetail = findViewById(R.id.tv_alamat_inovasi_detail);
+        namaInovatorDet = findViewById(R.id.tv_nama_inovator_det);
+        kategoriInovatorDet = findViewById(R.id.tv_category_inovator_det);
+        deskripsiInovasi = findViewById(R.id.tv_deskripsi_inovasi_detail);
+        manfaatInovasi = findViewById(R.id.deskripsi_manfaat_detail);
+
+        ContentInovasi_in_InovatorAdapter adapter;
+
+        // set up RecyclerView Inovasi Terkait (adapter nya belum dibikin)
+        RecyclerView recyclerView = findViewById(R.id.recycleViewInovasi_terkait);
+        LinearLayoutManager horizontalLayoutManager
+                = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
+        recyclerView.setLayoutManager(horizontalLayoutManager);
+        adapter = new ContentInovasi_in_InovatorAdapter(this,items);
+        recyclerView.setAdapter(adapter);
     }
 }

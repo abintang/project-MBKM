@@ -7,12 +7,11 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/content_inovasi_inov"
-        android:layout_width="140dp"
+        android:layout_width="@dimen/_120sdp"
         app:cardBackgroundColor="@color/white"
         app:cardUseCompatPadding="true"
-        android:layout_height="170dp"
+        android:layout_height="@dimen/_130sdp"
         android:layout_margin="@dimen/_3sdp"
-        android:layout_marginStart="@dimen/_3sdp"
         app:cardCornerRadius="@dimen/_5sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -24,15 +23,15 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_image"
                 android:layout_marginTop="@dimen/_4sdp"
-                android:layout_width="120dp"
-                android:layout_height="80dp"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_60sdp"
                 app:cardCornerRadius="@dimen/_3sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/foto_inovasi_inov"
+                    android:id="@+id/iv_foto_inovasi_inov"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:adjustViewBounds="false"
@@ -46,16 +45,16 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/title_inovasi_inov"
+                android:id="@+id/tv_nama_inovasi_inov"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginStart="@dimen/_5sdp"
                 android:layout_marginEnd="@dimen/_4sdp"
                 android:fontFamily="@font/monstserrat_semibold"
                 android:text="Teh Pala (Limbah Kulit Pala)"
                 android:textColor="@color/black"
-                android:textSize="12sp"
-                app:layout_constraintBottom_toTopOf="@id/category_inovasi_inov"
+                android:textSize="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_4sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -63,19 +62,18 @@
                 app:layout_constraintVertical_chainStyle="packed" />
 
             <TextView
-                android:id="@+id/category_inovasi_inov"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/tv_category_inovasi_inov"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_12sdp"
+                android:layout_marginStart="@dimen/_5sdp"
                 android:layout_marginEnd="4dp"
                 android:fontFamily="@font/montserrat_medium"
-                android:text="Kategori:   Warga Biasa"
+                android:text="Kuliner"
                 android:textColor="@color/gray_text"
-                android:textSize="9sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/title_inovasi_inov"
+                android:textSize="@dimen/_9sdp"
                 app:layout_constraintHorizontal_bias="0.375"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/title_inovasi_inov"
+                app:layout_constraintTop_toBottomOf="@+id/tv_nama_inovasi_inov"
                 app:layout_constraintVertical_bias="0.515" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

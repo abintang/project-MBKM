@@ -5,12 +5,16 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.codesgood.views.JustifiedTextView;
 import com.project.inovationmobile.R;
+import com.project.inovationmobile.adapters.ContentInovasi_TerkaitAdapter;
 import com.project.inovationmobile.adapters.ContentInovasi_in_InovatorAdapter;
 
 import java.util.ArrayList;
@@ -23,6 +27,8 @@ public class InovasiDetailActivity extends AppCompatActivity {
     ImageView fotoInovasiDetail, fotoInovatorDet;
     TextView kategoriInovasiDetail, namaInovasiDetail, alamatInovasiDetail, namaInovatorDet, kategoriInovatorDet;
     JustifiedTextView deskripsiInovasi, manfaatInovasi;
+
+    Button detailInovator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +45,15 @@ public class InovasiDetailActivity extends AppCompatActivity {
             items.add("Teh Pala (Limbah Kulit Pala)");
         }
 
+        detailInovator = findViewById(R.id.button_detail_inovator);
+        detailInovator.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(InovasiDetailActivity.this, InovatorDetailActivity.class);
+                startActivity(intent);
+            }
+        });
+
         // variable yang udah di declare sesuai dengan id nya masing-masing
         fotoInovasiDetail = findViewById(R.id.iv_foto_inovasi_detail);
         fotoInovatorDet = findViewById(R.id.iv_foto_inovator_det);
@@ -50,14 +65,15 @@ public class InovasiDetailActivity extends AppCompatActivity {
         deskripsiInovasi = findViewById(R.id.tv_deskripsi_inovasi_detail);
         manfaatInovasi = findViewById(R.id.deskripsi_manfaat_detail);
 
-        ContentInovasi_in_InovatorAdapter adapter;
+        ContentInovasi_TerkaitAdapter adapter;
 
-        // set up RecyclerView Inovasi Terkait (adapter nya belum dibikin)
+        // set up RecyclerView Inovasi Terkait
         RecyclerView recyclerView = findViewById(R.id.recycleViewInovasi_terkait);
         LinearLayoutManager horizontalLayoutManager
                 = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
         recyclerView.setLayoutManager(horizontalLayoutManager);
-        adapter = new ContentInovasi_in_InovatorAdapter(this,items);
+        adapter = new ContentInovasi_TerkaitAdapter(this,items);
         recyclerView.setAdapter(adapter);
+
     }
 }

@@ -28,7 +28,7 @@ public class InovasiDetailActivity extends AppCompatActivity {
     TextView kategoriInovasiDetail, namaInovasiDetail, alamatInovasiDetail, namaInovatorDet, kategoriInovatorDet;
     JustifiedTextView deskripsiInovasi, manfaatInovasi;
 
-    Button detailInovator;
+    Button detailInovator, detailInstansi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +54,15 @@ public class InovasiDetailActivity extends AppCompatActivity {
             }
         });
 
+        detailInstansi = findViewById(R.id.button_detail_instansi);
+        detailInstansi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(InovasiDetailActivity.this, InstansiDetailActivity.class);
+                startActivity(intent);
+            }
+        });
+
         // variable yang udah di declare sesuai dengan id nya masing-masing
         fotoInovasiDetail = findViewById(R.id.iv_foto_inovasi_detail);
         fotoInovatorDet = findViewById(R.id.iv_foto_inovator_det);
@@ -65,14 +74,14 @@ public class InovasiDetailActivity extends AppCompatActivity {
         deskripsiInovasi = findViewById(R.id.tv_deskripsi_inovasi_detail);
         manfaatInovasi = findViewById(R.id.deskripsi_manfaat_detail);
 
-        ContentInovasi_TerkaitAdapter adapter;
+        ContentInovasi_in_InovatorAdapter adapter;
 
         // set up RecyclerView Inovasi Terkait
         RecyclerView recyclerView = findViewById(R.id.recycleViewInovasi_terkait);
         LinearLayoutManager horizontalLayoutManager
                 = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
         recyclerView.setLayoutManager(horizontalLayoutManager);
-        adapter = new ContentInovasi_TerkaitAdapter(this,items);
+        adapter = new ContentInovasi_in_InovatorAdapter(this,items);
         recyclerView.setAdapter(adapter);
 
     }

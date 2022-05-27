@@ -22,6 +22,14 @@
 
     <string name="dt_inovasi">Detail Inovasi</string>
     <string name="dt_inovator">Detail Inovator</string>
+    <string name="dt_instansi">Detail Instansi</string>
+
+    <string name="info_instansi">Basic Info Instansi</string>
+    <string name="nm_instansi">Nama Instansi</string>
+    <string name="em_instansi">Email Instansi</string>
+    <string name="al_instansi">Alamat Instansi</string>
+    <string name="kec_instansi">Kecamatan Instansi</string>
+    <string name="des_instansi">Desa Instansi</string>
 
     <string name="info">Basic Info Inovator</string>
     <string name="ttl">Tempat Tanggal Lahir</string>

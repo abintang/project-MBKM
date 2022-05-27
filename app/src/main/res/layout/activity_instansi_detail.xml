@@ -3,7 +3,300 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background"
     tools:context=".activities.InstansiDetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/d"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_detail_instansi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="0dp"
+            app:elevation="0dp"
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_ios_new_24">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/monstserrat_semibold"
+                android:text="@string/dt_instansi"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sdp" />
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        app:layout_constraintTop_toBottomOf="@id/d"
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:fillViewport="true"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardNamaImage"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_141sdp"
+                android:background="@color/white"
+                app:cardCornerRadius="@dimen/_3sdp"
+                app:cardElevation="@dimen/_1sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/instansi" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardBio"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="@dimen/_1sdp"
+                app:layout_constraintTop_toBottomOf="@id/cardNamaImage">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.04" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.07" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.5" />
+
+                    <TextView
+                        android:id="@+id/title_card"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/monstserrat_semibold"
+                        android:text="@string/info_instansi"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintStart_toStartOf="@id/guideline2"
+                        app:layout_constraintTop_toTopOf="@id/guideline3" />
+
+                    <TextView
+                        android:id="@+id/nm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="@string/nm_instansi"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintStart_toStartOf="@id/guideline2"
+                        app:layout_constraintTop_toBottomOf="@id/title_card" />
+
+                    <TextView
+                        android:id="@+id/tv_nm_instansi_detail"
+                        android:layout_width="@dimen/_130sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/gray_text"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:textSize="@dimen/_10sdp"
+                        android:text="Dummy Name Text"
+                        app:layout_constraintStart_toStartOf="@id/guideline4"
+                        app:layout_constraintTop_toBottomOf="@id/title_card"/>
+
+                    <View
+                        android:id="@+id/line1"
+                        android:layout_width="@dimen/_290sdp"
+                        android:layout_height="@dimen/_2sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:background="@color/background"
+                        app:layout_constraintStart_toStartOf="@id/guideline2"
+                        app:layout_constraintTop_toBottomOf="@id/tv_nm_instansi_detail"/>
+
+                    <TextView
+                        android:id="@+id/em"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/em_instansi"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintTop_toBottomOf="@id/line1"
+                        app:layout_constraintStart_toStartOf="@id/guideline2"/>
+
+                    <TextView
+                        android:id="@+id/tv_em_instansi_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/gray_text"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:textSize="@dimen/_10sdp"
+                        android:text="dummy@gmail.com"
+                        app:layout_constraintStart_toStartOf="@id/guideline4"
+                        app:layout_constraintTop_toBottomOf="@id/line1"/>
+
+                    <View
+                        android:id="@+id/line2"
+                        android:layout_width="@dimen/_290sdp"
+                        android:layout_height="@dimen/_2sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:background="@color/background"
+                        app:layout_constraintStart_toStartOf="@id/guideline2"
+                        app:layout_constraintTop_toBottomOf="@id/tv_em_instansi_detail"/>
+
+                    <TextView
+                        android:id="@+id/al"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/al_instansi"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintTop_toBottomOf="@id/line2"
+                        app:layout_constraintStart_toStartOf="@id/guideline2"/>
+
+                    <TextView
+                        android:id="@+id/tv_alamat_instansi_detail"
+                        android:layout_width="@dimen/_130sdp"
+                        android:layout_height="wrap_content"
+                        android:text="Dramaga"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/gray_text"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintStart_toStartOf="@id/guideline4"
+                        app:layout_constraintTop_toBottomOf="@id/line2"/>
+
+                    <View
+                        android:id="@+id/line3"
+                        android:layout_width="@dimen/_290sdp"
+                        android:layout_height="@dimen/_2sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:background="@color/background"
+                        app:layout_constraintStart_toStartOf="@id/guideline2"
+                        app:layout_constraintTop_toBottomOf="@id/tv_alamat_instansi_detail"/>
+
+                    <TextView
+                        android:id="@+id/kc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/kec_instansi"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintTop_toBottomOf="@id/line3"
+                        app:layout_constraintStart_toStartOf="@id/guideline2"/>
+
+                    <TextView
+                        android:id="@+id/tv_kecamatan_instansi_detail"
+                        android:layout_width="@dimen/_130sdp"
+                        android:layout_height="wrap_content"
+                        android:text="Dummy Kecamatan Text"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/gray_text"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintStart_toStartOf="@id/guideline4"
+                        app:layout_constraintTop_toBottomOf="@id/line3"/>
+
+                    <View
+                        android:id="@+id/line4"
+                        android:layout_width="@dimen/_290sdp"
+                        android:layout_height="@dimen/_2sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:background="@color/background"
+                        app:layout_constraintStart_toStartOf="@id/guideline2"
+                        app:layout_constraintTop_toBottomOf="@id/tv_kecamatan_instansi_detail"/>
+
+                    <TextView
+                        android:id="@+id/ds"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/des_instansi"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintTop_toBottomOf="@id/line4"
+                        app:layout_constraintStart_toStartOf="@id/guideline2"/>
+
+                    <TextView
+                        android:id="@+id/tv_desa_instansi_detail"
+                        android:layout_width="@dimen/_130sdp"
+                        android:layout_height="wrap_content"
+                        android:text="Dummy Desa Text"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/gray_text"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintStart_toStartOf="@id/guideline4"
+                        app:layout_constraintTop_toBottomOf="@id/line4"/>
+
+                    <View
+                        android:id="@+id/line5"
+                        android:layout_width="@dimen/_290sdp"
+                        android:layout_height="@dimen/_2sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:background="@color/background"
+                        app:layout_constraintStart_toStartOf="@id/guideline2"
+                        app:layout_constraintTop_toBottomOf="@id/tv_desa_instansi_detail"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_10sdp"
+                        android:background="@color/white"
+                        app:layout_constraintTop_toBottomOf="@id/line5"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <View
+                android:background="@color/background"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_250sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardBio" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.project.inovationmobile.fragments;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -7,11 +8,21 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.NetworkResponse;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.project.inovationmobile.activities.ListInovasiActivity;
 import com.project.inovationmobile.activities.ListInovatorActivity;
@@ -19,13 +30,20 @@ import com.project.inovationmobile.activities.PetaActivity;
 import com.project.inovationmobile.adapters.ContentLatestAdapter;
 import com.project.inovationmobile.R;
 import com.project.inovationmobile.adapters.SliderAdapter;
+import com.project.inovationmobile.models.ContentLatestModel;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
+import java.util.Objects;
 
 
 /**
@@ -36,6 +54,8 @@ import java.util.Date;
 public class DashboardFragment extends Fragment {
 
     SliderView sliderView;
+    ArrayList<ContentLatestModel> items;
+    String url = "https://run.mocky.io/v3/5fa76df8-45a1-4969-99c5-1dfdf4623617";
     int[] banners = {
             R.drawable.banner_1,
             R.drawable.banner_2,
@@ -47,7 +67,7 @@ public class DashboardFragment extends Fragment {
 
     RecyclerView recyclerView;
     ContentLatestAdapter contentLatestAdapter;
-    ArrayList<String> items;
+
 
     TextView greetText;
 
@@ -111,16 +131,14 @@ public class DashboardFragment extends Fragment {
         sliderView.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION);
         sliderView.startAutoCycle();
 
-        items = new ArrayList<>();
-        for (int i = 0; i < 5 ; i++) {
-            items.add("Teh Pala (Limbah Kulit Pala)");
-        }
 
         // Component list Inovator pada Dashboard melalui Recycleview
         recyclerView = rootView.findViewById(R.id.recycleViewContentLatest);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        contentLatestAdapter = new ContentLatestAdapter(getActivity(),items);
-        recyclerView.setAdapter(contentLatestAdapter);
+       /* contentLatestAdapter = new ContentLatestAdapter(getActivity(),items);*/
+
+        getData();
+
 
         // Intent button pada Dashboard
         btnInovator = rootView.findViewById(R.id.button_inovator);
@@ -148,6 +166,7 @@ public class DashboardFragment extends Fragment {
                 startActivity(new Intent(getActivity(), PetaActivity.class));
             }
         });
+
         // Inflate the layout for this fragment
         return rootView;
     }
@@ -168,5 +187,48 @@ public class DashboardFragment extends Fragment {
         } else {
             greetText.setText(R.string.greet_malam);
         }
+    }
+
+    private void getData(){
+        final ProgressDialog progressDialog = new ProgressDialog(getContext());
+        progressDialog.setMessage("Load data...");
+        progressDialog.show();
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            progressDialog.dismiss();
+                            JSONObject jsonObject = new JSONObject(response);
+                            items = new ArrayList<>();
+                            JSONArray jsonArray = jsonObject.getJSONArray("data");
+
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                ContentLatestModel contentLatestModel = new ContentLatestModel();
+                                JSONObject object = jsonArray.getJSONObject(i);
+
+                                contentLatestModel.setId_inovasi(object.getInt("id_inovasi"));
+                                contentLatestModel.setNama_inovasi(object.getString("nama_inovasi"));
+                                contentLatestModel.setNama_inovator(object.getString("nama_kelompok"));
+
+                                items.add(contentLatestModel);
+                            }
+                            contentLatestAdapter = new ContentLatestAdapter(getActivity(), items);
+                            recyclerView.setAdapter(contentLatestAdapter);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+
+        requestQueue.add(stringRequest);
     }
 }

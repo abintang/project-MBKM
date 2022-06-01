@@ -13,27 +13,29 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.project.inovationmobile.R;
 import com.project.inovationmobile.activities.InovasiDetailActivity;
+import com.project.inovationmobile.models.ContentLatestModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ContentLatestAdapter extends RecyclerView.Adapter<ContentLatestAdapter.ViewHolder> {
 
-    private final LayoutInflater layoutInflater;
-    private final List<String> data;
+    private LayoutInflater inflater;
+    private final ArrayList<ContentLatestModel> data;
 
     /* adapter ini adalah adapter recyclerview yang ada di page dashboard (Terbaru - Max 5 data)
     , bisa diubah/diganti sesuai dengan adapter yang di mau. lalu untuk id masing-masing
     isi/content nya itu ada dibawah (ViewHolder) */
 
-    public ContentLatestAdapter(Context context, List<String> data){
-        this.layoutInflater = LayoutInflater.from(context);
+    public ContentLatestAdapter(Context context, ArrayList<ContentLatestModel> data){
+        inflater = LayoutInflater.from(context);
         this.data = data;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = layoutInflater.inflate(R.layout.content_inovasi_layout,viewGroup,false);
+        View view = inflater.inflate(R.layout.content_inovasi_layout,viewGroup,false);
         return new ViewHolder(view);
     }
 
@@ -41,8 +43,9 @@ public class ContentLatestAdapter extends RecyclerView.Adapter<ContentLatestAdap
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
         // bind the textview with data received
-        String title = data.get(i);
-        viewHolder.namaInovasi.setText(title);
+        viewHolder.kategoriInovasi.setText(Integer.toString(data.get(i).getId_inovasi()));
+        viewHolder.namaInovasi.setText(data.get(i).getNama_inovasi());
+        viewHolder.namaInovator.setText(data.get(i).getNama_inovator());
         // similarly you can set new image for each card and descriptions
 
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +72,7 @@ public class ContentLatestAdapter extends RecyclerView.Adapter<ContentLatestAdap
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             // variable yang udah di declare sesuai dengan id nya masing-masing
+            int idInovasi;
             namaInovasi = itemView.findViewById(R.id.tv_nama_inovasi);
             namaInovator = itemView.findViewById(R.id.tv_nama_inovator);
             fotoInovasi = itemView.findViewById(R.id.iv_foto_inovasi);

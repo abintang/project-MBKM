@@ -25,6 +25,6 @@
     <color name="gray_text">#717171</color>
     <color name="shadow">#EBEBEB</color>
     <color name="gray">#F1EEE9</color>
-    <color name="black_opacity">#99000000</color>
+    <color name="black_opacity">#A1000000</color>
 
 </resources>

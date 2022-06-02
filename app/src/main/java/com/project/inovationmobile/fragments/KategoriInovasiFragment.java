@@ -1,5 +1,6 @@
 package com.project.inovationmobile.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +20,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import com.google.android.material.card.MaterialCardView;
 import com.project.inovationmobile.R;
+import com.project.inovationmobile.activities.ListInovasiActivity;
+import com.project.inovationmobile.activities.ListInovatorActivity;
 import com.project.inovationmobile.adapters.ContentCategoryInovasiAdapter;
 import com.project.inovationmobile.models.ContentLatestModel;
 import com.project.inovationmobile.models.ListCategoryInovasiModel;
@@ -62,6 +66,13 @@ public class KategoriInovasiFragment extends BottomSheetDialogFragment implement
             @Override
             public void onClick(View view) {
                 dismiss();
+            }
+        });
+        MaterialCardView semuaKategori = view.findViewById(R.id.card_semuaKategori);
+        semuaKategori.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), ListInovasiActivity.class));
             }
         });
         getDataListCategoryInovasi();

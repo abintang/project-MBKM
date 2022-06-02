@@ -13,6 +13,9 @@
         app:strokeColor="@color/gray"
         app:cardCornerRadius="0dp"
         app:cardElevation="0dp"
+        android:foreground="@color/white_ripple"
+        android:clickable="true"
+        android:focusable="true"
         app:strokeWidth="1dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout

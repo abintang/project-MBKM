@@ -15,6 +15,7 @@ import com.google.android.material.floatingactionbutton.ExtendedFloatingActionBu
 import com.project.inovationmobile.R;
 import com.project.inovationmobile.adapters.ContentInovatorAdapter;
 import com.project.inovationmobile.fragments.KategoriInovasiFragment;
+import com.project.inovationmobile.fragments.KategoriInovatorFragment;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -69,9 +70,9 @@ public class ListInovatorActivity extends AppCompatActivity {
     }
 
     public void showBottomSheet(View view) {
-        KategoriInovasiFragment addPhotoBottomDialogFragment =
-                KategoriInovasiFragment.newInstance();
+        KategoriInovatorFragment addPhotoBottomDialogFragment =
+                KategoriInovatorFragment.newInstance();
         addPhotoBottomDialogFragment.show(getSupportFragmentManager(),
-                KategoriInovasiFragment.TAG);
+                KategoriInovatorFragment.TAG);
     }
 }

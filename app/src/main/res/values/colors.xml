@@ -26,5 +26,7 @@
     <color name="shadow">#EBEBEB</color>
     <color name="gray">#F1EEE9</color>
     <color name="black_opacity">#A1000000</color>
+    <color name="white_ripple">#42FFFFFF</color>
+    <color name="black_ripple">#42000000</color>
 
 </resources>

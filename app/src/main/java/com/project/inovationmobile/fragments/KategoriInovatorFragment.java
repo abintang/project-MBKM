@@ -1,16 +1,18 @@
 package com.project.inovationmobile.fragments;
 
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -21,8 +23,9 @@ import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.project.inovationmobile.R;
 import com.project.inovationmobile.adapters.ContentCategoryInovasiAdapter;
-import com.project.inovationmobile.models.ContentLatestModel;
+import com.project.inovationmobile.adapters.ContentCategoryInovatorAdapter;
 import com.project.inovationmobile.models.ListCategoryInovasiModel;
+import com.project.inovationmobile.models.ListCategoryInovatorModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,12 +33,13 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class KategoriInovasiFragment extends BottomSheetDialogFragment implements View.OnClickListener {
+
+public class KategoriInovatorFragment extends BottomSheetDialogFragment implements View.OnClickListener {
     public static final String TAG = "ActionBottomDialog";
 
-    ArrayList<ListCategoryInovasiModel> items;
-    String url = "https://run.mocky.io/v3/f7dd7235-4f5a-4b77-a1fe-37a579115886";
-    ContentCategoryInovasiAdapter adapter;
+    ArrayList<ListCategoryInovatorModel> items;
+    String url = "https://run.mocky.io/v3/e605dfc3-1729-4f0b-899c-545236917b58";
+    ContentCategoryInovatorAdapter adapter;
     RecyclerView recyclerView;
 
     @Override
@@ -43,8 +47,8 @@ public class KategoriInovasiFragment extends BottomSheetDialogFragment implement
 
     }
 
-    public static KategoriInovasiFragment newInstance() {
-        return new KategoriInovasiFragment();
+    public static KategoriInovatorFragment newInstance() {
+        return new KategoriInovatorFragment();
     }
 
     @Nullable
@@ -64,11 +68,10 @@ public class KategoriInovasiFragment extends BottomSheetDialogFragment implement
                 dismiss();
             }
         });
-        getDataListCategoryInovasi();
-
+        getDataCategoryInovator();
     }
 
-    private void getDataListCategoryInovasi(){
+    private void getDataCategoryInovator(){
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -77,15 +80,15 @@ public class KategoriInovasiFragment extends BottomSheetDialogFragment implement
                     items = new ArrayList<>();
                     JSONArray jsonArray = jsonObject.getJSONArray("data");
                     for (int i = 0; i < jsonArray.length(); i++) {
-                        ListCategoryInovasiModel listCategoryInovasiModel = new ListCategoryInovasiModel();
+                        ListCategoryInovatorModel listCategoryInovatorModel = new ListCategoryInovatorModel();
                         JSONObject object = jsonArray.getJSONObject(i);
 
-                        listCategoryInovasiModel.setIdCategoryInovasi(object.getInt("id_bidang_inovasi"));
-                        listCategoryInovasiModel.setNamaCategoryInovasi(object.getString("nama_bidang_inovasi"));
+                        listCategoryInovatorModel.setIdCategoryInovator(object.getInt("id_kategori_inovator"));
+                        listCategoryInovatorModel.setNamaCategoryInovator(object.getString("nama_kategori_inovator"));
 
-                        items.add(listCategoryInovasiModel);
+                        items.add(listCategoryInovatorModel);
                     }
-                    adapter = new ContentCategoryInovasiAdapter(getActivity(), items);
+                    adapter = new ContentCategoryInovatorAdapter(getActivity(), items);
                     recyclerView.setAdapter(adapter);
                 } catch (JSONException e) {
                     e.printStackTrace();

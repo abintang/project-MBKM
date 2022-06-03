@@ -23,6 +23,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.project.inovationmobile.activities.ListInovasiActivity;
 import com.project.inovationmobile.activities.ListInovatorActivity;
@@ -67,6 +68,8 @@ public class DashboardFragment extends Fragment {
 
     RecyclerView recyclerView;
     ContentLatestAdapter contentLatestAdapter;
+
+    ShimmerFrameLayout shimmerFrameLayout;
 
 
     TextView greetText;
@@ -137,6 +140,9 @@ public class DashboardFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
        /* contentLatestAdapter = new ContentLatestAdapter(getActivity(),items);*/
 
+        shimmerFrameLayout = rootView.findViewById(R.id.shimmer_dashboard_container);
+
+
         getData();
 
 
@@ -190,20 +196,16 @@ public class DashboardFragment extends Fragment {
     }
 
     private void getData(){
-        final ProgressDialog progressDialog = new ProgressDialog(getContext());
-        progressDialog.setMessage("Load data...");
-        progressDialog.show();
-
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
-                            progressDialog.dismiss();
                             JSONObject jsonObject = new JSONObject(response);
                             items = new ArrayList<>();
                             JSONArray jsonArray = jsonObject.getJSONArray("data");
-
+                            shimmerFrameLayout.stopShimmer();
+                            shimmerFrameLayout.setVisibility(View.GONE);
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 ContentLatestModel contentLatestModel = new ContentLatestModel();
                                 JSONObject object = jsonArray.getJSONObject(i);
@@ -230,5 +232,17 @@ public class DashboardFragment extends Fragment {
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
 
         requestQueue.add(stringRequest);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        shimmerFrameLayout.startShimmer();
+    }
+
+    @Override
+    public void onPause() {
+        shimmerFrameLayout.stopShimmer();
+        super.onPause();
     }
 }

@@ -227,6 +227,29 @@
             android:textSize="@dimen/_13sdp"
             app:layout_constraintStart_toStartOf="@id/guideline2"
             app:layout_constraintTop_toBottomOf="@id/mn_inovasi" />
+        
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_dashboard_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_23sdp"
+            android:layout_marginStart="@dimen/_18sdp"
+            app:layout_constraintStart_toStartOf="@id/guideline2"
+            app:shimmer_duration="800"
+            app:layout_constraintTop_toBottomOf="@id/latest_inovasi">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/placeholder_inovasi_layout"/>
+                <include layout="@layout/placeholder_inovasi_layout"/>
+                <include layout="@layout/placeholder_inovasi_layout"/>
+                <include layout="@layout/placeholder_inovasi_layout"/>
+                <include layout="@layout/placeholder_inovasi_layout"/>
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycleViewContentLatest"

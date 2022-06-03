@@ -41,7 +41,7 @@
         <entry key="..\:/Users/ndrre/AndroidStudioProjects/InovationMobile/app/src/main/res/layout/fragment_about.xml" value="0.23183925811437403" />
         <entry key="..\:/Users/ndrre/AndroidStudioProjects/InovationMobile/app/src/main/res/layout/fragment_bottom_sheet_kategori_inovasi_list_dialog.xml" value="0.14407866609662248" />
         <entry key="..\:/Users/ndrre/AndroidStudioProjects/InovationMobile/app/src/main/res/layout/fragment_bottom_sheet_kategori_inovasi_list_dialog_item.xml" value="0.14407866609662248" />
-        <entry key="..\:/Users/ndrre/AndroidStudioProjects/InovationMobile/app/src/main/res/layout/fragment_dashboard.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/ndrre/AndroidStudioProjects/InovationMobile/app/src/main/res/layout/fragment_dashboard.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/ndrre/AndroidStudioProjects/InovationMobile/app/src/main/res/layout/fragment_register.xml" value="0.22" />
         <entry key="..\:/Users/ndrre/AndroidStudioProjects/InovationMobile/app/src/main/res/layout/fragment_search.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/ndrre/AndroidStudioProjects/InovationMobile/app/src/main/res/layout/inner_empty_layout.xml" value="0.14407866609662248" />
@@ -52,6 +52,7 @@
         <entry key="..\:/Users/ndrre/AndroidStudioProjects/InovationMobile/app/src/main/res/layout/layout_profile_metadata.xml" value="0.14407866609662248" />
         <entry key="..\:/Users/ndrre/AndroidStudioProjects/InovationMobile/app/src/main/res/layout/layout_second_profil.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/ndrre/AndroidStudioProjects/InovationMobile/app/src/main/res/layout/nointernet_layout.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/ndrre/AndroidStudioProjects/InovationMobile/app/src/main/res/layout/placeholder_inovasi_layout.xml" value="0.22" />
         <entry key="..\:/Users/ndrre/AndroidStudioProjects/InovationMobile/app/src/main/res/layout/search_layout.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/ndrre/AndroidStudioProjects/InovationMobile/app/src/main/res/layout/slider_item.xml" value="0.1" />
         <entry key="..\:/Users/ndrre/AndroidStudioProjects/InovationMobile/app/src/main/res/menu/bottom_navbar.xml" value="0.16145833333333334" />

@@ -29,4 +29,10 @@
     <color name="white_ripple">#42FFFFFF</color>
     <color name="black_ripple">#42000000</color>
 
+    <color name="placeholder_bg">#dddddd</color>
+    <color name="item_name">#0c0c0c</color>
+    <color name="description">#1a1a1a</color>
+    <color name="title">#777</color>
+    <color name="name">#777</color>
+
 </resources>

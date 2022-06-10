@@ -2,10 +2,18 @@ package com.project.inovationmobile.models;
 
 public class ContentLatestModel {
     int id_inovasi;
-    String nama_inovasi, nama_inovator;
+    String nama_inovasi, nama_inovator, kategoriInovasi;
 
     public int getId_inovasi() {
         return id_inovasi;
+    }
+
+    public String getKategoriInovasi() {
+        return kategoriInovasi;
+    }
+
+    public void setKategoriInovasi(String kategoriInovasi) {
+        this.kategoriInovasi = kategoriInovasi;
     }
 
     public void setId_inovasi(int id_inovasi) {

@@ -13,19 +13,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.project.inovationmobile.R;
 import com.project.inovationmobile.activities.InovasiDetailActivity;
+import com.project.inovationmobile.models.ContentLatestModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ContentInovasiAdapter extends RecyclerView.Adapter<ContentInovasiAdapter.ViewHolder> {
 
     private final LayoutInflater layoutInflater;
-    private final List<String> data;
+    private final ArrayList<ContentLatestModel> data;
 
     /* adapter ini adalah adapter recyclerview yang ada di page list inovasi
     , bisa diubah/diganti sesuai dengan adapter yang di mau. lalu untuk id
     masing-masing isi/content nya itu ada dibawah (ViewHolder) */
 
-    public ContentInovasiAdapter(Context context, List<String> data) {
+    public ContentInovasiAdapter(Context context, ArrayList<ContentLatestModel> data) {
         this.layoutInflater = LayoutInflater.from(context);
         this.data = data;
     }
@@ -34,20 +36,23 @@ public class ContentInovasiAdapter extends RecyclerView.Adapter<ContentInovasiAd
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = layoutInflater.inflate(R.layout.content_inovasi_layout,viewGroup,false);
-        return new ViewHolder(view);
+        return new ContentInovasiAdapter.ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         // bind the textview with data received
-        String titleInovasi = data.get(i);
-        viewHolder.namaInovasi.setText(titleInovasi);
+        viewHolder.kategoriInovasi.setText(data.get(i).getKategoriInovasi());
+        viewHolder.namaInovasi.setText(data.get(i).getNama_inovasi());
+        viewHolder.namaInovator.setText(data.get(i).getNama_inovator());
+        viewHolder.fotoInovasi.setImageResource(R.drawable.inovasi);
         // similarly you can set new image for each card and descriptions
 
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), InovasiDetailActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 view.getContext().startActivity(intent);
             }
         });

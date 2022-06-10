@@ -40,7 +40,7 @@
 
     <string name="profil_tl">Profil</string>
     <string name="tugas_tl">Tugas Pokok dan Fungsi</string>
-    <string name="unsur_tl">Unsur dan Susunan Organisasi</string>
+    <string name="unsur_tl">Visi dan Misi</string>
     <string name="strategi_tl">Strategi</string>
     <string name="kontak_tl">Kontak Kami</string>
 
@@ -48,6 +48,9 @@
     <string name="profil_desc">Kabupaten Bogor yang dibentuk berdasarkan Peraturan Bupati (PerBup) Kabupaten Bogor Nomor 69 Tahun 2017 tentang Kedudukan, Susunan Organisasi, Tugas dan Fungsi Badan Perencanaan Pembangunan, Penelitian dan Pengembangan Daerah.</string>
     <string name="fixed_tugas_desc">Penyusunan, pelaksanaan, pemantauan, hingga pelaksanaan, dalam ruang lingkup kebijakan teknis di</string>
     <string name="tugas_desc">bidang perencanaan, penelitian, dan pengembangan daerah.</string>
+    <string name="fixed_visi_desc">Perumusan dan Pemberian dukungan di bidang kesatuan bangsa dan politik, lalu pembinaan serta</string>
+    <string name="visi_desc">pelaksanaan tugas untuk kesatuan bangsa dan politik sesuai tugas yang diberikan Bupati.</string>
+    <string name="visi2_desc">Mewujudkan Kabupaten Bogor Maju, Nyaman, Bekeadaban, dan meningkatkan pengembangan budaya dan Pendidikan politik.</string>
     <string name="fixed_strategi_desc">1). Menjalin kerja sama dengan instansi\n2). Meningkatkan intensitas social pada industry 4.0</string>
     <string name="strategi_desc">3). Mengajukan rancangan pembangungan daerah\n4). Optimalisasi anggaran dalam pencapaian visi misi kepala daerah</string>
     <string name="fixed_kontak_desc">Jalan Segar III Kav 2 Komplek Perkantoran Pemda Bogor, Cibinong – Bogor, Jawa Barat 16914, Indonesia</string>
@@ -85,6 +88,8 @@
     <string name="daftar">Daftar</string>
     <string name="detail">Detail</string>
 
+    <string name="invs_det">Sebuah ide atau gagasan baru oleh seseorang atau kelompok yang diaplikasikan atau pun diadopsi dengan ketentuan tertentu</string>
+    <string name="inv_det">Seseorang atau kelompok yang memperkenalkan ide/gagasan baru yang diaplikasikan atau pun diadopsi dengan ketentuan tertentu</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_list_inovator">ListInovatorActivity</string>

@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.35" />
+            app:layout_constraintGuide_percent="0.32" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline5"
@@ -50,7 +50,7 @@
             android:id="@+id/cardIsi"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/_180sdp"
+            android:layout_marginTop="@dimen/_170sdp"
             app:optRoundCardBackgroundColor="@color/white"
             app:optRoundCardCornerRadius="@dimen/_15sdp"
             app:optRoundCardLeftBottomCorner="false"
@@ -318,17 +318,17 @@
         </com.github.captain_miao.optroundcardview.OptRoundCardView>
 
 
-       <!-- <ImageView
-            android:id="@+id/temp_bg_search"
-            android:layout_width="287dp"
-            android:layout_height="259dp"
-            android:src="@drawable/search_bg"
-            app:layout_constraintBottom_toTopOf="@id/guideline5"
-            app:layout_constraintEnd_toStartOf="@id/guideline4"
-            app:layout_constraintHorizontal_bias="0.417"
-            app:layout_constraintStart_toStartOf="@id/guideline2"
-            app:layout_constraintTop_toBottomOf="@id/tabHeader"
-            app:layout_constraintVertical_bias="0.534" />-->
+        <!-- <ImageView
+             android:id="@+id/temp_bg_search"
+             android:layout_width="287dp"
+             android:layout_height="259dp"
+             android:src="@drawable/search_bg"
+             app:layout_constraintBottom_toTopOf="@id/guideline5"
+             app:layout_constraintEnd_toStartOf="@id/guideline4"
+             app:layout_constraintHorizontal_bias="0.417"
+             app:layout_constraintStart_toStartOf="@id/guideline2"
+             app:layout_constraintTop_toBottomOf="@id/tabHeader"
+             app:layout_constraintVertical_bias="0.534" />-->
 
         <!--<com.airbnb.lottie.LottieAnimationView
             android:id="@+id/temp_bg_search"

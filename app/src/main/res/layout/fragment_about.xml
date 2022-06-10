@@ -392,7 +392,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
                             android:fontFamily="@font/montserrat_regular"
-                            android:text="@string/fixed_strategi_desc"
+                            android:text="@string/fixed_visi_desc"
                             android:textColor="@color/gray_text"
                             android:textSize="@dimen/_10sdp"
                             app:layout_constraintStart_toEndOf="@id/guideline31"
@@ -429,11 +429,22 @@
                             android:layout_width="@dimen/_275sdp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/montserrat_regular"
-                            android:text="@string/strategi_desc"
+                            android:text="@string/visi_desc"
                             android:textColor="@color/gray_text"
                             android:textSize="@dimen/_10sdp"
                             app:layout_constraintStart_toStartOf="@id/guideline34"
                             app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.codesgood.views.JustifiedTextView
+                            android:id="@+id/text_unsur2"
+                            android:layout_width="@dimen/_275sdp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="@string/visi2_desc"
+                            android:textColor="@color/gray_text"
+                            android:textSize="@dimen/_10sdp"
+                            app:layout_constraintStart_toStartOf="@id/guideline34"
+                            app:layout_constraintTop_toBottomOf="@id/text_unsur" />
 
                         <View
                             android:id="@+id/pad_bottom_unsur_expand"
@@ -441,7 +452,7 @@
                             android:layout_height="@dimen/_10sdp"
                             android:background="@color/white"
                             android:visibility="visible"
-                            app:layout_constraintTop_toBottomOf="@id/text_unsur"
+                            app:layout_constraintTop_toBottomOf="@id/text_unsur2"
                             tools:layout_editor_absoluteX="0dp" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -43,9 +43,10 @@ public class ContentLatestAdapter extends RecyclerView.Adapter<ContentLatestAdap
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
         // bind the textview with data received
-        viewHolder.kategoriInovasi.setText(Integer.toString(data.get(i).getId_inovasi()));
+        viewHolder.kategoriInovasi.setText(data.get(i).getKategoriInovasi());
         viewHolder.namaInovasi.setText(data.get(i).getNama_inovasi());
         viewHolder.namaInovator.setText(data.get(i).getNama_inovator());
+
         // similarly you can set new image for each card and descriptions
 
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {

@@ -46,7 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.36" />
+        app:layout_constraintGuide_percent="0.35" />
 
             <com.github.captain_miao.optroundcardview.OptRoundCardView
                 android:layout_width="match_parent"
@@ -70,7 +70,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            app:layout_constraintGuide_percent="0.02" />
+                            app:layout_constraintGuide_percent="0.01" />
 
                         <androidx.constraintlayout.widget.Guideline
                             android:id="@+id/guideline2"

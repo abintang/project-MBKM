@@ -156,7 +156,6 @@
                 app:layout_constraintTop_toBottomOf="@id/illust_inovasi"
                 app:tint="@color/black_opacity" />
 
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
@@ -207,6 +206,37 @@
                 app:layout_constraintHeight_default="wrap"
                 app:layout_constraintTop_toBottomOf="@id/search_button_inovasi"
                 app:layout_constraintBottom_toBottomOf="parent" />
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer_inovasi_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_23sdp"
+                android:layout_marginStart="@dimen/_18sdp"
+                app:layout_constraintStart_toStartOf="@id/guideline2"
+                app:shimmer_duration="800"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="@id/guideline4"
+                app:layout_constraintTop_toBottomOf="@id/search_button_inovasi"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/placeholder_inovasi_layout"/>
+                    <include layout="@layout/placeholder_inovasi_layout"/>
+                    <include layout="@layout/placeholder_inovasi_layout"/>
+                    <include layout="@layout/placeholder_inovasi_layout"/>
+                    <include layout="@layout/placeholder_inovasi_layout"/>
+                    <include layout="@layout/placeholder_inovasi_layout"/>
+                    <include layout="@layout/placeholder_inovasi_layout"/>
+                    <include layout="@layout/placeholder_inovasi_layout"/>
+                    <include layout="@layout/placeholder_inovasi_layout"/>
+                    <include layout="@layout/placeholder_inovasi_layout"/>
+                </LinearLayout>
+            </com.facebook.shimmer.ShimmerFrameLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

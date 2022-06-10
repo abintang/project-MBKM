@@ -78,6 +78,8 @@ public class AboutFragment extends Fragment {
         constraintLayoutProfil = rootView.findViewById(R.id.hidden_layout_profil);
         padProfil = rootView.findViewById(R.id.pad_bottom_profil);
 
+
+
         cardProfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,6 +94,28 @@ public class AboutFragment extends Fragment {
                     padProfil.setVisibility(View.GONE);
                     constraintLayoutProfil.setVisibility(View.VISIBLE);
                     iconArrowProfil.setImageResource(R.drawable.ic_baseline_expand_less_24);
+                }
+            }
+        });
+
+        cardUnsur = rootView.findViewById(R.id.cardUnsur);
+        iconArrowUnsur = rootView.findViewById(R.id.icon_arrow_unsur);
+        constraintLayoutUnsur = rootView.findViewById(R.id.hidden_layout_unsur);
+        padUnsur = rootView.findViewById(R.id.pad_bottom_unsur);
+
+        cardUnsur.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(constraintLayoutUnsur.getVisibility() == View.VISIBLE) {
+                    TransitionManager.beginDelayedTransition(cardUnsur, new AutoTransition());
+                    padUnsur.setVisibility(View.VISIBLE);
+                    constraintLayoutUnsur.setVisibility(View.GONE);
+                    iconArrowUnsur.setImageResource(R.drawable.ic_baseline_expand_more_24);
+                } else {
+                    TransitionManager.beginDelayedTransition(cardUnsur, new AutoTransition());
+                    padUnsur.setVisibility(View.GONE);
+                    constraintLayoutUnsur.setVisibility(View.VISIBLE);
+                    iconArrowUnsur.setImageResource(R.drawable.ic_baseline_expand_less_24);
                 }
             }
         });

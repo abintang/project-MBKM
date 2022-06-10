@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.35" />
+            app:layout_constraintGuide_percent="0.25" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline5"
@@ -34,8 +34,8 @@
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/ani_regi"
-            android:layout_width="@dimen/_160sdp"
-            android:layout_height="@dimen/_160sdp"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             app:layout_constraintBottom_toTopOf="@id/guideline3"
@@ -50,7 +50,7 @@
             android:id="@+id/cardIsi"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/_180sdp"
+            android:layout_marginTop="@dimen/_100sdp"
             app:optRoundCardBackgroundColor="@color/white"
             app:optRoundCardCornerRadius="@dimen/_15sdp"
             app:optRoundCardLeftBottomCorner="false"
@@ -97,7 +97,7 @@
                     android:text="@string/daftar_text"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_14sdp"
+                    android:textSize="@dimen/_11sdp"
                     app:layout_constraintEnd_toEndOf="@id/guideline9"
                     app:layout_constraintStart_toStartOf="@id/guideline8"
                     app:layout_constraintTop_toBottomOf="@id/guideline7" />
@@ -107,7 +107,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_20sdp"
-                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:layout_marginEnd="@dimen/_20sdp"
                     app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="@dimen/_5sdp"
@@ -157,7 +157,7 @@
                             android:fontFamily="@font/montserrat_medium"
                             android:text="@string/Inovasi_mn"
                             android:textColor="@color/black"
-                            android:textSize="@dimen/_12sdp"
+                            android:textSize="@dimen/_10sdp"
                             app:layout_constraintStart_toStartOf="@id/guideline13"
                             app:layout_constraintTop_toTopOf="@id/guideline11" />
 
@@ -168,13 +168,13 @@
                             android:fontFamily="@font/montserrat_regular"
                             android:text="@string/invs_det"
                             android:textColor="@color/gray_text"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_9sdp"
                             app:layout_constraintStart_toStartOf="@id/guideline13"
                             app:layout_constraintTop_toBottomOf="@id/invs" />
 
                         <ImageView
-                            android:layout_width="@dimen/_80sdp"
-                            android:layout_height="@dimen/_80sdp"
+                            android:layout_width="@dimen/_60sdp"
+                            android:layout_height="@dimen/_60sdp"
                             android:src="@drawable/rounded_inovasi"
                             app:layout_constraintEnd_toStartOf="@id/guideline14"
                             app:layout_constraintStart_toStartOf="@id/guideline12"
@@ -193,7 +193,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_20sdp"
-                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
                     android:layout_marginEnd="@dimen/_20sdp"
                     app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="@dimen/_5sdp"
@@ -243,7 +243,7 @@
                             android:fontFamily="@font/montserrat_medium"
                             android:text="@string/Inovator_mn"
                             android:textColor="@color/black"
-                            android:textSize="@dimen/_12sdp"
+                            android:textSize="@dimen/_10sdp"
                             app:layout_constraintStart_toStartOf="@id/guideline23"
                             app:layout_constraintTop_toTopOf="@id/guideline21" />
 
@@ -254,13 +254,13 @@
                             android:fontFamily="@font/montserrat_regular"
                             android:text="@string/inv_det"
                             android:textColor="@color/gray_text"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_8sdp"
                             app:layout_constraintStart_toStartOf="@id/guideline23"
                             app:layout_constraintTop_toBottomOf="@id/invt" />
 
                         <ImageView
-                            android:layout_width="@dimen/_80sdp"
-                            android:layout_height="@dimen/_80sdp"
+                            android:layout_width="@dimen/_60sdp"
+                            android:layout_height="@dimen/_60sdp"
                             android:src="@drawable/rounded_inovator"
                             app:layout_constraintEnd_toStartOf="@id/guideline24"
                             app:layout_constraintStart_toStartOf="@id/guideline22"
@@ -277,14 +277,14 @@
                 <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
                     android:id="@+id/button_daftar"
                     android:layout_width="@dimen/_120sdp"
-                    android:layout_height="@dimen/_35sdp"
+                    android:layout_height="@dimen/_38sdp"
                     android:backgroundTint="@color/header_bg"
                     android:fontFamily="@font/monstserrat_semibold"
                     android:text="@string/daftar"
                     android:textAlignment="center"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_12sdp"
+                    android:textSize="@dimen/_9sdp"
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:layout_constraintBottom_toTopOf="@id/guideline6"
@@ -296,14 +296,14 @@
                 <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
                     android:id="@+id/button_panduan"
                     android:layout_width="@dimen/_135sdp"
-                    android:layout_height="@dimen/_35sdp"
+                    android:layout_height="@dimen/_38sdp"
                     android:backgroundTint="@color/white"
                     android:fontFamily="@font/monstserrat_semibold"
                     android:text="@string/panduan"
                     android:textAlignment="center"
                     android:textAllCaps="false"
                     android:textColor="@color/header_bg"
-                    android:textSize="@dimen/_12sdp"
+                    android:textSize="@dimen/_9sdp"
                     app:elevation="0dp"
                     app:layout_constraintBottom_toTopOf="@id/guideline6"
                     app:layout_constraintEnd_toStartOf="@id/button_daftar"

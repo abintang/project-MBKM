@@ -24,7 +24,7 @@
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/searchinovator_src_text"
-                android:layout_width="@dimen/_200sdp"
+                android:layout_width="@dimen/_220sdp"
                 android:layout_height="@dimen/_30sdp"
                 android:hint="@string/btn_text_inovator_search"
                 android:textColorHint="@color/gray_text"
@@ -33,19 +33,6 @@
                 android:imeOptions="actionSearch"
                 android:paddingStart="15dp"
                 />
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_marginStart="15dp"
-                android:backgroundTint="@color/background"
-                app:elevation="0dp"
-                android:elevation="0dp"
-                app:borderWidth="0dp"
-                app:srcCompat="@drawable/ic_baseline_keyboard_voice_24"
-                app:fabCustomSize="@dimen/_30sdp"
-                app:maxImageSize="@dimen/_20sdp"
-                app:tint="@color/gray_text"/>
 
 
         </androidx.appcompat.widget.Toolbar>

@@ -56,7 +56,7 @@ public class DashboardFragment extends Fragment {
 
     SliderView sliderView;
     ArrayList<ContentLatestModel> items;
-    String url = "https://run.mocky.io/v3/5fa76df8-45a1-4969-99c5-1dfdf4623617";
+    String url = "https://run.mocky.io/v3/7a26fd58-15ba-44eb-983b-8beae544d84d";
     int[] banners = {
             R.drawable.banner_1,
             R.drawable.banner_2,
@@ -124,7 +124,6 @@ public class DashboardFragment extends Fragment {
         greetText = rootView.findViewById(R.id.greeting);
         sliderView = rootView.findViewById(R.id.imageSlider);
         SliderAdapter sliderAdapter = new SliderAdapter(banners);
-
 
         greetingDashboard();
 
@@ -206,13 +205,24 @@ public class DashboardFragment extends Fragment {
                             JSONArray jsonArray = jsonObject.getJSONArray("data");
                             shimmerFrameLayout.stopShimmer();
                             shimmerFrameLayout.setVisibility(View.GONE);
-                            for (int i = 0; i < jsonArray.length(); i++) {
+                            int len = jsonArray.length();
+                            int dummy = len - 5;
+                            Log.i("hasil", "onResponse: " + len);
+                            Log.i("hasil", "onResponse: " + dummy);
+                            for (int i = len - 1; i >= dummy ; i--) {
+                                Log.i("hasil", "onResponse: " + i);
                                 ContentLatestModel contentLatestModel = new ContentLatestModel();
                                 JSONObject object = jsonArray.getJSONObject(i);
 
                                 contentLatestModel.setId_inovasi(object.getInt("id_inovasi"));
                                 contentLatestModel.setNama_inovasi(object.getString("nama_inovasi"));
-                                contentLatestModel.setNama_inovator(object.getString("nama_kelompok"));
+
+                                JSONObject object1 = object.getJSONObject("inovator");
+                                contentLatestModel.setNama_inovator(object1.getString("nama_inovator"));
+
+                                JSONObject object2 = object.getJSONObject("bidang_inovasi");
+                                contentLatestModel.setKategoriInovasi(object2.getString("nama_bidang_inovasi"));
+                                /*contentLatestModel.setNama_inovator(object.getString("nama_kelompok"));*/
 
                                 items.add(contentLatestModel);
                             }
@@ -226,7 +236,8 @@ public class DashboardFragment extends Fragment {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+                        Log.i("TEST", "onErrorResponse: " + error.getMessage());
                     }
                 });
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
@@ -239,6 +250,8 @@ public class DashboardFragment extends Fragment {
         super.onResume();
         shimmerFrameLayout.startShimmer();
     }
+
+
 
     @Override
     public void onPause() {

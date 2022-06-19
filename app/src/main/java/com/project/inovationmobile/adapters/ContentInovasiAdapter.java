@@ -53,6 +53,7 @@ public class ContentInovasiAdapter extends RecyclerView.Adapter<ContentInovasiAd
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), InovasiDetailActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("tempInovasiId", data.get(i).getId_inovasi());
                 view.getContext().startActivity(intent);
             }
         });

@@ -13,19 +13,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.project.inovationmobile.R;
 import com.project.inovationmobile.activities.InovasiDetailActivity;
+import com.project.inovationmobile.models.ContentLatestModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ContentInovasi_TerkaitAdapter extends RecyclerView.Adapter<ContentInovasi_TerkaitAdapter.ViewHolder> {
     private final LayoutInflater layoutInflater;
-    private final List<String> data;
+    private final ArrayList<ContentLatestModel> data;
 
 
     /* adapter ini adalah adapter recyclerview yang ada di page detail inovasi (isinya list
     inovasi terkait dengan detail inovasi yang bersangkutan). adapter ini bisa diubah/diganti sesuai
     dengan adapter yang di mau. lalu untuk id masing-masing isi/content nya itu ada fun ViewHolder */
 
-    public ContentInovasi_TerkaitAdapter(Context context, List<String> data){
+    public ContentInovasi_TerkaitAdapter(Context context, ArrayList<ContentLatestModel> data){
         this.layoutInflater = LayoutInflater.from(context);
         this.data = data;
     }
@@ -40,8 +42,7 @@ public class ContentInovasi_TerkaitAdapter extends RecyclerView.Adapter<ContentI
     @Override
     public void onBindViewHolder(@NonNull ContentInovasi_TerkaitAdapter.ViewHolder holder, int position) {
         // bind the textview with data received
-        String titleInovasi = data.get(position);
-        holder.namaInovasi.setText(titleInovasi);
+
         // similarly you can set new image for each card and descriptions
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {

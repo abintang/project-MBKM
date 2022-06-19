@@ -2,6 +2,7 @@ package com.project.inovationmobile.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,6 +13,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -41,9 +43,12 @@ public class ListInovasiActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ContentInovasiAdapter contentInovasiAdapter;
     ArrayList<ContentLatestModel> items;
-    String url = "https://run.mocky.io/v3/7a26fd58-15ba-44eb-983b-8beae544d84d";
+    String url = "https://api.koys.my.id/inovasi";
     ExtendedFloatingActionButton searchButton;
     ShimmerFrameLayout shimmerFrameLayout;
+    ProgressBar progressBar;
+    NestedScrollView nestedScrollView;
+    int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +64,22 @@ public class ListInovasiActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(contentInovasiAdapter);
         getData();
+
+        /*progressBar = findViewById(R.id.progress_inovasi);*/
+        nestedScrollView = findViewById(R.id.scrollView2);
+
+        nestedScrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
+            @Override
+            public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+                if(scrollY == v.getChildAt(0).getMeasuredHeight() - v.getMeasuredHeight()) {
+                    count++;
+                    Log.i("TTL", "onScrollChange: " + count);
+                    if (count < 10) {
+                        getData();
+                    }
+                }
+            }
+        });
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar_inovasi);
         setSupportActionBar(mToolbar);
@@ -109,18 +130,21 @@ public class ListInovasiActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+
                         try {
                             JSONObject jsonObject = new JSONObject(response);
                             items = new ArrayList<>();
                             JSONArray jsonArray = jsonObject.getJSONArray("data");
                             shimmerFrameLayout.stopShimmer();
                             shimmerFrameLayout.setVisibility(View.GONE);
+
                             for (int i = 0; i < jsonArray.length() ; i++) {
                                 ContentLatestModel contentLatestModel = new ContentLatestModel();
                                 JSONObject object = jsonArray.getJSONObject(i);
 
                                 contentLatestModel.setId_inovasi(object.getInt("id_inovasi"));
                                 contentLatestModel.setNama_inovasi(object.getString("nama_inovasi"));
+                                contentLatestModel.setUrlGambar(object.getString("foto_inovasi"));
 
                                 JSONObject object1 = object.getJSONObject("inovator");
                                 contentLatestModel.setNama_inovator(object1.getString("nama_inovator"));

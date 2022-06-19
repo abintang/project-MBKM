@@ -76,8 +76,11 @@
     <string name="btn_text_inovasi_search">Cari Inovasi</string>
     <string name="text_list_inovasi">List Inovasi</string>
 
-    <string name="semua_kategori">Semua Kategori</string>
+    <string name="semua_kategori">Seluruh Kategori</string>
     <string name="kategori">Kategori</string>
+
+    <string name="seluruh_bidang">Seluruh Bidang</string>
+    <string name="bidang">Bidang</string>
 
     <string name="title_deskripsi">Deskripsi</string>
     <string name="dummy_deskripsi">Minuman buah pala mengandung gizi buah pala yang terkandung di dalamnya, energi, protein lemak, karbohidrat,kalsium, fosfor, zat besi dan vitamin A selain itu kulit buah pala juga mengandung minyak atsiri dan zat samak</string>

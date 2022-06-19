@@ -33,6 +33,15 @@
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_inovator"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/d"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/placeholder_detail_inovator"/>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
     <ScrollView
         app:layout_constraintTop_toBottomOf="@id/d"
         android:layout_width="match_parent"
@@ -47,8 +56,9 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardNamaImage"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_141sdp"
+                android:layout_height="wrap_content"
                 android:background="@color/white"
+                android:visibility="invisible"
                 app:cardCornerRadius="@dimen/_3sdp"
                 app:cardElevation="@dimen/_1sdp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -73,11 +83,12 @@
 
                     <TextView
                         android:id="@+id/tv_nama_inovator_detail"
-                        android:layout_width="wrap_content"
+                        android:layout_width="@dimen/_250sdp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/monstserrat_semibold"
                         android:text="Wirda Ningsih"
+                        android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_18sdp"
                         app:layout_constraintEnd_toEndOf="@id/iv_foto_inovator_detail"
@@ -96,14 +107,20 @@
                         app:layout_constraintEnd_toEndOf="@id/tv_nama_inovator_detail"
                         app:layout_constraintStart_toStartOf="@id/tv_nama_inovator_detail"
                         app:layout_constraintTop_toBottomOf="@id/tv_nama_inovator_detail" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_10sdp"
+                        app:layout_constraintTop_toBottomOf="@id/email_inovator_detail" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardBio"
-                android:layout_marginTop="@dimen/_8sdp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:visibility="invisible"
                 app:cardElevation="@dimen/_1sdp"
                 app:layout_constraintTop_toBottomOf="@id/cardNamaImage">
 
@@ -159,13 +176,13 @@
                         android:id="@+id/tv_ttl_inovator_detail"
                         android:layout_width="@dimen/_130sdp"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserrat_medium"
-                        android:textColor="@color/gray_text"
                         android:layout_marginTop="@dimen/_8sdp"
-                        android:textSize="@dimen/_10sdp"
+                        android:fontFamily="@font/montserrat_medium"
                         android:text="Bogor, 1 Januari 0000"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/_10sdp"
                         app:layout_constraintStart_toStartOf="@id/guideline4"
-                        app:layout_constraintTop_toBottomOf="@id/title_card"/>
+                        app:layout_constraintTop_toBottomOf="@id/title_card" />
 
                     <View
                         android:id="@+id/line1"
@@ -174,31 +191,31 @@
                         android:layout_marginTop="@dimen/_3sdp"
                         android:background="@color/background"
                         app:layout_constraintStart_toStartOf="@id/guideline2"
-                        app:layout_constraintTop_toBottomOf="@id/tv_ttl_inovator_detail"/>
+                        app:layout_constraintTop_toBottomOf="@id/tv_ttl_inovator_detail" />
 
                     <TextView
                         android:id="@+id/gd"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/gender"
-                        android:fontFamily="@font/montserrat_medium"
                         android:layout_marginTop="@dimen/_2sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="@string/gender"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_10sdp"
-                        app:layout_constraintTop_toBottomOf="@id/line1"
-                        app:layout_constraintStart_toStartOf="@id/guideline2"/>
+                        app:layout_constraintStart_toStartOf="@id/guideline2"
+                        app:layout_constraintTop_toBottomOf="@id/line1" />
 
                     <TextView
                         android:id="@+id/tv_gender_inovator_detail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserrat_medium"
-                        android:textColor="@color/gray_text"
                         android:layout_marginTop="@dimen/_2sdp"
-                        android:textSize="@dimen/_10sdp"
+                        android:fontFamily="@font/montserrat_medium"
                         android:text="Perempuan"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/_10sdp"
                         app:layout_constraintStart_toStartOf="@id/guideline4"
-                        app:layout_constraintTop_toBottomOf="@id/line1"/>
+                        app:layout_constraintTop_toBottomOf="@id/line1" />
 
                     <View
                         android:id="@+id/line2"
@@ -207,31 +224,31 @@
                         android:layout_marginTop="@dimen/_3sdp"
                         android:background="@color/background"
                         app:layout_constraintStart_toStartOf="@id/guideline2"
-                        app:layout_constraintTop_toBottomOf="@id/tv_gender_inovator_detail"/>
+                        app:layout_constraintTop_toBottomOf="@id/tv_gender_inovator_detail" />
 
                     <TextView
                         android:id="@+id/ad"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/alamat"
-                        android:fontFamily="@font/montserrat_medium"
                         android:layout_marginTop="@dimen/_2sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="@string/alamat"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_10sdp"
-                        app:layout_constraintTop_toBottomOf="@id/line2"
-                        app:layout_constraintStart_toStartOf="@id/guideline2"/>
+                        app:layout_constraintStart_toStartOf="@id/guideline2"
+                        app:layout_constraintTop_toBottomOf="@id/line2" />
 
                     <TextView
                         android:id="@+id/tv_alamat_inovator_detail"
                         android:layout_width="@dimen/_130sdp"
                         android:layout_height="wrap_content"
-                        android:text="Dramaga"
-                        android:fontFamily="@font/montserrat_medium"
-                        android:textColor="@color/gray_text"
                         android:layout_marginTop="@dimen/_2sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Dramaga"
+                        android:textColor="@color/gray_text"
                         android:textSize="@dimen/_10sdp"
                         app:layout_constraintStart_toStartOf="@id/guideline4"
-                        app:layout_constraintTop_toBottomOf="@id/line2"/>
+                        app:layout_constraintTop_toBottomOf="@id/line2" />
 
                     <View
                         android:id="@+id/line3"
@@ -240,13 +257,13 @@
                         android:layout_marginTop="@dimen/_3sdp"
                         android:background="@color/background"
                         app:layout_constraintStart_toStartOf="@id/guideline2"
-                        app:layout_constraintTop_toBottomOf="@id/tv_alamat_inovator_detail"/>
+                        app:layout_constraintTop_toBottomOf="@id/tv_alamat_inovator_detail" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_10sdp"
                         android:background="@color/white"
-                        app:layout_constraintTop_toBottomOf="@id/line3"/>
+                        app:layout_constraintTop_toBottomOf="@id/line3" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
@@ -256,7 +273,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_100sdp"
                 android:layout_marginTop="@dimen/_6sdp"
+                android:visibility="invisible"
                 app:cardElevation="@dimen/_1sdp"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cardBio">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -319,8 +338,8 @@
                         android:text="Masyarakat Umum"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_18sdp"
-                        app:layout_constraintStart_toStartOf="@id/kt"
                         app:layout_constraintEnd_toEndOf="@id/kt"
+                        app:layout_constraintStart_toStartOf="@id/kt"
                         app:layout_constraintTop_toBottomOf="@id/kt" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -332,6 +351,7 @@
                 android:layout_height="220dp"
                 android:layout_marginTop="@dimen/_6sdp"
                 app:cardElevation="@dimen/_1sdp"
+                android:visibility="invisible"
                 app:layout_constraintTop_toBottomOf="@id/cardCategory">
 
                 <androidx.constraintlayout.widget.ConstraintLayout

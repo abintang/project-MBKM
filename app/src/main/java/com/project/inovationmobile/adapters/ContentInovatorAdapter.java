@@ -1,5 +1,6 @@
 package com.project.inovationmobile.adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -42,14 +43,14 @@ public class ContentInovatorAdapter extends RecyclerView.Adapter<ContentInovator
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ContentInovatorAdapter.ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull ContentInovatorAdapter.ViewHolder viewHolder, @SuppressLint("RecyclerView") int i) {
         // bind the textview with data received
 
-        viewHolder.kategoriInovator.setText(Integer.toString(data.get(i).getId_inovator()));
+        /*viewHolder.kategoriInovator.setText(Integer.toString(data.get(i).getId_inovator()));*/
         viewHolder.namaInovator.setText(data.get(i).getNama_inovator());
         viewHolder.alamatInovator.setText(data.get(i).getAlamat_inovator());
+        viewHolder.kategoriInovator.setText(data.get(i).getKategoriInovator());
         viewHolder.fotoInovator.setImageResource(R.drawable.dump_image_inovator);
-
         // similarly you can set new image for each card and descriptions
 
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +58,7 @@ public class ContentInovatorAdapter extends RecyclerView.Adapter<ContentInovator
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), InovatorDetailActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("tempInovatorId", data.get(i).getId_inovator());
                 view.getContext().startActivity(intent);
             }
         });

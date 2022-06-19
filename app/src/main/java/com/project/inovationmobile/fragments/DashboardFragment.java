@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,6 +28,7 @@ import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.project.inovationmobile.activities.ListInovasiActivity;
 import com.project.inovationmobile.activities.ListInovatorActivity;
+import com.project.inovationmobile.activities.MainActivity;
 import com.project.inovationmobile.activities.PetaActivity;
 import com.project.inovationmobile.adapters.ContentLatestAdapter;
 import com.project.inovationmobile.R;
@@ -46,6 +48,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
+import www.sanju.motiontoast.MotionToast;
+import www.sanju.motiontoast.MotionToastStyle;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -56,7 +61,7 @@ public class DashboardFragment extends Fragment {
 
     SliderView sliderView;
     ArrayList<ContentLatestModel> items;
-    String url = "https://run.mocky.io/v3/7a26fd58-15ba-44eb-983b-8beae544d84d";
+    String url = "https://api.koys.my.id/inovasi";
     int[] banners = {
             R.drawable.banner_1,
             R.drawable.banner_2,
@@ -70,6 +75,7 @@ public class DashboardFragment extends Fragment {
     ContentLatestAdapter contentLatestAdapter;
 
     ShimmerFrameLayout shimmerFrameLayout;
+    MotionToast motionToast;
 
 
     TextView greetText;
@@ -216,11 +222,12 @@ public class DashboardFragment extends Fragment {
 
                                 contentLatestModel.setId_inovasi(object.getInt("id_inovasi"));
                                 contentLatestModel.setNama_inovasi(object.getString("nama_inovasi"));
+                                contentLatestModel.setUrlGambar(object.getString("foto_inovasi"));
 
                                 JSONObject object1 = object.getJSONObject("inovator");
                                 contentLatestModel.setNama_inovator(object1.getString("nama_inovator"));
 
-                                JSONObject object2 = object.getJSONObject("bidang_inovasi");
+                                JSONObject object2 = object.getJSONObject("bidang");
                                 contentLatestModel.setKategoriInovasi(object2.getString("nama_bidang_inovasi"));
                                 /*contentLatestModel.setNama_inovator(object.getString("nama_kelompok"));*/
 
@@ -236,7 +243,15 @@ public class DashboardFragment extends Fragment {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+                        MotionToast.Companion.createToast(
+                                getActivity(),
+                                "Lost Connection, Please Refresh",
+                                "Ada kesalahan dalam mengambil data dari server",
+                                MotionToastStyle.ERROR,
+                                MotionToast.GRAVITY_BOTTOM,
+                                MotionToast.LONG_DURATION,
+                                ResourcesCompat.getFont(getActivity(),R.font.montserrat_medium)
+                        );
                         Log.i("TEST", "onErrorResponse: " + error.getMessage());
                     }
                 });

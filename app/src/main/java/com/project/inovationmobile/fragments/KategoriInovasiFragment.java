@@ -54,7 +54,7 @@ public class KategoriInovasiFragment extends BottomSheetDialogFragment implement
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.bottomsheet_kategori_inovasi, container, false);
+        return inflater.inflate(R.layout.bottomsheet_bidang_inovasi, container, false);
     }
 
     @Override

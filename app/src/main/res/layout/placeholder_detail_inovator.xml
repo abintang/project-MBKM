@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background">
+
+    <ScrollView
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:fillViewport="true"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/cardNama"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_141sdp"
+                app:cardCornerRadius="@dimen/_3sdp"
+                app:cardElevation="@dimen/_1sdp"
+                android:background="@color/placeholder_bg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <View
+                android:id="@+id/cardBi"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                app:cardElevation="@dimen/_1sdp"
+                android:background="@color/placeholder_bg"
+                app:layout_constraintTop_toBottomOf="@id/cardNama"/>
+
+            <View
+                android:id="@+id/cardCateg"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                app:cardElevation="@dimen/_1sdp"
+                android:background="@color/placeholder_bg"
+                app:layout_constraintTop_toBottomOf="@id/cardBi"/>
+
+            <View
+                android:id="@+id/cardInovasi_in_Inova"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:background="@color/placeholder_bg"
+                android:layout_marginTop="@dimen/_6sdp"
+                app:cardElevation="@dimen/_1sdp"
+                app:layout_constraintTop_toBottomOf="@id/cardCateg"/>
+
+            <View
+                android:background="@color/background"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_60sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardInovasi_in_Inova" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

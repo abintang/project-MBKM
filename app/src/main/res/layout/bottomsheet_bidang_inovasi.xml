@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/black_opacity">
+
+    <com.github.captain_miao.optroundcardview.OptRoundCardView
+        android:id="@+id/cardViewInnerProductContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        app:optRoundCardCornerRadius="@dimen/_15sdp"
+        app:optRoundCardLeftBottomCorner="false"
+        app:optRoundCardRightBottomCorner="false"
+        app:optRoundCardBackgroundColor="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/closeIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:src="@drawable/ic_baseline_close_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:tint="@color/black"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/kategori"
+                android:fontFamily="@font/monstserrat_semibold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_3sdp"
+                android:paddingStart="@dimen/_7sdp"
+                android:text="@string/bidang"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/divider"
+                app:layout_constraintTop_toTopOf="@id/closeIv" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray"
+                app:layout_constraintTop_toBottomOf="@id/closeIv" />
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_semuaKategori"
+                app:layout_constraintTop_toBottomOf="@id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                app:strokeColor="@color/gray"
+                android:clickable="true"
+                android:foreground="@color/white_ripple"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                android:focusable="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:text="@string/seluruh_bidang"
+                        android:textSize="@dimen/_10sdp"
+                        android:textColor="@color/black"
+                        android:padding="@dimen/_3sdp"
+                        android:paddingStart="@dimen/_7sdp"
+                        android:fontFamily="@font/montserrat_medium"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_list_kategori_inovasi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/card_semuaKategori"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_5sdp"
+                app:layout_constraintTop_toBottomOf="@id/rv_list_kategori_inovasi"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.github.captain_miao.optroundcardview.OptRoundCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

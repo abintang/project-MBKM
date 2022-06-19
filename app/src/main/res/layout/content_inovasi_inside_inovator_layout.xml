@@ -46,35 +46,32 @@
 
             <TextView
                 android:id="@+id/tv_nama_inovasi_inov"
-                android:layout_width="match_parent"
+                android:layout_width="@dimen/_100sdp"
                 android:layout_height="@dimen/_35sdp"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:layout_marginEnd="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:maxLines="2"
+                android:ellipsize="end"
                 android:fontFamily="@font/monstserrat_semibold"
                 android:text="Teh Pala (Limbah Kulit Pala)"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_4sdp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@id/card_image"
                 app:layout_constraintTop_toBottomOf="@id/card_image"
-                app:layout_constraintVertical_chainStyle="packed" />
+                app:layout_constraintEnd_toEndOf="@id/card_image"/>
 
             <TextView
                 android:id="@+id/tv_category_inovasi_inov"
-                android:layout_width="match_parent"
+                android:layout_width="@dimen/_100sdp"
                 android:layout_height="@dimen/_12sdp"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:layout_marginEnd="4dp"
                 android:fontFamily="@font/montserrat_medium"
                 android:text="Kuliner"
+                android:maxLines="1"
+                android:ellipsize="end"
                 android:textColor="@color/gray_text"
                 android:textSize="@dimen/_9sdp"
-                app:layout_constraintHorizontal_bias="0.375"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_nama_inovasi_inov"
-                app:layout_constraintVertical_bias="0.515" />
+                app:layout_constraintStart_toStartOf="@id/tv_nama_inovasi_inov"
+                app:layout_constraintTop_toBottomOf="@id/tv_nama_inovasi_inov"
+                app:layout_constraintEnd_toEndOf="@id/tv_nama_inovasi_inov"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

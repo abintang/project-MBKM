@@ -41,7 +41,7 @@ public class ListInovatorActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ContentInovatorAdapter contentInovatorAdapter;
     ArrayList<ListInovatorModel> items;
-    String url = "https://run.mocky.io/v3/a644a80d-d1a0-47cb-afb3-2696a91311c7";
+    String url = "https://api.koys.my.id/inovator";
     ExtendedFloatingActionButton searchButton;
     ShimmerFrameLayout shimmerFrameLayout;
     Button bottomSheetKategoriButton;
@@ -124,6 +124,12 @@ public class ListInovatorActivity extends AppCompatActivity {
                                 listInovatorModel.setId_inovator(object.getInt("id_inovator"));
                                 listInovatorModel.setNama_inovator(object.getString("nama_inovator"));
                                 listInovatorModel.setAlamat_inovator(object.getString("alamat"));
+                                if (object.isNull("kategori_inovator")) {
+                                    listInovatorModel.setKategoriInovator("Tidak Berkategori");
+                                } else {
+                                    JSONObject object1 = object.getJSONObject("kategori_inovator");
+                                    listInovatorModel.setKategoriInovator(object1.getString("nama_kategori_inovator"));
+                                }
 
                                 items.add(listInovatorModel);
                             }

@@ -2,7 +2,15 @@ package com.project.inovationmobile.models;
 
 public class ContentLatestModel {
     int id_inovasi;
-    String nama_inovasi, nama_inovator, kategoriInovasi;
+    String nama_inovasi, nama_inovator, kategoriInovasi, urlGambar;
+
+    public String getUrlGambar() {
+        return urlGambar;
+    }
+
+    public void setUrlGambar(String urlGambar) {
+        this.urlGambar = urlGambar;
+    }
 
     public int getId_inovasi() {
         return id_inovasi;

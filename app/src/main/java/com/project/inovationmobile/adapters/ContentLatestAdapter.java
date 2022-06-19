@@ -1,5 +1,6 @@
 package com.project.inovationmobile.adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -11,9 +12,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.project.inovationmobile.R;
 import com.project.inovationmobile.activities.InovasiDetailActivity;
 import com.project.inovationmobile.models.ContentLatestModel;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,19 +43,22 @@ public class ContentLatestAdapter extends RecyclerView.Adapter<ContentLatestAdap
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder, @SuppressLint("RecyclerView") int i) {
 
         // bind the textview with data received
         viewHolder.kategoriInovasi.setText(data.get(i).getKategoriInovasi());
         viewHolder.namaInovasi.setText(data.get(i).getNama_inovasi());
         viewHolder.namaInovator.setText(data.get(i).getNama_inovator());
 
+        String urlImage = "https://tim1.koys.my.id/assets/upload/foto_inovasi/" + data.get(i).getUrlGambar();
         // similarly you can set new image for each card and descriptions
-
+        Picasso.get().load(urlImage).into(viewHolder.fotoInovasi);
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), InovasiDetailActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("tempInovasiId", data.get(i).getId_inovasi());
                 view.getContext().startActivity(intent);
             }
         });

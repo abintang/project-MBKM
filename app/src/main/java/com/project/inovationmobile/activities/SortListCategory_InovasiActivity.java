@@ -39,7 +39,7 @@ public class SortListCategory_InovasiActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ContentInovasiAdapter contentInovasiAdapter;
     ArrayList<ContentLatestModel> items;
-    String url = "https://run.mocky.io/v3/7a26fd58-15ba-44eb-983b-8beae544d84d";
+    String url;
     ExtendedFloatingActionButton searchButton;
     ShimmerFrameLayout shimmerFrameLayout;
     TextView textCategorySort;
@@ -56,6 +56,8 @@ public class SortListCategory_InovasiActivity extends AppCompatActivity {
         Log.d("Check id - > ", "ID: " + idCategory);
         String categoryName = getIntent().getExtras().getString("tempCategoryName");
         textCategorySort.setText(categoryName);
+
+        url = "https://api.koys.my.id/inovasi/kategori/" + idCategory;
 
         shimmerFrameLayout = findViewById(R.id.shimmer_inovasi_container);
 

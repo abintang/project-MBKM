@@ -39,10 +39,11 @@ public class SortListCategory_InovatorActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ContentInovatorAdapter contentInovatorAdapter;
     ArrayList<ListInovatorModel> items;
-    String url = "https://run.mocky.io/v3/a644a80d-d1a0-47cb-afb3-2696a91311c7";
+    String url;
     ExtendedFloatingActionButton searchButton;
     ShimmerFrameLayout shimmerFrameLayout;
     Button bottomSheetKategoriButton;
+    TextView textCategorySort;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,10 +53,20 @@ public class SortListCategory_InovatorActivity extends AppCompatActivity {
 
         shimmerFrameLayout = findViewById(R.id.shimmer_inovator_container);
 
+        textCategorySort = findViewById(R.id.text_category_inovator);
+
         // set up RecyclerView List Inovator
         recyclerView = findViewById(R.id.recycleViewListInovator);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(contentInovatorAdapter);
+
+        int idCategory = getIntent().getExtras().getInt("tempCategoryId");
+        Log.d("Check id - > ", "ID: " + idCategory);
+        String categoryName = getIntent().getExtras().getString("tempCategoryName");
+        textCategorySort.setText(categoryName);
+
+        url = "https://api.koys.my.id/inovator/kategori/" + idCategory;
+
 
         getData();
 
@@ -122,6 +133,9 @@ public class SortListCategory_InovatorActivity extends AppCompatActivity {
                                 listInovatorModel.setId_inovator(object.getInt("id_inovator"));
                                 listInovatorModel.setNama_inovator(object.getString("nama_inovator"));
                                 listInovatorModel.setAlamat_inovator(object.getString("alamat"));
+
+                                JSONObject object1 = object.getJSONObject("kategori_inovator");
+                                listInovatorModel.setKategoriInovator(object1.getString("nama_kategori_inovator"));
 
                                 items.add(listInovatorModel);
                             }

@@ -124,10 +124,11 @@ public class ListInovatorActivity extends AppCompatActivity {
                                 listInovatorModel.setId_inovator(object.getInt("id_inovator"));
                                 listInovatorModel.setNama_inovator(object.getString("nama_inovator"));
                                 listInovatorModel.setAlamat_inovator(object.getString("alamat"));
-                                if (object.isNull("kategori_inovator")) {
+                                listInovatorModel.setFotoInovator(object.getString("foto_inovator"));
+                                if (object.isNull("id_kategori_inovator")) {
                                     listInovatorModel.setKategoriInovator("Tidak Berkategori");
                                 } else {
-                                    JSONObject object1 = object.getJSONObject("kategori_inovator");
+                                    JSONObject object1 = object.getJSONObject("kategori");
                                     listInovatorModel.setKategoriInovator(object1.getString("nama_kategori_inovator"));
                                 }
 

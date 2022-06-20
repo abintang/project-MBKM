@@ -41,7 +41,7 @@ public class InovatorDetailActivity extends AppCompatActivity {
     ArrayList<ContentLatestModel> items;
 
     TextView namaInovatorDetail, emailInovatorDetail, ttlInovatorDetail, genderInovatorDetail, alamatInovatorDetail,
-    kategoriInovatorDetail;
+    kategoriInovatorDetail, instansiInovatorDetail;
     CircleImageView fotoInovatorDetail;
     ContentInovasi_in_InovatorAdapter contentInovasi_in_inovatorAdapter;
     String url;
@@ -78,6 +78,7 @@ public class InovatorDetailActivity extends AppCompatActivity {
         cardImage = findViewById(R.id.cardNamaImage);
         cardCategory = findViewById(R.id.cardCategory);
         cardInovasi = findViewById(R.id.cardInovasi_in_Inovator);
+        instansiInovatorDetail = findViewById(R.id.tv_instansi_inovator_detail);
 
 
         // set up RecyclerView Inovasi yang dibuat oleh inovator yang bersangkutan
@@ -124,6 +125,12 @@ public class InovatorDetailActivity extends AppCompatActivity {
                                     ttlInovatorDetail.setText(object.getString("tgl_lahir"));
                                 } else {
                                     ttlInovatorDetail.setText("-");
+                                }
+
+                                if (!object.isNull("id_instansi")) {
+                                    instansiInovatorDetail.setText(object.getString("id_instansi"));
+                                } else {
+                                    instansiInovatorDetail.setText("Tidak memilki instansi");
                                 }
 
                                 alamatInovatorDetail.setText(object.getString("alamat"));

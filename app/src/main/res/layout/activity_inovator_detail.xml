@@ -161,28 +161,61 @@
                         app:layout_constraintTop_toTopOf="@id/guideline3" />
 
                     <TextView
-                        android:id="@+id/tl"
+                        android:id="@+id/kategoriInovator"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_8sdp"
                         android:fontFamily="@font/montserrat_medium"
-                        android:text="@string/ttl"
+                        android:text="@string/kt"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_10sdp"
                         app:layout_constraintStart_toStartOf="@id/guideline2"
                         app:layout_constraintTop_toBottomOf="@id/title_card" />
 
                     <TextView
-                        android:id="@+id/tv_ttl_inovator_detail"
+                        android:id="@+id/tv_category_inovator_detail"
                         android:layout_width="@dimen/_130sdp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_8sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Dummy"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintStart_toStartOf="@id/guideline4"
+                        app:layout_constraintTop_toBottomOf="@id/title_card" />
+
+                    <View
+                        android:id="@+id/line0"
+                        android:layout_width="@dimen/_290sdp"
+                        android:layout_height="@dimen/_2sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:background="@color/background"
+                        app:layout_constraintStart_toStartOf="@id/guideline2"
+                        app:layout_constraintTop_toBottomOf="@id/tv_category_inovator_detail" />
+
+                    <TextView
+                        android:id="@+id/tl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="@string/ttl"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintStart_toStartOf="@id/guideline2"
+                        app:layout_constraintTop_toBottomOf="@id/line0" />
+
+                    <TextView
+                        android:id="@+id/tv_ttl_inovator_detail"
+                        android:layout_width="@dimen/_130sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
                         android:fontFamily="@font/montserrat_medium"
                         android:text="Bogor, 1 Januari 0000"
                         android:textColor="@color/gray_text"
                         android:textSize="@dimen/_10sdp"
                         app:layout_constraintStart_toStartOf="@id/guideline4"
-                        app:layout_constraintTop_toBottomOf="@id/title_card" />
+                        app:layout_constraintTop_toBottomOf="@id/line0" />
 
                     <View
                         android:id="@+id/line1"
@@ -304,13 +337,13 @@
                         app:layout_constraintGuide_percent="0.67" />
 
                     <TextView
-                        android:id="@+id/kt"
+                        android:id="@+id/instansi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="48dp"
                         android:layout_marginTop="37dp"
                         android:fontFamily="@font/monstserrat_semibold"
-                        android:text="@string/kt"
+                        android:text="@string/asl_instansi"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_12sdp"
                         app:layout_constraintEnd_toEndOf="@id/guideline8"
@@ -331,16 +364,19 @@
                         app:lottie_loop="true" />
 
                     <TextView
-                        android:id="@+id/tv_category_inovator_detail"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/tv_instansi_inovator_detail"
+                        android:layout_width="@dimen/_165sdp"
                         android:layout_height="wrap_content"
+                        android:ellipsize="end"
                         android:fontFamily="@font/sfpro"
+                        android:maxLines="1"
                         android:text="Masyarakat Umum"
+                        android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/_18sdp"
-                        app:layout_constraintEnd_toEndOf="@id/kt"
-                        app:layout_constraintStart_toStartOf="@id/kt"
-                        app:layout_constraintTop_toBottomOf="@id/kt" />
+                        android:textSize="@dimen/_15sdp"
+                        app:layout_constraintEnd_toEndOf="@id/instansi"
+                        app:layout_constraintStart_toStartOf="@id/instansi"
+                        app:layout_constraintTop_toBottomOf="@id/instansi" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>

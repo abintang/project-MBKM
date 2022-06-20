@@ -25,8 +25,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:optRoundCardBackgroundColor="@color/white"
-        app:optRoundCardCornerRadius="@dimen/_15sdp"
-        android:layout_marginTop="-15dp"
         app:layout_constraintTop_toBottomOf="@id/iv_foto_inovas">
 
         <ScrollView

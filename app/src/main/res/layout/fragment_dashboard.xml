@@ -79,10 +79,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_120sdp"
                 app:sliderIndicatorGravity="center_horizontal|bottom"
-                app:sliderIndicatorMargin="15dp"
+                app:sliderIndicatorMargin="@dimen/_20sdp"
                 app:sliderIndicatorOrientation="horizontal"
-                app:sliderIndicatorPadding="3dp"
-                app:sliderIndicatorRadius="2dp"
+                app:sliderIndicatorPadding="@dimen/_2sdp"
+                app:sliderIndicatorRadius="@dimen/_1sdp"
                 app:sliderIndicatorSelectedColor="@color/green_smooth"
                 app:sliderIndicatorUnselectedColor="#FFF" />
         </com.google.android.material.card.MaterialCardView>

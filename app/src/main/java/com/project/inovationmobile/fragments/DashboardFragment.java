@@ -63,6 +63,7 @@ public class DashboardFragment extends Fragment {
     ArrayList<ContentLatestModel> items;
     String url = "https://api.koys.my.id/inovasi";
     int[] banners = {
+            R.drawable.bappeda,
             R.drawable.banner_1,
             R.drawable.banner_2,
             R.drawable.banner_3,
@@ -233,8 +234,10 @@ public class DashboardFragment extends Fragment {
 
                                 items.add(contentLatestModel);
                             }
-                            contentLatestAdapter = new ContentLatestAdapter(getActivity(), items);
-                            recyclerView.setAdapter(contentLatestAdapter);
+                            if (getActivity() != null) {
+                                contentLatestAdapter = new ContentLatestAdapter(getActivity(), items);
+                                recyclerView.setAdapter(contentLatestAdapter);
+                            }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

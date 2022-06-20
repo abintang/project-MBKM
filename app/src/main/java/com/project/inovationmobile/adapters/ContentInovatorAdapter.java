@@ -17,6 +17,7 @@ import com.project.inovationmobile.activities.InovasiDetailActivity;
 import com.project.inovationmobile.activities.InovatorDetailActivity;
 import com.project.inovationmobile.models.ContentLatestModel;
 import com.project.inovationmobile.models.ListInovatorModel;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,8 +51,11 @@ public class ContentInovatorAdapter extends RecyclerView.Adapter<ContentInovator
         viewHolder.namaInovator.setText(data.get(i).getNama_inovator());
         viewHolder.alamatInovator.setText(data.get(i).getAlamat_inovator());
         viewHolder.kategoriInovator.setText(data.get(i).getKategoriInovator());
-        viewHolder.fotoInovator.setImageResource(R.drawable.dump_image_inovator);
         // similarly you can set new image for each card and descriptions
+
+        String urlImage = "https://tim1.koys.my.id/assets/upload/foto_inovator/" +
+                data.get(i).getFotoInovator();
+        Picasso.get().load(urlImage).into(viewHolder.fotoInovator);
 
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

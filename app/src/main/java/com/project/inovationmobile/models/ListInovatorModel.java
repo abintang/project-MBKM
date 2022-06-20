@@ -2,7 +2,15 @@ package com.project.inovationmobile.models;
 
 public class ListInovatorModel {
     int id_inovator;
-    String nama_inovator, alamat_inovator, kategoriInovator;
+    String nama_inovator, alamat_inovator, kategoriInovator, fotoInovator;
+
+    public void setFotoInovator(String fotoInovator) {
+        this.fotoInovator = fotoInovator;
+    }
+
+    public String getFotoInovator() {
+        return fotoInovator;
+    }
 
     public int getId_inovator() {
         return id_inovator;

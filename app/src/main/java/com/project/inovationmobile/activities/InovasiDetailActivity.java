@@ -25,7 +25,6 @@ import com.codesgood.views.JustifiedTextView;
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.github.captain_miao.optroundcardview.OptRoundCardView;
 import com.project.inovationmobile.R;
-import com.project.inovationmobile.adapters.ContentInovasi_TerkaitAdapter;
 import com.project.inovationmobile.adapters.ContentInovasi_in_InovatorAdapter;
 import com.project.inovationmobile.models.ContentLatestModel;
 import com.squareup.picasso.Picasso;
@@ -148,31 +147,34 @@ public class InovasiDetailActivity extends AppCompatActivity {
 
                                 switch (idKategoriInovator) {
                                     case 1:
-                                        kategoriInovatorDet.setText("Mahasiswa");
+                                        kategoriInovatorDet.setText("SD / MI / SEDERAJAT");
                                         break;
                                     case 2:
-                                        kategoriInovatorDet.setText("SMP");
+                                        kategoriInovatorDet.setText("SMP/ MTS / SEDERAJAT");
                                         break;
                                     case 3:
-                                        kategoriInovatorDet.setText("SMA/SMK");
+                                        kategoriInovatorDet.setText("SMA / SMK / MA/ SEDERAJAT");
                                         break;
                                     case 4:
-                                        kategoriInovatorDet.setText("Dosen Peneliti");
+                                        kategoriInovatorDet.setText("Mahasiswa");
                                         break;
                                     case 5:
-                                        kategoriInovatorDet.setText("Desa/Kelurahan");
+                                        kategoriInovatorDet.setText("Dosen Peneliti");
                                         break;
                                     case 6:
-                                        kategoriInovatorDet.setText("Kecamatan");
+                                        kategoriInovatorDet.setText("Desa/Kelurahan");
                                         break;
                                     case 7:
-                                        kategoriInovatorDet.setText("Perangkat Desa");
+                                        kategoriInovatorDet.setText("Kecamatan");
                                         break;
                                     case 8:
-                                        kategoriInovatorDet.setText("Masyarakat Umum");
+                                        kategoriInovatorDet.setText("Puskesmas");
                                         break;
                                     case 9:
-                                        kategoriInovatorDet.setText("Puskesmas");
+                                        kategoriInovatorDet.setText("Perangkat Daerah Instansi");
+                                        break;
+                                    case 10:
+                                        kategoriInovatorDet.setText("Masyarakat Umum");
                                         break;
                                     default:
                                         kategoriInovatorDet.setText("Invalid");

@@ -41,7 +41,7 @@ public class KategoriInovatorFragment extends BottomSheetDialogFragment implemen
     public static final String TAG = "ActionBottomDialog";
 
     ArrayList<ListCategoryInovatorModel> items;
-    String url = "https://run.mocky.io/v3/e605dfc3-1729-4f0b-899c-545236917b58";
+    String url = "https://api.koys.my.id/kategoriInovator";
     ContentCategoryInovatorAdapter adapter;
     RecyclerView recyclerView;
 

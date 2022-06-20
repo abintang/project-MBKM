@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,6 +24,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.project.inovationmobile.R;
 import com.project.inovationmobile.adapters.ContentInovasiAdapter;
 import com.project.inovationmobile.fragments.KategoriInovasiFragment;
@@ -43,6 +45,8 @@ public class SortListCategory_InovasiActivity extends AppCompatActivity {
     ExtendedFloatingActionButton searchButton;
     ShimmerFrameLayout shimmerFrameLayout;
     TextView textCategorySort;
+    NestedScrollView nestedScrollView;
+    int count = 0;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -66,6 +70,20 @@ public class SortListCategory_InovasiActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(contentInovasiAdapter);
         getData();
+
+        nestedScrollView = findViewById(R.id.scrollView2);
+        nestedScrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
+            @Override
+            public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+                if(scrollY == v.getChildAt(0).getMeasuredHeight()){
+                    count++;
+                    Log.d("Check id - > ", "ID: " + count);
+                    if(count < 20) {
+                        getData();
+                    }
+                }
+            }
+        });
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar_inovasi);
         setSupportActionBar(mToolbar);
@@ -122,17 +140,19 @@ public class SortListCategory_InovasiActivity extends AppCompatActivity {
                             JSONArray jsonArray = jsonObject.getJSONArray("data");
                             shimmerFrameLayout.stopShimmer();
                             shimmerFrameLayout.setVisibility(View.GONE);
+
                             for (int i = 0; i < jsonArray.length() ; i++) {
                                 ContentLatestModel contentLatestModel = new ContentLatestModel();
                                 JSONObject object = jsonArray.getJSONObject(i);
 
                                 contentLatestModel.setId_inovasi(object.getInt("id_inovasi"));
                                 contentLatestModel.setNama_inovasi(object.getString("nama_inovasi"));
+                                contentLatestModel.setUrlGambar(object.getString("foto_inovasi"));
 
                                 JSONObject object1 = object.getJSONObject("inovator");
                                 contentLatestModel.setNama_inovator(object1.getString("nama_inovator"));
 
-                                JSONObject object2 = object.getJSONObject("bidang_inovasi");
+                                JSONObject object2 = object.getJSONObject("bidang");
                                 contentLatestModel.setKategoriInovasi(object2.getString("nama_bidang_inovasi"));
                                 /*contentLatestModel.setNama_inovator(object.getString("nama_kelompok"));*/
 

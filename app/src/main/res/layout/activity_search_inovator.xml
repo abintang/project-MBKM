@@ -27,11 +27,12 @@
                 android:layout_width="@dimen/_220sdp"
                 android:layout_height="@dimen/_30sdp"
                 android:hint="@string/btn_text_inovator_search"
+                android:textSize="@dimen/_10sdp"
                 android:textColorHint="@color/gray_text"
                 android:textColor="@color/gray_text"
                 style="@style/customize_search"
                 android:imeOptions="actionSearch"
-                android:paddingStart="15dp"
+                android:paddingStart="@dimen/_8sdp"
                 />
 
 
@@ -41,8 +42,8 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/temp_bg_search"
-        android:layout_width="287dp"
-        android:layout_height="259dp"
+        android:layout_width="@dimen/_220sdp"
+        android:layout_height="@dimen/_200sdp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -71,8 +72,8 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="304dp"
-        android:layout_height="60dp"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_30sdp"
         android:fontFamily="@font/monstserrat_semibold"
         android:text="@string/det_empty_search"
         android:textAlignment="center"
@@ -149,6 +150,49 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.92" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleViewSearchInovator"
+        android:layout_width="match_parent"
+        android:visibility="invisible"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/_23sdp"
+        android:layout_marginStart="@dimen/_18sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:nestedScrollingEnabled="true"
+        app:layout_constraintHeight_default="wrap"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintTop_toBottomOf="@id/bg_result_search_inovator"/>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_search_inovator_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_23sdp"
+        android:layout_marginStart="@dimen/_18sdp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintTop_toBottomOf="@id/bg_result_search_inovator"
+        app:shimmer_duration="800"
+        android:layout_marginTop="@dimen/_10sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/placeholder_inovasi_layout"/>
+        <include layout="@layout/placeholder_inovasi_layout"/>
+        <include layout="@layout/placeholder_inovasi_layout"/>
+        <include layout="@layout/placeholder_inovasi_layout"/>
+        <include layout="@layout/placeholder_inovasi_layout"/>
+        <include layout="@layout/placeholder_inovasi_layout"/>
+        <include layout="@layout/placeholder_inovasi_layout"/>
+        <include layout="@layout/placeholder_inovasi_layout"/>
+        <include layout="@layout/placeholder_inovasi_layout"/>
+        <include layout="@layout/placeholder_inovasi_layout"/>
+    </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

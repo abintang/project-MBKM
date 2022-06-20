@@ -32,11 +32,12 @@
     <string name="des_instansi">Desa Instansi</string>
 
     <string name="info">Basic Info Inovator</string>
-    <string name="ttl">Tempat Tanggal Lahir</string>
+    <string name="ttl">Tanggal Lahir</string>
     <string name="gender">Jenis Kelamin</string>
     <string name="alamat">Alamat</string>
     <string name="in">List Inovasi yang dibuat</string>
     <string name="kt">Kategori Inovator</string>
+    <string name="asl">Asal Instansi</string>
 
     <string name="profil_tl">Profil</string>
     <string name="tugas_tl">Tugas Pokok dan Fungsi</string>

@@ -24,6 +24,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.project.inovationmobile.R;
 import com.project.inovationmobile.adapters.ContentInovasiAdapter;
 import com.project.inovationmobile.adapters.ContentLatestAdapter;
@@ -67,19 +68,6 @@ public class ListInovasiActivity extends AppCompatActivity {
 
         /*progressBar = findViewById(R.id.progress_inovasi);*/
         nestedScrollView = findViewById(R.id.scrollView2);
-
-        nestedScrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
-            @Override
-            public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-                if(scrollY == v.getChildAt(0).getMeasuredHeight() - v.getMeasuredHeight()) {
-                    count++;
-                    Log.i("TTL", "onScrollChange: " + count);
-                    if (count < 10) {
-                        getData();
-                    }
-                }
-            }
-        });
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar_inovasi);
         setSupportActionBar(mToolbar);
@@ -126,6 +114,7 @@ public class ListInovasiActivity extends AppCompatActivity {
     }
 
     private void getData(){
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
@@ -149,7 +138,7 @@ public class ListInovasiActivity extends AppCompatActivity {
                                 JSONObject object1 = object.getJSONObject("inovator");
                                 contentLatestModel.setNama_inovator(object1.getString("nama_inovator"));
 
-                                JSONObject object2 = object.getJSONObject("bidang_inovasi");
+                                JSONObject object2 = object.getJSONObject("bidang");
                                 contentLatestModel.setKategoriInovasi(object2.getString("nama_bidang_inovasi"));
                                 /*contentLatestModel.setNama_inovator(object.getString("nama_kelompok"));*/
 
@@ -169,7 +158,7 @@ public class ListInovasiActivity extends AppCompatActivity {
                         Log.i("TEST", "onErrorResponse: " + error.getMessage());
                     }
                 });
-        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+
 
         requestQueue.add(stringRequest);
     }

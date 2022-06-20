@@ -23,7 +23,7 @@ import java.util.List;
 
 public class ContentLatestAdapter extends RecyclerView.Adapter<ContentLatestAdapter.ViewHolder> {
 
-    private LayoutInflater inflater;
+    private final LayoutInflater inflater;
     private final ArrayList<ContentLatestModel> data;
 
     /* adapter ini adalah adapter recyclerview yang ada di page dashboard (Terbaru - Max 5 data)
@@ -31,7 +31,7 @@ public class ContentLatestAdapter extends RecyclerView.Adapter<ContentLatestAdap
     isi/content nya itu ada dibawah (ViewHolder) */
 
     public ContentLatestAdapter(Context context, ArrayList<ContentLatestModel> data){
-        inflater = LayoutInflater.from(context);
+        this.inflater = LayoutInflater.from(context);
         this.data = data;
     }
 

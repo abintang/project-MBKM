@@ -84,7 +84,13 @@
                 app:sliderIndicatorPadding="@dimen/_2sdp"
                 app:sliderIndicatorRadius="@dimen/_1sdp"
                 app:sliderIndicatorSelectedColor="@color/green_smooth"
-                app:sliderIndicatorUnselectedColor="#FFF" />
+                app:sliderIndicatorUnselectedColor="#FFF"
+                app:sliderAnimationDuration="900"
+                app:sliderAutoCycleDirection="back_and_forth"
+                app:sliderAutoCycleEnabled="true"
+                app:sliderIndicatorAnimationDuration="900"
+                app:sliderScrollTimeInSec="10"
+                app:sliderStartAutoCycle="true"/>
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton

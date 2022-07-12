@@ -154,7 +154,8 @@ public class SearchInovatorActivity extends AppCompatActivity {
                                     if (object.isNull("id_kategori_inovator")) {
                                         listInovatorModel.setKategoriInovator("Tidak Berkategori");
                                     } else {
-                                        listInovatorModel.setKategoriInovator(object.getString("id_kategori_inovator"));
+                                        JSONObject object1 = object.getJSONObject("kategori");
+                                        listInovatorModel.setKategoriInovator(object1.getString("nama_kategori_inovator"));
                                     }
 
                                     items.add(listInovatorModel);

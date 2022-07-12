@@ -42,7 +42,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Objects;
 
-public class SortListCategory_InovasiActivity extends AppCompatActivity {
+public class SortYear_InovasiActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ContentInovasiAdapter contentInovasiAdapter;
     ArrayList<ContentLatestModel> items;
@@ -51,14 +51,14 @@ public class SortListCategory_InovasiActivity extends AppCompatActivity {
     ShimmerFrameLayout shimmerFrameLayout;
     TextView textCategorySort;
     NestedScrollView nestedScrollView;
+    PowerSpinnerView powerSpinnerView;
     CardView buttonPrev, buttonNext;
     View view;
-    PowerSpinnerView powerSpinnerView;
     int page = 1;
     int limit;
+    String tahun;
     LottieAnimationView lottieAnimationView;
     TextView invalidText, invalidTextDesc;
-    int idCategory;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -68,20 +68,21 @@ public class SortListCategory_InovasiActivity extends AppCompatActivity {
         Button bottomSheetKategoriButton = findViewById(R.id.buttonsheet_categoryinovasi);
 
         textCategorySort = findViewById(R.id.text_category_inovasi);
-        idCategory = getIntent().getExtras().getInt("tempCategoryId");
-        Log.d("Check id - > ", "ID: " + idCategory);
-        String categoryName = getIntent().getExtras().getString("tempCategoryName");
-        textCategorySort.setText(categoryName);
+        tahun = getIntent().getExtras().getString("tempYear");
         lottieAnimationView = findViewById(R.id.temp_bg_invalid);
         invalidText = findViewById(R.id.invalid_text);
         invalidTextDesc = findViewById(R.id.textView);
 
-        url = "https://api.koys.my.id/inovasi/kategori/" + idCategory;
+        url = "https://api.koys.my.id/inovasi/tahun/" + tahun;
 
-        nestedScrollView = findViewById(R.id.scrollView2);
-        buttonNext = findViewById(R.id.buttonNextPage);
-        buttonPrev = findViewById(R.id.buttonPrevPage);
-        view = findViewById(R.id.padBottom);
+        shimmerFrameLayout = findViewById(R.id.shimmer_inovasi_container);
+
+        // set up RecyclerView List Inovasi
+        recyclerView = findViewById(R.id.recycleViewListInovasi);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(contentInovasiAdapter);
+
+
         powerSpinnerView = findViewById(R.id.spinner_year);
         ArrayList<String> years = new ArrayList<String>();
         int thisYears = Calendar.getInstance().get(Calendar.YEAR);
@@ -90,82 +91,22 @@ public class SortListCategory_InovasiActivity extends AppCompatActivity {
         }
 
         powerSpinnerView.setItems(years);
+        powerSpinnerView.setHint("Tahun: "+ tahun);
 
         powerSpinnerView.setOnSpinnerItemSelectedListener(new OnSpinnerItemSelectedListener<String>() {
             @Override
             public void onItemSelected(int i, @Nullable String s, int i1, String t1) {
-                Intent intent = new Intent(getApplicationContext(), SortYearCategory_InovasiActivity.class);
+                Intent intent = new Intent(getApplicationContext(), SortYear_InovasiActivity.class);
                 intent.putExtra("tempYear", powerSpinnerView.getText());
-                intent.putExtra("tempCategoryId", idCategory);
                 startActivity(intent);
             }
         });
 
 
-        shimmerFrameLayout = findViewById(R.id.shimmer_inovasi_container);
-
-        // set up RecyclerView List Inovasi
-        recyclerView = findViewById(R.id.recycleViewListInovasi);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
         nestedScrollView = findViewById(R.id.scrollView2);
-
-        RequestQueue queue = Volley.newRequestQueue(SortListCategory_InovasiActivity.this);
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                try {
-                    if (!response.has("data")){
-                        shimmerFrameLayout.stopShimmer();
-                        shimmerFrameLayout.setVisibility(View.GONE);
-                        lottieAnimationView.setVisibility(View.VISIBLE);
-                        invalidText.setVisibility(View.VISIBLE);
-                        invalidTextDesc.setText("Data dengan kategori " + textCategorySort.getText() + " tidak dapat ditemukan");
-                        invalidTextDesc.setVisibility(View.VISIBLE);
-                    }
-                    int max = response.getInt("total_data");
-                    limit = (max + 20 - 1) / 20;
-                    getData(page, limit);
-                    buttonNext.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            page++;
-                            recyclerView.setVisibility(View.GONE);
-                            buttonNext.setVisibility(View.GONE);
-                            buttonPrev.setVisibility(View.GONE);
-                            shimmerFrameLayout.setVisibility(View.VISIBLE);
-                            shimmerFrameLayout.startShimmer();
-                            getData(page, limit);
-                            nestedScrollView.scrollTo(0, 0);
-                        }
-                    });
-
-                    buttonPrev.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            page--;
-                            recyclerView.setVisibility(View.INVISIBLE);
-                            shimmerFrameLayout.setVisibility(View.VISIBLE);
-                            shimmerFrameLayout.startShimmer();
-                            buttonNext.setVisibility(View.GONE);
-                            buttonPrev.setVisibility(View.GONE);
-                            getData(page, limit);
-                            nestedScrollView.scrollTo(0, 0);
-                        }
-                    });
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(SortListCategory_InovasiActivity.this, "Fail to get data..", Toast.LENGTH_SHORT).show();
-
-            }
-        });
-        queue.add(jsonObjectRequest);
-
+        buttonNext = findViewById(R.id.buttonNextPage);
+        buttonPrev = findViewById(R.id.buttonPrevPage);
+        view = findViewById(R.id.padBottom);
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar_inovasi);
         setSupportActionBar(mToolbar);
@@ -176,12 +117,76 @@ public class SortListCategory_InovasiActivity extends AppCompatActivity {
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SortListCategory_InovasiActivity.this, SearchInovasiActivity.class);
+                Intent intent = new Intent(SortYear_InovasiActivity.this, SearchInovasiActivity.class);
                 overridePendingTransition(0,0);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent);
             }
         });
+
+        RequestQueue queue = Volley.newRequestQueue(SortYear_InovasiActivity.this);
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    if (!response.has("data")){
+                        shimmerFrameLayout.stopShimmer();
+                        shimmerFrameLayout.setVisibility(View.GONE);
+                        lottieAnimationView.setVisibility(View.VISIBLE);
+                        invalidText.setVisibility(View.VISIBLE);
+                        invalidTextDesc.setText("Data dengan kategori tahun " + powerSpinnerView.getText() + " tidak dapat ditemukan");
+                        invalidTextDesc.setVisibility(View.VISIBLE);
+                    }
+
+                    if (response.has("total_data")) {
+                        int max = response.getInt("total_data");
+                        limit = (max + 20 - 1) / 20;
+
+                        getData(page, limit);
+                        buttonNext.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                page++;
+                                recyclerView.setVisibility(View.GONE);
+                                buttonNext.setVisibility(View.GONE);
+                                buttonPrev.setVisibility(View.GONE);
+                                shimmerFrameLayout.setVisibility(View.VISIBLE);
+                                shimmerFrameLayout.startShimmer();
+                                getData(page, limit);
+                                nestedScrollView.scrollTo(0, 0);
+                            }
+                        });
+
+                        buttonPrev.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                page--;
+                                recyclerView.setVisibility(View.INVISIBLE);
+                                buttonNext.setVisibility(View.GONE);
+                                buttonPrev.setVisibility(View.GONE);
+                                shimmerFrameLayout.setVisibility(View.VISIBLE);
+                                shimmerFrameLayout.startShimmer();
+                                getData(page, limit);
+                                nestedScrollView.scrollTo(0, 0);
+                            }
+                        });
+                    } else {
+                        Toast.makeText(SortYear_InovasiActivity.this, "Data Kosong", Toast.LENGTH_SHORT).show();
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(SortYear_InovasiActivity.this, "Fail to get data..", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        queue.add(jsonObjectRequest);
+
 
         bottomSheetKategoriButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -212,7 +217,9 @@ public class SortListCategory_InovasiActivity extends AppCompatActivity {
     }
 
     private void getData(int page, int limit){
-        String url2 = "https://api.koys.my.id/inovasi/kategori/"+ idCategory +"/paginate?page=" + page;
+
+
+        String url2 = "https://api.koys.my.id/inovasi/tahun/"+ tahun +"/paginate?page=" + page;
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url2,
                 new Response.Listener<String>() {
                     @Override
@@ -223,8 +230,6 @@ public class SortListCategory_InovasiActivity extends AppCompatActivity {
                             JSONArray jsonArray = jsonObject.getJSONArray("data");
                             shimmerFrameLayout.stopShimmer();
                             shimmerFrameLayout.setVisibility(View.GONE);
-                            buttonNext.setVisibility(View.VISIBLE);
-                            buttonPrev.setVisibility(View.VISIBLE);
                             if (page == 1 ) {
                                 buttonNext.setVisibility(View.VISIBLE);
                                 buttonPrev.setVisibility(View.GONE);
@@ -236,7 +241,6 @@ public class SortListCategory_InovasiActivity extends AppCompatActivity {
                                 buttonNext.setVisibility(View.INVISIBLE);
                                 buttonPrev.setVisibility(View.VISIBLE);
                             }
-
                             recyclerView.setVisibility(View.VISIBLE);
                             view.setVisibility(View.VISIBLE);
 

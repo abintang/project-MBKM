@@ -53,7 +53,7 @@ public class ContentInovatorAdapter extends RecyclerView.Adapter<ContentInovator
         viewHolder.kategoriInovator.setText(data.get(i).getKategoriInovator());
         // similarly you can set new image for each card and descriptions
 
-        String urlImage = "https://tim1.koys.my.id/assets/upload/foto_inovator/" +
+        String urlImage = "https://tim1.koys.my.id/assets/images/upload/foto_inovator/" +
                 data.get(i).getFotoInovator();
         Picasso.get().load(urlImage).into(viewHolder.fotoInovator);
 

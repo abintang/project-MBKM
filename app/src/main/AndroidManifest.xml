@@ -13,13 +13,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.InovationMobile">
+        android:theme="@style/Theme.InovationMobile"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".activities.ImageViewerActivity"
+            android:exported="false"
+            android:parentActivityName=".activities.ListInovatorActivity"/>
         <activity
             android:name=".activities.InstansiDetailActivity"
             android:exported="false"
             android:parentActivityName=".activities.InovasiDetailActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.InovatorDetailActivity"
             android:exported="false"
@@ -63,19 +67,21 @@
             android:exported="false"
             android:parentActivityName=".activities.MainActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".activities.SortListCategory_InovasiActivity"
             android:exported="false"
             android:parentActivityName=".activities.MainActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".activities.SortListCategory_InovatorActivity"
             android:exported="false"
             android:parentActivityName=".activities.MainActivity"
             android:screenOrientation="portrait" />
-
+        <activity
+            android:name=".activities.SortYear_InovasiActivity"
+            android:exported="false"
+            android:parentActivityName=".activities.MainActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.SplashScreenActivity"
             android:exported="true"

@@ -50,7 +50,7 @@ public class PetaActivity extends AppCompatActivity {
             }
         });
 
-        peta.loadUrl("https://www.google.co.id/maps");
+        peta.loadUrl("https://tim2.koys.my.id/petakhusus");
 
     }
 

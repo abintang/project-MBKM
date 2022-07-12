@@ -48,7 +48,6 @@ dependencies {
     // Library yang digunakan
     implementation 'com.github.ismaeldivita:chip-navigation-bar:1.4.0'
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
-    implementation 'com.intuit.sdp:sdp-android:1.0.6'
     implementation 'com.github.smarteist:autoimageslider:1.4.0'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'com.airbnb.android:lottie:3.4.0'
@@ -60,5 +59,7 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.13.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.github.Spikeysanju:MotionToast:1.4'
-    implementation 'com.jcodecraeer:xrecyclerview:1.6.0'
+    implementation 'com.github.chrisbanes:PhotoView:2.0.0'
+    implementation 'com.github.ibrahimsn98:CirclesLoadingView:1.0'
+    implementation "com.github.skydoves:powerspinner:1.2.3"
 }

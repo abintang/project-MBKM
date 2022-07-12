@@ -22,7 +22,7 @@ import java.util.List;
 
 public class ContentInovasiAdapter extends RecyclerView.Adapter<ContentInovasiAdapter.ViewHolder> {
 
-    private final LayoutInflater layoutInflater;
+    private final Context context;
     private final ArrayList<ContentLatestModel> data;
 
     /* adapter ini adalah adapter recyclerview yang ada di page list inovasi
@@ -30,14 +30,14 @@ public class ContentInovasiAdapter extends RecyclerView.Adapter<ContentInovasiAd
     masing-masing isi/content nya itu ada dibawah (ViewHolder) */
 
     public ContentInovasiAdapter(Context context, ArrayList<ContentLatestModel> data) {
-        this.layoutInflater = LayoutInflater.from(context);
+        this.context = context;
         this.data = data;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = layoutInflater.inflate(R.layout.content_inovasi_layout,viewGroup,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.content_inovasi_layout,viewGroup,false);
         return new ContentInovasiAdapter.ViewHolder(view);
     }
 
@@ -48,7 +48,7 @@ public class ContentInovasiAdapter extends RecyclerView.Adapter<ContentInovasiAd
         viewHolder.namaInovasi.setText(data.get(i).getNama_inovasi());
         viewHolder.namaInovator.setText(data.get(i).getNama_inovator());
 
-        String urlImage = "https://tim1.koys.my.id/assets/upload/foto_inovasi/" + data.get(i).getUrlGambar();
+        String urlImage = "https://tim1.koys.my.id/assets/images/upload/foto_inovasi/" + data.get(i).getUrlGambar();
         // similarly you can set new image for each card and descriptions
         Picasso.get().load(urlImage).into(viewHolder.fotoInovasi);
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {

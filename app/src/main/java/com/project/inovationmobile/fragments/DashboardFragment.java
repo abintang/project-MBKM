@@ -1,6 +1,5 @@
 package com.project.inovationmobile.fragments;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -14,21 +13,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.project.inovationmobile.activities.ListInovasiActivity;
 import com.project.inovationmobile.activities.ListInovatorActivity;
-import com.project.inovationmobile.activities.MainActivity;
 import com.project.inovationmobile.activities.PetaActivity;
 import com.project.inovationmobile.adapters.ContentLatestAdapter;
 import com.project.inovationmobile.R;
@@ -45,8 +40,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
-import java.util.Objects;
 
 import www.sanju.motiontoast.MotionToast;
 import www.sanju.motiontoast.MotionToastStyle;
@@ -223,7 +216,7 @@ public class DashboardFragment extends Fragment {
 
                                 contentLatestModel.setId_inovasi(object.getInt("id_inovasi"));
                                 contentLatestModel.setNama_inovasi(object.getString("nama_inovasi"));
-                                contentLatestModel.setUrlGambar(object.getString("foto_inovasi"));
+                                contentLatestModel.setUrlGambar(object.getString("foto_inovasi1"));
 
                                 JSONObject object1 = object.getJSONObject("inovator");
                                 contentLatestModel.setNama_inovator(object1.getString("nama_inovator"));
@@ -246,21 +239,24 @@ public class DashboardFragment extends Fragment {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        MotionToast.Companion.createToast(
-                                getActivity(),
-                                "Lost Connection, Please Refresh",
-                                "Ada kesalahan dalam mengambil data dari server",
-                                MotionToastStyle.ERROR,
-                                MotionToast.GRAVITY_BOTTOM,
-                                MotionToast.LONG_DURATION,
-                                ResourcesCompat.getFont(getActivity(),R.font.montserrat_medium)
-                        );
-                        Log.i("TEST", "onErrorResponse: " + error.getMessage());
+                        if (getActivity() != null) {
+                            MotionToast.Companion.createToast(
+                                    getActivity(),
+                                    "Lost Connection, Please Refresh",
+                                    "Ada kesalahan dalam mengambil data dari server",
+                                    MotionToastStyle.ERROR,
+                                    MotionToast.GRAVITY_BOTTOM,
+                                    MotionToast.LONG_DURATION,
+                                    ResourcesCompat.getFont(getActivity(), R.font.montserrat_medium)
+                            );
+                            Log.i("TEST", "onErrorResponse: " + error.getMessage());
+                        }
                     }
                 });
-        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
-
-        requestQueue.add(stringRequest);
+        if (getContext() != null) {
+            RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+            requestQueue.add(stringRequest);
+        }
     }
 
     @Override

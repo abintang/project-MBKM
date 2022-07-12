@@ -1,8 +1,16 @@
 package com.project.inovationmobile.models;
 
 public class ContentLatestModel {
-    int id_inovasi;
+    int id_inovasi, totalData;
     String nama_inovasi, nama_inovator, kategoriInovasi, urlGambar;
+
+    public void setTotalData(int totalData) {
+        this.totalData = totalData;
+    }
+
+    public int getTotalData() {
+        return totalData;
+    }
 
     public String getUrlGambar() {
         return urlGambar;

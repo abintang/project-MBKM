@@ -139,10 +139,10 @@ public class InovatorDetailActivity extends AppCompatActivity {
                                 kategoriInovatorDetail.setText(object1.getString("nama_kategori_inovator"));
 
                                 if(!object.isNull("foto_inovator")) {
-                                    urlInovator = "https://tim1.koys.my.id/assets/upload/foto_inovator/" +
+                                    urlInovator = "https://tim1.koys.my.id/assets/images/upload/foto_inovator/" +
                                             object.getString("foto_inovator");
                                 } else {
-                                    urlInovator = "https://tim1.koys.my.id/assets/upload/foto_inovator/default.png";
+                                    urlInovator = "https://tim1.koys.my.id/assets/images/upload/foto_inovator/default.png";
                                 }
                                 Picasso.get().load(urlInovator).into(fotoInovatorDetail);
                         } catch (JSONException e) {
@@ -188,7 +188,7 @@ public class InovatorDetailActivity extends AppCompatActivity {
 
                                 contentLatestModel.setId_inovasi(object.getInt("id_inovasi"));
                                 contentLatestModel.setNama_inovasi(object.getString("nama_inovasi"));
-                                contentLatestModel.setUrlGambar(object.getString("foto_inovasi"));
+                                contentLatestModel.setUrlGambar(object.getString("foto_inovasi1"));
 
                                 JSONObject object1 = object.getJSONObject("bidang");
                                 contentLatestModel.setKategoriInovasi(object1.getString("nama_bidang_inovasi"));

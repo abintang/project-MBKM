@@ -58,12 +58,53 @@
         android:scaleType="centerCrop"
         app:layout_constraintTop_toBottomOf="@id/d" />
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardInovasi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:cardBackgroundColor="@color/black_bg"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_foto_inovasi_detail">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_5sdp"
+                app:layout_constraintTop_toBottomOf="@id/tv_nama_inovasi_detail" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.07" />
+
+            <TextView
+                android:id="@+id/tv_nama_inovasi_detail"
+                android:layout_width="@dimen/_260sdp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/monstserrat_semibold"
+                android:text="Teh Pala (Limbah Kulit Pala)"
+                android:textColor="@color/white_rd"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guideline11"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.36" />
+        app:layout_constraintGuide_begin="267dp" />
 
     <com.github.captain_miao.optroundcardview.OptRoundCardView
         android:id="@+id/contentDetail"
@@ -84,13 +125,6 @@
                 android:layout_height="wrap_content">
 
                 <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_constraintGuide_percent="0.01" />
-
-                <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -105,16 +139,19 @@
                     app:layout_constraintGuide_percent="0.93" />
 
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardkategori"
+                    android:id="@+id/kategoriInovatorDet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="@color/white_ripple"
+                    app:cardBackgroundColor="@color/gray_btn"
+                    app:cardCornerRadius="@dimen/_8sdp"
                     app:cardElevation="0dp"
                     app:cardUseCompatPadding="true"
-                    app:contentPadding="@dimen/_4sdp"
+                    app:contentPadding="@dimen/_5sdp"
                     app:layout_constraintStart_toStartOf="@id/guideline2"
-                    app:layout_constraintTop_toBottomOf="@id/guideline1"
-                    app:strokeColor="@color/green_smooth"
-                    app:strokeWidth="@dimen/_1sdp">
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
                         android:id="@+id/tv_category_inovasi_detail"
@@ -123,22 +160,66 @@
                         android:fontFamily="@font/montserrat_medium"
                         android:text="Kuliner"
                         android:textAlignment="center"
-                        android:textColor="@color/green_smooth"
-                        android:textSize="@dimen/_10sdp" />
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_8sdp" />
 
                 </com.google.android.material.card.MaterialCardView>
 
-                <TextView
-                    android:id="@+id/tv_nama_inovasi_detail"
-                    android:layout_width="@dimen/_260sdp"
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/kategoriInovatorDet2"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/monstserrat_semibold"
-                    android:text="Teh Pala (Limbah Kulit Pala)"
-                    android:textAllCaps="true"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_13sdp"
-                    app:layout_constraintStart_toStartOf="@id/guideline2"
-                    app:layout_constraintTop_toBottomOf="@id/cardkategori" />
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="@color/white_ripple"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="@color/gray_btn"
+                    app:cardCornerRadius="@dimen/_8sdp"
+                    app:cardElevation="0dp"
+                    app:cardUseCompatPadding="true"
+                    app:contentPadding="@dimen/_5sdp"
+                    app:layout_constraintStart_toEndOf="@id/kategoriInovatorDet"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tv_category_inovasi_detail_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Kuliner"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_8sdp" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/kategoriInovatorDet3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="@color/white_ripple"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="@color/gray_btn"
+                    app:cardCornerRadius="@dimen/_8sdp"
+                    app:cardElevation="0dp"
+                    app:cardUseCompatPadding="true"
+                    app:contentPadding="@dimen/_5sdp"
+                    app:layout_constraintStart_toEndOf="@id/kategoriInovatorDet2"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tv_category_inovasi_detail3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Kuliner"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_8sdp" />
+
+                </com.google.android.material.card.MaterialCardView>
 
                 <TextView
                     android:id="@+id/tv_alamat_inovasi_detail"
@@ -149,7 +230,17 @@
                     android:textColor="@color/gray_text"
                     android:textSize="@dimen/_10sdp"
                     app:layout_constraintStart_toStartOf="@id/guideline2"
-                    app:layout_constraintTop_toBottomOf="@id/tv_nama_inovasi_detail" />
+                    app:layout_constraintTop_toBottomOf="@id/kategoriInovatorDet" />
+
+                <TextView
+                    android:id="@+id/tv_tahun_inovasi_detail"
+                    android:layout_width="@dimen/_260sdp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/monstserrat_semibold"
+                    android:textColor="@color/gray_text"
+                    android:textSize="@dimen/_8sdp"
+                    app:layout_constraintStart_toStartOf="@id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@id/tv_alamat_inovasi_detail" />
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/title_deskripsi"
@@ -299,7 +390,7 @@
                     android:layout_marginEnd="@dimen/_20sdp"
                     app:cardCornerRadius="@dimen/_5sdp"
                     app:cardElevation="0dp"
-                    app:layout_constraintTop_toBottomOf="@id/tv_alamat_inovasi_detail"
+                    app:layout_constraintTop_toBottomOf="@id/tv_tahun_inovasi_detail"
                     app:strokeColor="@color/gray"
                     app:strokeWidth="@dimen/_1sdp">
 
@@ -339,122 +430,78 @@
                             app:layout_constraintStart_toStartOf="@id/guideline62"
                             app:layout_constraintTop_toBottomOf="@+id/guideline52" />
 
-                        <com.google.android.material.card.MaterialCardView
-                            android:id="@+id/inovatorCard"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_10sdp"
-                            android:layout_marginTop="@dimen/_4sdp"
-                            android:layout_marginEnd="@dimen/_10sdp"
-                            app:cardCornerRadius="@dimen/_2sdp"
-                            app:cardElevation="1dp"
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card_image"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            app:cardCornerRadius="@dimen/_3sdp"
+                            app:layout_constraintStart_toStartOf="@id/guideline62"
                             app:layout_constraintTop_toBottomOf="@id/title_inovator">
 
-                            <androidx.constraintlayout.widget.ConstraintLayout
+                            <ImageView
+                                android:id="@+id/iv_foto_inovator_det"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent">
+                                android:layout_height="match_parent"
+                                android:adjustViewBounds="false"
+                                android:scaleType="centerCrop"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.0"
+                                app:srcCompat="@drawable/dump_image_inovator" />
+                        </androidx.cardview.widget.CardView>
 
-                                <androidx.constraintlayout.widget.Guideline
-                                    android:id="@+id/guideline22"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical"
-                                    app:layout_constraintGuide_percent="0.04" />
+                        <TextView
+                            android:id="@+id/tv_category_inovator_det"
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:maxLines="1"
+                            android:text="Masyarakat Umum"
+                            android:textColor="@color/gray_text"
+                            android:textSize="@dimen/_7sdp"
+                            app:layout_constraintBottom_toTopOf="@id/tv_nama_inovator_det"
+                            app:layout_constraintStart_toEndOf="@id/card_image"
+                            app:layout_constraintTop_toTopOf="@id/card_image" />
 
-                                <androidx.constraintlayout.widget.Guideline
-                                    android:id="@+id/guideline23"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical"
-                                    app:layout_constraintGuide_percent="0.67" />
-
-                                <androidx.constraintlayout.widget.Guideline
-                                    android:id="@+id/guideline24"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    app:layout_constraintGuide_percent="0.10" />
-
-                                <androidx.cardview.widget.CardView
-                                    android:id="@+id/card_image"
-                                    android:layout_width="@dimen/_40sdp"
-                                    android:layout_height="@dimen/_40sdp"
-                                    app:cardCornerRadius="@dimen/_6sdp"
-                                    app:layout_constraintStart_toStartOf="@id/guideline22"
-                                    app:layout_constraintTop_toTopOf="@id/guideline24">
-
-                                    <ImageView
-                                        android:id="@+id/iv_foto_inovator_det"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:adjustViewBounds="false"
-                                        android:scaleType="centerCrop"
-                                        app:layout_constraintBottom_toBottomOf="parent"
-                                        app:layout_constraintStart_toStartOf="parent"
-                                        app:layout_constraintTop_toTopOf="parent"
-                                        app:layout_constraintVertical_bias="0.0"
-                                        app:srcCompat="@drawable/dump_image_inovator" />
-                                </androidx.cardview.widget.CardView>
-
-                                <TextView
-                                    android:id="@+id/tv_nama_inovator_det"
-                                    android:layout_width="@dimen/_100sdp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="@dimen/_8sdp"
-                                    android:layout_marginTop="@dimen/_3sdp"
-                                    android:ellipsize="end"
-                                    android:fontFamily="@font/montserrat_medium"
-                                    android:maxLines="1"
-                                    android:text="Wirda Ningsih"
-                                    android:textColor="@color/gray_text"
-                                    android:textSize="@dimen/_10sdp"
-                                    app:layout_constraintStart_toEndOf="@id/card_image"
-                                    app:layout_constraintTop_toBottomOf="@id/guideline24" />
-
-                                <TextView
-                                    android:id="@+id/tv_category_inovator_det"
-                                    android:layout_width="@dimen/_100sdp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="@dimen/_8sdp"
-                                    android:layout_marginTop="@dimen/_3sdp"
-                                    android:ellipsize="end"
-                                    android:fontFamily="@font/montserrat_regular"
-                                    android:maxLines="1"
-                                    android:text="Masyarakat Umum"
-                                    android:textColor="@color/gray_text"
-                                    android:textSize="@dimen/_8sdp"
-                                    app:layout_constraintStart_toEndOf="@id/card_image"
-                                    app:layout_constraintTop_toBottomOf="@id/tv_nama_inovator_det" />
+                        <TextView
+                            android:id="@+id/tv_nama_inovator_det"
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:maxLines="1"
+                            android:text="Wirda Ningsih"
+                            android:textColor="@color/gray_text"
+                            android:textSize="@dimen/_8sdp"
+                            app:layout_constraintStart_toEndOf="@id/card_image"
+                            app:layout_constraintTop_toBottomOf="@id/tv_category_inovator_det" />
 
 
-                                <Button
-                                    android:id="@+id/button_detail_inovator"
-                                    android:layout_width="@dimen/_60sdp"
-                                    android:layout_height="@dimen/_28sdp"
-                                    android:backgroundTint="@color/green_smooth"
-                                    android:elevation="0dp"
-                                    android:fontFamily="@font/monstserrat_semibold"
-                                    android:text="@string/detail"
-                                    android:textAlignment="center"
-                                    android:textAllCaps="false"
-                                    android:textColor="@color/white"
-                                    android:textSize="@dimen/_8sdp"
-                                    app:elevation="0dp"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintHorizontal_bias="0.515"
-                                    app:layout_constraintStart_toEndOf="@id/guideline23"
-                                    app:layout_constraintTop_toBottomOf="@id/guideline24"
-                                    app:layout_constraintVertical_bias="0.36"
-                                    app:shapeAppearanceOverlay="@style/shapeButton" />
-
-                                <View
-                                    android:layout_width="match_parent"
-                                    android:layout_height="@dimen/_8sdp"
-                                    app:layout_constraintTop_toBottomOf="@id/card_image" />
-
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-                        </com.google.android.material.card.MaterialCardView>
+                        <Button
+                            android:id="@+id/button_detail_inovator"
+                            android:layout_width="@dimen/_60sdp"
+                            android:layout_height="@dimen/_28sdp"
+                            android:backgroundTint="@color/gray_btn"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/monstserrat_semibold"
+                            android:text="@string/detail"
+                            android:textAlignment="center"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_8sdp"
+                            app:elevation="0dp"
+                            app:layout_constraintBottom_toBottomOf="@id/tv_nama_inovator_det"
+                            app:layout_constraintEnd_toEndOf="@id/guideline72"
+                            app:layout_constraintHorizontal_bias="0.515"
+                            app:layout_constraintTop_toTopOf="@id/tv_category_inovator_det"
+                            app:layout_constraintVertical_bias="0.36"
+                            app:shapeAppearanceOverlay="@style/shapeButton" />
 
                         <TextView
                             android:id="@+id/title_anggota"
@@ -464,60 +511,40 @@
                             android:fontFamily="@font/montserrat_medium"
                             android:text="@string/anggota_text"
                             android:textColor="@color/black"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_11sdp"
+                            android:visibility="gone"
                             app:layout_constraintStart_toStartOf="@id/guideline62"
-                            app:layout_constraintTop_toBottomOf="@+id/inovatorCard" />
+                            app:layout_constraintTop_toBottomOf="@+id/card_image" />
 
                         <com.google.android.material.card.MaterialCardView
-                            android:id="@+id/kelompokCard"
-                            android:layout_width="match_parent"
+                            android:id="@+id/cardAnggota"
+                            android:layout_width="@dimen/_80sdp"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_10sdp"
-                            android:layout_marginTop="@dimen/_4sdp"
-                            android:layout_marginEnd="@dimen/_10sdp"
-                            app:cardCornerRadius="@dimen/_2sdp"
-                            app:cardElevation="1dp"
-                            app:layout_constraintTop_toBottomOf="@id/title_anggota">
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:visibility="gone"
+                            app:cardCornerRadius="@dimen/_5sdp"
+                            app:cardElevation="0dp"
+                            app:layout_constraintStart_toStartOf="@id/title_anggota"
+                            app:layout_constraintTop_toBottomOf="@id/title_anggota"
+                            app:strokeColor="@color/gray"
+                            app:strokeWidth="@dimen/_1sdp"
+                            tools:ignore="MissingConstraints">
 
                             <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent">
 
-                                <androidx.constraintlayout.widget.Guideline
-                                    android:id="@+id/guideline32"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical"
-                                    app:layout_constraintGuide_percent="0.04" />
-
-                                <androidx.constraintlayout.widget.Guideline
-                                    android:id="@+id/guideline33"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical"
-                                    app:layout_constraintGuide_percent="0.72" />
-
-                                <androidx.constraintlayout.widget.Guideline
-                                    android:id="@+id/guideline34"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    app:layout_constraintGuide_percent="0.10" />
-
                                 <androidx.cardview.widget.CardView
-                                    android:id="@+id/card_image_kelompok"
-                                    android:layout_width="@dimen/_40sdp"
-                                    android:layout_height="@dimen/_40sdp"
-                                    app:cardCornerRadius="@dimen/_6sdp"
-                                    app:cardElevation="0dp"
-                                    app:layout_constraintStart_toStartOf="@id/guideline32"
-                                    app:layout_constraintTop_toTopOf="@id/guideline34">
+                                    android:id="@+id/card_image_kelompok1"
+                                    android:layout_width="@dimen/_25sdp"
+                                    android:layout_height="@dimen/_25sdp"
+                                    app:cardCornerRadius="@dimen/_3sdp">
 
                                     <ImageView
-                                        android:id="@+id/kelompok"
+                                        android:id="@+id/iv_foto_kelompok_det"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:adjustViewBounds="false"
+                                        android:adjustViewBounds="true"
                                         android:scaleType="centerCrop"
                                         app:layout_constraintBottom_toBottomOf="parent"
                                         app:layout_constraintStart_toStartOf="parent"
@@ -527,30 +554,207 @@
                                 </androidx.cardview.widget.CardView>
 
                                 <TextView
-                                    android:id="@+id/tv_nama_kelompok_det"
-                                    android:layout_width="@dimen/_100sdp"
-                                    android:layout_height="wrap_content"
+                                    android:id="@+id/nama_anggota_inovasi"
+                                    android:layout_width="@dimen/_45sdp"
+                                    android:layout_height="@dimen/_20sdp"
                                     android:layout_marginStart="@dimen/_8sdp"
-                                    android:layout_marginTop="@dimen/_4sdp"
+                                    android:ellipsize="end"
                                     android:fontFamily="@font/montserrat_medium"
-                                    android:text="Dummy Text"
+                                    android:maxLines="2"
+                                    android:text="Wirda Ningsih"
                                     android:textColor="@color/gray_text"
-                                    android:textSize="@dimen/_10sdp"
-                                    app:layout_constraintStart_toEndOf="@id/card_image_kelompok"
-                                    app:layout_constraintTop_toTopOf="@id/guideline34" />
+                                    android:textSize="@dimen/_7sdp"
+                                    app:layout_constraintBottom_toBottomOf="@id/card_image_kelompok1"
+                                    app:layout_constraintStart_toEndOf="@id/card_image_kelompok1"
+                                    app:layout_constraintTop_toTopOf="@id/card_image_kelompok1" />
 
-                                <View
-                                    android:layout_width="match_parent"
-                                    android:layout_height="@dimen/_8sdp"
-                                    app:layout_constraintTop_toBottomOf="@id/card_image_kelompok" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardAnggota2"
+                            android:layout_width="@dimen/_80sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_2sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:visibility="gone"
+                            app:cardCornerRadius="@dimen/_5sdp"
+                            app:cardElevation="0dp"
+                            app:layout_constraintStart_toEndOf="@id/cardAnggota"
+                            app:layout_constraintTop_toBottomOf="@id/title_anggota"
+                            app:strokeColor="@color/gray"
+                            app:strokeWidth="@dimen/_1sdp"
+                            tools:ignore="MissingConstraints">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent">
+
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/card_image_kelompok2"
+                                    android:layout_width="@dimen/_25sdp"
+                                    android:layout_height="@dimen/_25sdp"
+                                    app:cardCornerRadius="@dimen/_3sdp">
+
+                                    <ImageView
+                                        android:id="@+id/iv_foto_kelompok_det2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="centerCrop"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintVertical_bias="0.0"
+                                        app:srcCompat="@drawable/kelompok_image" />
+                                </androidx.cardview.widget.CardView>
+
+                                <TextView
+                                    android:id="@+id/nama_anggota_inovasi_2"
+                                    android:layout_width="@dimen/_45sdp"
+                                    android:layout_height="@dimen/_20sdp"
+                                    android:layout_marginStart="@dimen/_8sdp"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/montserrat_medium"
+                                    android:maxLines="2"
+                                    android:text="Wirda Ningsih"
+                                    android:textColor="@color/gray_text"
+                                    android:textSize="@dimen/_7sdp"
+                                    app:layout_constraintBottom_toBottomOf="@id/card_image_kelompok2"
+                                    app:layout_constraintStart_toEndOf="@id/card_image_kelompok2"
+                                    app:layout_constraintTop_toTopOf="@id/card_image_kelompok2" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardAnggota3"
+                            android:layout_width="@dimen/_80sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_2sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:visibility="gone"
+                            app:cardCornerRadius="@dimen/_5sdp"
+                            app:cardElevation="0dp"
+                            app:layout_constraintStart_toEndOf="@id/cardAnggota2"
+                            app:layout_constraintTop_toBottomOf="@id/title_anggota"
+                            app:strokeColor="@color/gray"
+                            app:strokeWidth="@dimen/_1sdp"
+                            tools:ignore="MissingConstraints">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent">
+
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/card_image_kelompok3"
+                                    android:layout_width="@dimen/_25sdp"
+                                    android:layout_height="@dimen/_25sdp"
+                                    app:cardCornerRadius="@dimen/_3sdp">
+
+                                    <ImageView
+                                        android:id="@+id/iv_foto_kelompok_de3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="centerCrop"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintVertical_bias="0.0"
+                                        app:srcCompat="@drawable/kelompok_image" />
+                                </androidx.cardview.widget.CardView>
+
+                                <TextView
+                                    android:id="@+id/nama_anggota_inovasi3"
+                                    android:layout_width="@dimen/_45sdp"
+                                    android:layout_height="@dimen/_20sdp"
+                                    android:layout_marginStart="@dimen/_8sdp"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/montserrat_medium"
+                                    android:maxLines="2"
+                                    android:text="Wirda Ningsih"
+                                    android:textColor="@color/gray_text"
+                                    android:textSize="@dimen/_7sdp"
+                                    app:layout_constraintBottom_toBottomOf="@id/card_image_kelompok3"
+                                    app:layout_constraintStart_toEndOf="@id/card_image_kelompok3"
+                                    app:layout_constraintTop_toTopOf="@id/card_image_kelompok3" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardAnggota4"
+                            android:layout_width="@dimen/_80sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:visibility="gone"
+                            app:cardCornerRadius="@dimen/_5sdp"
+                            app:cardElevation="0dp"
+                            app:layout_constraintStart_toStartOf="@id/cardAnggota"
+                            app:layout_constraintTop_toBottomOf="@id/cardAnggota"
+                            app:strokeColor="@color/gray"
+                            app:strokeWidth="@dimen/_1sdp"
+                            tools:ignore="MissingConstraints">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent">
+
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/card_image_kelompok4"
+                                    android:layout_width="@dimen/_25sdp"
+                                    android:layout_height="@dimen/_25sdp"
+                                    app:cardCornerRadius="@dimen/_3sdp">
+
+                                    <ImageView
+                                        android:id="@+id/iv_foto_kelompok_det4"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="centerCrop"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintVertical_bias="0.0"
+                                        app:srcCompat="@drawable/kelompok_image" />
+                                </androidx.cardview.widget.CardView>
+
+                                <TextView
+                                    android:id="@+id/nama_anggota_inovasi4"
+                                    android:layout_width="@dimen/_45sdp"
+                                    android:layout_height="@dimen/_20sdp"
+                                    android:layout_marginStart="@dimen/_8sdp"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/montserrat_medium"
+                                    android:maxLines="2"
+                                    android:text="Wirda Ningsih"
+                                    android:textColor="@color/gray_text"
+                                    android:textSize="@dimen/_7sdp"
+                                    app:layout_constraintBottom_toBottomOf="@id/card_image_kelompok4"
+                                    app:layout_constraintStart_toEndOf="@id/card_image_kelompok4"
+                                    app:layout_constraintTop_toTopOf="@id/card_image_kelompok4" />
 
                             </androidx.constraintlayout.widget.ConstraintLayout>
                         </com.google.android.material.card.MaterialCardView>
 
                         <View
+                            android:id="@+id/pad_bottom_inovator"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/_10sdp"
-                            app:layout_constraintTop_toBottomOf="@id/kelompokCard" />
+                            app:layout_constraintTop_toBottomOf="@id/card_image" />
+
+                        <View
+                            android:id="@+id/pad_bottom_anggota"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_10sdp"
+                            app:layout_constraintTop_toBottomOf="@id/cardAnggota" />
+
+                        <View
+                            android:id="@+id/pad_bottom_anggota4"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_10sdp"
+                            app:layout_constraintTop_toBottomOf="@id/cardAnggota4" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </com.google.android.material.card.MaterialCardView>
@@ -627,7 +831,7 @@
                             android:id="@+id/button_detail_instansi"
                             android:layout_width="@dimen/_60sdp"
                             android:layout_height="@dimen/_28sdp"
-                            android:backgroundTint="@color/green_smooth"
+                            android:backgroundTint="@color/gray_btn"
                             android:elevation="0dp"
                             android:fontFamily="@font/monstserrat_semibold"
                             android:text="@string/detail"
@@ -635,7 +839,6 @@
                             android:textAllCaps="false"
                             android:textColor="@color/white"
                             android:textSize="@dimen/_8sdp"
-                            app:borderWidth="0dp"
                             app:elevation="0dp"
                             app:layout_constraintStart_toStartOf="@id/tv_nama_instansi_det"
                             app:layout_constraintTop_toBottomOf="@id/tv_nama_instansi_det"

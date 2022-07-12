@@ -157,7 +157,7 @@ public class SearchInovasiActivity extends AppCompatActivity {
 
                                     contentLatestModel.setId_inovasi(object.getInt("id_inovasi"));
                                     contentLatestModel.setNama_inovasi(object.getString("nama_inovasi"));
-                                    contentLatestModel.setUrlGambar(object.getString("foto_inovasi"));
+                                    contentLatestModel.setUrlGambar(object.getString("foto_inovasi1"));
 
                                     JSONObject object1 = object.getJSONObject("inovator");
                                     contentLatestModel.setNama_inovator(object1.getString("nama_inovator"));

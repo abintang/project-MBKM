@@ -45,6 +45,8 @@
     <string name="strategi_tl">Strategi</string>
     <string name="kontak_tl">Kontak Kami</string>
 
+    <string name="tahun_inovasi">Tahun dibuat: %1$s</string>
+
     <string name="fixed_profile_desc">Bappedalitbang Kabupaten Bogor merupakan salah satu lembagateknis daerah di lingkungan Pemerintah</string>
     <string name="profil_desc">Kabupaten Bogor yang dibentuk berdasarkan Peraturan Bupati (PerBup) Kabupaten Bogor Nomor 69 Tahun 2017 tentang Kedudukan, Susunan Organisasi, Tugas dan Fungsi Badan Perencanaan Pembangunan, Penelitian dan Pengembangan Daerah.</string>
     <string name="fixed_tugas_desc">Penyusunan, pelaksanaan, pemantauan, hingga pelaksanaan, dalam ruang lingkup kebijakan teknis di</string>
@@ -68,9 +70,12 @@
     <string name="det_no_connection">Whoops… koneksi internet anda tidak terdeteksi. Periksa koneksi internet anda dan coba lagi</string>
     <string name="coba_lagi">Coba lagi</string>
 
-    <string name="anggota_text">Anggota Kelompok</string>
+    <string name="anggota_text">Anggota</string>
     <string name="inv_terkait">Inovasi Terkait</string>
     <string name="asl_instansi">Asal Instansi</string>
+
+    <string name="invalid">Data yang dituju tidak dapat diraih</string>
+
 
     <string name="btn_text_inovator_search">Cari Inovator</string>
     <string name="text_list_inovator">List Inovator</string>

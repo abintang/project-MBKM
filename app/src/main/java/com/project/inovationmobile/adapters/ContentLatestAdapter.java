@@ -50,7 +50,7 @@ public class ContentLatestAdapter extends RecyclerView.Adapter<ContentLatestAdap
         viewHolder.namaInovasi.setText(data.get(i).getNama_inovasi());
         viewHolder.namaInovator.setText(data.get(i).getNama_inovator());
 
-        String urlImage = "https://tim1.koys.my.id/assets/upload/foto_inovasi/" + data.get(i).getUrlGambar();
+        String urlImage = "https://tim1.koys.my.id/assets/images/upload/foto_inovasi/" + data.get(i).getUrlGambar();
         // similarly you can set new image for each card and descriptions
         Picasso.get().load(urlImage).into(viewHolder.fotoInovasi);
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {

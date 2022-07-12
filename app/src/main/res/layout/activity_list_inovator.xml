@@ -194,6 +194,52 @@
                 app:layout_constraintStart_toStartOf="@id/guideline2"
                 app:layout_constraintTop_toBottomOf="@id/illust_inovator" />
 
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/temp_bg_invalid"
+                android:layout_width="@dimen/_180sdp"
+                android:layout_height="@dimen/_180sdp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/_20sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/search_button_inovator"
+                app:layout_constraintVertical_bias="0.312"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="84885-404-sleep-cat.json"
+                app:lottie_loop="true" />
+
+            <TextView
+                android:id="@+id/invalid_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="@string/invalid"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/monstserrat_semibold"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/temp_bg_invalid"
+                android:layout_marginTop="-53dp"
+                app:layout_constraintStart_toStartOf="@id/temp_bg_invalid"
+                app:layout_constraintEnd_toEndOf="@id/temp_bg_invalid"/>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:fontFamily="@font/monstserrat_semibold"
+                android:text="@string/det_empty_search"
+                android:textAlignment="center"
+                android:textSize="@dimen/_7sdp"
+                app:layout_constraintEnd_toEndOf="@id/invalid_text"
+                app:layout_constraintHorizontal_bias="0.387"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@id/invalid_text"
+                app:layout_constraintTop_toBottomOf="@id/invalid_text"
+                app:layout_constraintVertical_bias="0.064" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycleViewListInovator"
                 android:layout_width="match_parent"
@@ -205,8 +251,7 @@
                 app:layout_constraintStart_toStartOf="@id/guideline2"
                 app:layout_constraintEnd_toEndOf="@id/guideline4"
                 app:layout_constraintHeight_default="wrap"
-                app:layout_constraintTop_toBottomOf="@id/search_button_inovator"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/search_button_inovator"/>
 
             <com.facebook.shimmer.ShimmerFrameLayout
                 android:id="@+id/shimmer_inovator_container"
@@ -238,6 +283,102 @@
                     <include layout="@layout/placeholder_inovasi_layout"/>
                 </LinearLayout>
             </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/buttonPrevPage"
+                android:layout_width="@dimen/_85sdp"
+                android:layout_height="@dimen/_35sdp"
+                app:cardBackgroundColor="@color/background"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:visibility="gone"
+                app:cardElevation="0dp"
+                android:elevation="0dp"
+                app:layout_constraintTop_toBottomOf="@id/recycleViewListInovator"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_20sdp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/iconPrev"
+                        android:layout_width="@dimen/_26sdp"
+                        android:layout_height="@dimen/_26sdp"
+                        app:tint="@color/red_smooth"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:src="@drawable/ic_baseline_navigate_before_24"/>
+
+                    <TextView
+                        android:id="@+id/textPrev"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Prev Page"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textSize="@dimen/_11sdp"
+                        android:textColor="@color/red_smooth"
+                        app:layout_constraintStart_toEndOf="@id/iconPrev"
+                        app:layout_constraintTop_toTopOf="@id/iconPrev"
+                        app:layout_constraintBottom_toBottomOf="@id/iconPrev"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/buttonNextPage"
+                android:layout_width="@dimen/_85sdp"
+                android:layout_height="@dimen/_35sdp"
+                app:cardBackgroundColor="@color/background"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:visibility="gone"
+                app:cardElevation="0dp"
+                android:elevation="0dp"
+                app:layout_constraintTop_toBottomOf="@id/recycleViewListInovator"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_20sdp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/iconNext"
+                        android:layout_width="@dimen/_26sdp"
+                        android:layout_height="@dimen/_26sdp"
+                        app:tint="@color/red_smooth"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:src="@drawable/ic_baseline_navigate_next_24"/>
+
+                    <TextView
+                        android:id="@+id/textNext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Next Page"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textSize="@dimen/_11sdp"
+                        android:textColor="@color/red_smooth"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/iconNext"
+                        app:layout_constraintBottom_toBottomOf="@id/iconNext"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <View
+                android:id="@+id/padBottom"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_130sdp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/buttonNextPage"/>
+
+
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

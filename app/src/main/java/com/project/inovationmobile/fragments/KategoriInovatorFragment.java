@@ -110,8 +110,9 @@ public class KategoriInovatorFragment extends BottomSheetDialogFragment implemen
                 Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
-
-        requestQueue.add(stringRequest);
+        if (getContext() != null) {
+            RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+            requestQueue.add(stringRequest);
+        }
     }
 }

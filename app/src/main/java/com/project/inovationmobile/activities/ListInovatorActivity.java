@@ -2,6 +2,8 @@ package com.project.inovationmobile.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
+import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,12 +13,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.facebook.shimmer.ShimmerFrameLayout;
@@ -45,6 +50,11 @@ public class ListInovatorActivity extends AppCompatActivity {
     ExtendedFloatingActionButton searchButton;
     ShimmerFrameLayout shimmerFrameLayout;
     Button bottomSheetKategoriButton;
+    CardView buttonPrev, buttonNext;
+    View view;
+    NestedScrollView nestedScrollView;
+    int page = 1;
+    int limit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,9 +67,62 @@ public class ListInovatorActivity extends AppCompatActivity {
         // set up RecyclerView List Inovator
         recyclerView = findViewById(R.id.recycleViewListInovator);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(contentInovatorAdapter);
 
-        getData();
+
+        nestedScrollView = findViewById(R.id.scrollView2);
+        buttonNext = findViewById(R.id.buttonNextPage);
+        buttonPrev = findViewById(R.id.buttonPrevPage);
+        view = findViewById(R.id.padBottom);
+
+
+        RequestQueue queue = Volley.newRequestQueue(ListInovatorActivity.this);
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    int max = response.getInt("total_data");
+                    limit = (max + 20 - 1) / 20;
+                    getData(page, limit);
+                    buttonNext.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            page++;
+                            recyclerView.setVisibility(View.GONE);
+                            buttonNext.setVisibility(View.GONE);
+                            buttonPrev.setVisibility(View.GONE);
+                            shimmerFrameLayout.setVisibility(View.VISIBLE);
+                            shimmerFrameLayout.startShimmer();
+                            getData(page, limit);
+                            nestedScrollView.scrollTo(0, 0);
+                        }
+                    });
+
+                    buttonPrev.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            page--;
+                            recyclerView.setVisibility(View.INVISIBLE);
+                            buttonNext.setVisibility(View.GONE);
+                            buttonPrev.setVisibility(View.GONE);
+                            shimmerFrameLayout.setVisibility(View.VISIBLE);
+                            shimmerFrameLayout.startShimmer();
+                            getData(page, limit);
+                            nestedScrollView.scrollTo(0, 0);
+                        }
+                    });
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(ListInovatorActivity.this, "Fail to get data..", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        queue.add(jsonObjectRequest);
+
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar_inovator);
         setSupportActionBar(mToolbar);
@@ -106,8 +169,9 @@ public class ListInovatorActivity extends AppCompatActivity {
                 KategoriInovatorFragment.TAG);
     }
 
-    private void getData(){
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+    private void getData(int page, int limit){
+        String url2 = "https://api.koys.my.id/inovator/paginate?page=" + page;
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url2,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -117,6 +181,23 @@ public class ListInovatorActivity extends AppCompatActivity {
                             JSONArray jsonArray = jsonObject.getJSONArray("data");
                             shimmerFrameLayout.stopShimmer();
                             shimmerFrameLayout.setVisibility(View.GONE);
+                            buttonNext.setVisibility(View.VISIBLE);
+                            buttonPrev.setVisibility(View.VISIBLE);
+                            if (page == 1 ) {
+                                buttonNext.setVisibility(View.VISIBLE);
+                                buttonPrev.setVisibility(View.GONE);
+                            } else {
+                                buttonPrev.setVisibility(View.VISIBLE);
+                            }
+
+                            if (page == limit) {
+                                buttonNext.setVisibility(View.INVISIBLE);
+                                buttonPrev.setVisibility(View.VISIBLE);
+                            }
+
+                            recyclerView.setVisibility(View.VISIBLE);
+                            view.setVisibility(View.VISIBLE);
+
                             for (int i = 0; i < jsonArray.length() ; i++) {
                                 ListInovatorModel listInovatorModel = new ListInovatorModel();
                                 JSONObject object = jsonArray.getJSONObject(i);

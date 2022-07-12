@@ -46,7 +46,7 @@ public class ContentInovasi_in_InovatorAdapter extends RecyclerView.Adapter<Cont
         holder.namaInovasi.setText(data.get(position).getNama_inovasi());
         holder.kategoriInovasi.setText(data.get(position).getKategoriInovasi());
 
-        String urlImage = "https://tim1.koys.my.id/assets/upload/foto_inovasi/" + data.get(position).getUrlGambar();
+        String urlImage = "https://tim1.koys.my.id/assets/images/upload/foto_inovasi/" + data.get(position).getUrlGambar();
         // similarly you can set new image for each card and descriptions
         Picasso.get().load(urlImage).into(holder.fotoInovasi);
         // similarly you can set new image for each card and descriptions

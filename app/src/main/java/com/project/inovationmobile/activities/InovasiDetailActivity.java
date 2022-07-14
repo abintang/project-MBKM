@@ -124,6 +124,10 @@ public class InovasiDetailActivity extends AppCompatActivity {
         kategoriInovasiDetail2 = findViewById(R.id.tv_category_inovasi_detail_2);
         kategoriInovasiDetail3 = findViewById(R.id.tv_category_inovasi_detail3);
 
+        fotoAnggota1 = findViewById(R.id.iv_foto_kelompok_det);
+        fotoAnggota2 = findViewById(R.id.iv_foto_kelompok_det2);
+        fotoAnggota3 = findViewById(R.id.iv_foto_kelompok_de3);
+        fotoAnggota4 = findViewById(R.id.iv_foto_kelompok_det4);
 
         recyclerView = findViewById(R.id.recycleViewInovasi_terkait);
         LinearLayoutManager horizontalLayoutManager
@@ -146,18 +150,24 @@ public class InovasiDetailActivity extends AppCompatActivity {
                                         && object.isNull("nama_anggota3") && object.isNull("nama_anggota4")) {
                                     titleAnggota.setVisibility(View.VISIBLE);
                                     cardAnggota.setVisibility(View.VISIBLE);
-                                    urlAnggota1 = "http://tim1.koys.my.id/assets/images/upload/foto_anggota_inovator/" + object.getString("foto_anggota1");
-                                    Picasso.get().load(urlAnggota1).into(fotoAnggota1);
+                                    if (!object.isNull("foto_anggota1")) {
+                                        urlAnggota1 = "http://tim1.koys.my.id/assets/images/upload/foto_anggota_inovator/" + object.getString("foto_anggota1");
+                                        Picasso.get().load(urlAnggota1).into(fotoAnggota1);
+                                    }
+
                                     anggota1.setText(object.getString("nama_anggota1"));
+
                                 } else if (!object.isNull("nama_anggota1") && !object.isNull("nama_anggota2")
                                         && object.isNull("nama_anggota3") && object.isNull("nama_anggota4")) {
                                     titleAnggota.setVisibility(View.VISIBLE);
                                     cardAnggota.setVisibility(View.VISIBLE);
                                     cardAnggota2.setVisibility(View.VISIBLE);
-                                    urlAnggota1 = "http://tim1.koys.my.id/assets/images/upload/foto_anggota_inovator/" + object.getString("foto_anggota1");
-                                    Picasso.get().load(urlAnggota1).into(fotoAnggota1);
-                                    urlAnggota2 = "http://tim1.koys.my.id/assets/images/upload/foto_anggota_inovator/" + object.getString("foto_anggota2");
-                                    Picasso.get().load(urlAnggota2).into(fotoAnggota2);
+                                    if (!object.isNull("foto_anggota1")) {
+                                        urlAnggota1 = "http://tim1.koys.my.id/assets/images/upload/foto_anggota_inovator/" + object.getString("foto_anggota1");
+                                        Picasso.get().load(urlAnggota1).into(fotoAnggota1);
+                                        urlAnggota2 = "http://tim1.koys.my.id/assets/images/upload/foto_anggota_inovator/" + object.getString("foto_anggota2");
+                                        Picasso.get().load(urlAnggota2).into(fotoAnggota2);
+                                    }
                                     anggota1.setText(object.getString("nama_anggota1"));
                                     anggota2.setText(object.getString("nama_anggota2"));
                                 } else if (!object.isNull("nama_anggota1") && !object.isNull("nama_anggota2")
@@ -166,12 +176,14 @@ public class InovasiDetailActivity extends AppCompatActivity {
                                     cardAnggota.setVisibility(View.VISIBLE);
                                     cardAnggota2.setVisibility(View.VISIBLE);
                                     cardAnggota3.setVisibility(View.VISIBLE);
-                                    urlAnggota1 = "http://tim1.koys.my.id/assets/images/upload/foto_anggota_inovator/" + object.getString("foto_anggota1");
-                                    Picasso.get().load(urlAnggota1).into(fotoAnggota1);
-                                    urlAnggota2 = "http://tim1.koys.my.id/assets/images/upload/foto_anggota_inovator/" + object.getString("foto_anggota2");
-                                    Picasso.get().load(urlAnggota2).into(fotoAnggota2);
-                                    urlAnggota3 = "http://tim1.koys.my.id/assets/images/upload/foto_anggota_inovator/" + object.getString("foto_anggota3");
-                                    Picasso.get().load(urlAnggota3).into(fotoAnggota3);
+                                    if (!object.isNull("foto_anggota1")) {
+                                        urlAnggota1 = "http://tim1.koys.my.id/assets/images/upload/foto_anggota_inovator/" + object.getString("foto_anggota1");
+                                        Picasso.get().load(urlAnggota1).into(fotoAnggota1);
+                                        urlAnggota2 = "http://tim1.koys.my.id/assets/images/upload/foto_anggota_inovator/" + object.getString("foto_anggota2");
+                                        Picasso.get().load(urlAnggota2).into(fotoAnggota2);
+                                        urlAnggota3 = "http://tim1.koys.my.id/assets/images/upload/foto_anggota_inovator/" + object.getString("foto_anggota3");
+                                        Picasso.get().load(urlAnggota3).into(fotoAnggota3);
+                                    }
                                     anggota1.setText(object.getString("nama_anggota1"));
                                     anggota2.setText(object.getString("nama_anggota2"));
                                     anggota3.setText(object.getString("nama_anggota3"));
@@ -182,14 +194,16 @@ public class InovasiDetailActivity extends AppCompatActivity {
                                     cardAnggota2.setVisibility(View.VISIBLE);
                                     cardAnggota3.setVisibility(View.VISIBLE);
                                     cardAnggota4.setVisibility(View.VISIBLE);
-                                    urlAnggota1 = "http://tim1.koys.my.id/assets/images/upload/foto_anggota_inovator/" + object.getString("foto_anggota1");
-                                    Picasso.get().load(urlAnggota1).into(fotoAnggota1);
-                                    urlAnggota2 = "http://tim1.koys.my.id/assets/images/upload/foto_anggota_inovator/" + object.getString("foto_anggota2");
-                                    Picasso.get().load(urlAnggota2).into(fotoAnggota2);
-                                    urlAnggota3 = "http://tim1.koys.my.id/assets/images/upload/foto_anggota_inovator/" + object.getString("foto_anggota3");
-                                    Picasso.get().load(urlAnggota3).into(fotoAnggota3);
-                                    urlAnggota4 = "http://tim1.koys.my.id/assets/images/upload/foto_anggota_inovator/" + object.getString("foto_anggota4");
-                                    Picasso.get().load(urlAnggota4).into(fotoAnggota4);
+                                    if (!object.isNull("foto_anggota1")) {
+                                        urlAnggota1 = "http://tim1.koys.my.id/assets/images/upload/foto_anggota_inovator/" + object.getString("foto_anggota1");
+                                        Picasso.get().load(urlAnggota1).into(fotoAnggota1);
+                                        urlAnggota2 = "http://tim1.koys.my.id/assets/images/upload/foto_anggota_inovator/" + object.getString("foto_anggota2");
+                                        Picasso.get().load(urlAnggota2).into(fotoAnggota2);
+                                        urlAnggota3 = "http://tim1.koys.my.id/assets/images/upload/foto_anggota_inovator/" + object.getString("foto_anggota3");
+                                        Picasso.get().load(urlAnggota3).into(fotoAnggota3);
+                                        urlAnggota4 = "http://tim1.koys.my.id/assets/images/upload/foto_anggota_inovator/" + object.getString("foto_anggota4");
+                                        Picasso.get().load(urlAnggota4).into(fotoAnggota4);
+                                    }
                                     anggota1.setText(object.getString("nama_anggota1"));
                                     anggota2.setText(object.getString("nama_anggota2"));
                                     anggota3.setText(object.getString("nama_anggota3"));
@@ -210,11 +224,6 @@ public class InovasiDetailActivity extends AppCompatActivity {
                                 String urlImage = "https://tim1.koys.my.id/assets/images/upload/foto_inovasi/" +
                                         object.getString("foto_inovasi1");
                                 Picasso.get().load(urlImage).into(fotoInovasiDetail);
-
-                                if(object.isNull("instansi")){
-                                    detailInstansi.setVisibility(View.INVISIBLE);
-                                    instansiDet.setText("Tidak memiliki Instansi");
-                                }
 
                                 JSONObject object1 = object.getJSONObject("bidang");
                                 kategoriInovasiDetail.setText(object1.getString("nama_bidang_inovasi"));
@@ -250,6 +259,14 @@ public class InovasiDetailActivity extends AppCompatActivity {
                                                 JSONObject object = jsonArray.getJSONObject(0);
                                                 JSONObject object1 = object.getJSONObject("kategori");
                                                 kategoriInovatorDet.setText(object1.getString("nama_kategori_inovator"));
+                                                if(object.isNull("instansi")){
+                                                    detailInstansi.setVisibility(View.INVISIBLE);
+                                                    instansiDet.setText("Tidak memiliki Instansi");
+                                                } else {
+                                                    detailInstansi.setVisibility(View.VISIBLE);
+                                                    JSONObject object2 = object.getJSONObject("instansi");
+                                                    instansiDet.setText(object2.getString("nama_instansi"));
+                                                }
                                             } catch (JSONException e) {
                                                 e.printStackTrace();
                                             }

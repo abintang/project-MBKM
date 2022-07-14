@@ -50,6 +50,7 @@ public class InovatorDetailActivity extends AppCompatActivity {
     String urlInovator, urlInovasiInovator;
     RecyclerView recyclerView;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -128,7 +129,8 @@ public class InovatorDetailActivity extends AppCompatActivity {
                                 }
 
                                 if (!object.isNull("id_instansi")) {
-                                    instansiInovatorDetail.setText(object.getString("id_instansi"));
+                                    JSONObject object2 = object.getJSONObject("instansi");
+                                    instansiInovatorDetail.setText(object2.getString("nama_instansi"));
                                 } else {
                                     instansiInovatorDetail.setText("Tidak memilki instansi");
                                 }

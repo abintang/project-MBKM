@@ -97,6 +97,7 @@ public class SortListCategory_InovasiActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), SortYearCategory_InovasiActivity.class);
                 intent.putExtra("tempYear", powerSpinnerView.getText());
                 intent.putExtra("tempCategoryId", idCategory);
+                intent.putExtra("tempCategoryName", categoryName);
                 startActivity(intent);
             }
         });

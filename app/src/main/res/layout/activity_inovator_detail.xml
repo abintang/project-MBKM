@@ -304,7 +304,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardCategory"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_100sdp"
+                android:layout_height="@dimen/_110sdp"
                 android:layout_marginTop="@dimen/_6sdp"
                 android:visibility="invisible"
                 app:cardElevation="@dimen/_1sdp"
@@ -340,8 +340,8 @@
                         android:id="@+id/instansi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="48dp"
-                        android:layout_marginTop="37dp"
+                        android:layout_marginStart="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
                         android:fontFamily="@font/monstserrat_semibold"
                         android:text="@string/asl_instansi"
                         android:textColor="@color/black"
@@ -357,6 +357,7 @@
                         android:layout_height="@dimen/_80sdp"
                         android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/_5sdp"
                         app:layout_constraintStart_toStartOf="@id/guideline8"
                         app:layout_constraintTop_toTopOf="@id/guideline6"
                         app:lottie_autoPlay="true"
@@ -377,6 +378,26 @@
                         app:layout_constraintEnd_toEndOf="@id/instansi"
                         app:layout_constraintStart_toStartOf="@id/instansi"
                         app:layout_constraintTop_toBottomOf="@id/instansi" />
+
+                    <Button
+                        android:id="@+id/button_detail_inovator"
+                        android:layout_width="@dimen/_75sdp"
+                        android:layout_height="@dimen/_28sdp"
+                        android:backgroundTint="@color/gray_btn"
+                        android:elevation="0dp"
+                        android:fontFamily="@font/monstserrat_semibold"
+                        android:text="@string/detail"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_8sdp"
+                        app:elevation="0dp"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toBottomOf="@id/tv_instansi_inovator_detail"
+                        app:layout_constraintEnd_toEndOf="@id/tv_instansi_inovator_detail"
+                        app:layout_constraintStart_toStartOf="@id/tv_instansi_inovator_detail"
+                        app:layout_constraintVertical_bias="0.36"
+                        app:shapeAppearanceOverlay="@style/shapeButton" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>

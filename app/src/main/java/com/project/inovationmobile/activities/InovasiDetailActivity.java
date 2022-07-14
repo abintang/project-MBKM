@@ -146,12 +146,18 @@ public class InovasiDetailActivity extends AppCompatActivity {
                                         && object.isNull("nama_anggota3") && object.isNull("nama_anggota4")) {
                                     titleAnggota.setVisibility(View.VISIBLE);
                                     cardAnggota.setVisibility(View.VISIBLE);
+                                    urlAnggota1 = "http://tim1.koys.my.id/assets/images/upload/foto_anggota_inovator/" + object.getString("foto_anggota1");
+                                    Picasso.get().load(urlAnggota1).into(fotoAnggota1);
                                     anggota1.setText(object.getString("nama_anggota1"));
                                 } else if (!object.isNull("nama_anggota1") && !object.isNull("nama_anggota2")
                                         && object.isNull("nama_anggota3") && object.isNull("nama_anggota4")) {
                                     titleAnggota.setVisibility(View.VISIBLE);
                                     cardAnggota.setVisibility(View.VISIBLE);
                                     cardAnggota2.setVisibility(View.VISIBLE);
+                                    urlAnggota1 = "http://tim1.koys.my.id/assets/images/upload/foto_anggota_inovator/" + object.getString("foto_anggota1");
+                                    Picasso.get().load(urlAnggota1).into(fotoAnggota1);
+                                    urlAnggota2 = "http://tim1.koys.my.id/assets/images/upload/foto_anggota_inovator/" + object.getString("foto_anggota2");
+                                    Picasso.get().load(urlAnggota2).into(fotoAnggota2);
                                     anggota1.setText(object.getString("nama_anggota1"));
                                     anggota2.setText(object.getString("nama_anggota2"));
                                 } else if (!object.isNull("nama_anggota1") && !object.isNull("nama_anggota2")
@@ -160,6 +166,12 @@ public class InovasiDetailActivity extends AppCompatActivity {
                                     cardAnggota.setVisibility(View.VISIBLE);
                                     cardAnggota2.setVisibility(View.VISIBLE);
                                     cardAnggota3.setVisibility(View.VISIBLE);
+                                    urlAnggota1 = "http://tim1.koys.my.id/assets/images/upload/foto_anggota_inovator/" + object.getString("foto_anggota1");
+                                    Picasso.get().load(urlAnggota1).into(fotoAnggota1);
+                                    urlAnggota2 = "http://tim1.koys.my.id/assets/images/upload/foto_anggota_inovator/" + object.getString("foto_anggota2");
+                                    Picasso.get().load(urlAnggota2).into(fotoAnggota2);
+                                    urlAnggota3 = "http://tim1.koys.my.id/assets/images/upload/foto_anggota_inovator/" + object.getString("foto_anggota3");
+                                    Picasso.get().load(urlAnggota3).into(fotoAnggota3);
                                     anggota1.setText(object.getString("nama_anggota1"));
                                     anggota2.setText(object.getString("nama_anggota2"));
                                     anggota3.setText(object.getString("nama_anggota3"));
@@ -170,6 +182,14 @@ public class InovasiDetailActivity extends AppCompatActivity {
                                     cardAnggota2.setVisibility(View.VISIBLE);
                                     cardAnggota3.setVisibility(View.VISIBLE);
                                     cardAnggota4.setVisibility(View.VISIBLE);
+                                    urlAnggota1 = "http://tim1.koys.my.id/assets/images/upload/foto_anggota_inovator/" + object.getString("foto_anggota1");
+                                    Picasso.get().load(urlAnggota1).into(fotoAnggota1);
+                                    urlAnggota2 = "http://tim1.koys.my.id/assets/images/upload/foto_anggota_inovator/" + object.getString("foto_anggota2");
+                                    Picasso.get().load(urlAnggota2).into(fotoAnggota2);
+                                    urlAnggota3 = "http://tim1.koys.my.id/assets/images/upload/foto_anggota_inovator/" + object.getString("foto_anggota3");
+                                    Picasso.get().load(urlAnggota3).into(fotoAnggota3);
+                                    urlAnggota4 = "http://tim1.koys.my.id/assets/images/upload/foto_anggota_inovator/" + object.getString("foto_anggota4");
+                                    Picasso.get().load(urlAnggota4).into(fotoAnggota4);
                                     anggota1.setText(object.getString("nama_anggota1"));
                                     anggota2.setText(object.getString("nama_anggota2"));
                                     anggota3.setText(object.getString("nama_anggota3"));
@@ -208,16 +228,42 @@ public class InovasiDetailActivity extends AppCompatActivity {
                                     kategoriInovasiDetail2.setText(objectBidang2.getString("nama_bidang_inovasi"));
                                 }
 
-                            if (!object.isNull("id_bidang_inovasi_3")) {
+                                if (!object.isNull("id_bidang_inovasi_3")) {
                                 JSONObject objectBidang3 = object.getJSONObject("bidang3");
                                 kategori3.setVisibility(View.VISIBLE);
                                 idBidang3 = objectBidang3.getInt("id_bidang_inovasi");
                                 kategoriInovasiDetail3.setText(objectBidang3.getString("nama_bidang_inovasi"));
-                            }
+                                }
 
                                 JSONObject object2 = object.getJSONObject("inovator");
                                 namaInovatorDet.setText(object2.getString("nama_inovator"));
                                 idInovator = object2.getInt("id_inovator");
+                            String urlInovatorId =  "https://api.koys.my.id/inovator/" + idInovator;
+
+                            StringRequest stringRequest = new StringRequest(Request.Method.GET, urlInovatorId,
+                                    new Response.Listener<String>() {
+                                        @Override
+                                        public void onResponse(String response) {
+                                            try {
+                                                JSONObject jsonObject = new JSONObject(response);
+                                                JSONArray jsonArray = jsonObject.getJSONArray("data");
+                                                JSONObject object = jsonArray.getJSONObject(0);
+                                                JSONObject object1 = object.getJSONObject("kategori");
+                                                kategoriInovatorDet.setText(object1.getString("nama_kategori_inovator"));
+                                            } catch (JSONException e) {
+                                                e.printStackTrace();
+                                            }
+                                        }
+                                    },
+                                    new Response.ErrorListener() {
+                                        @Override
+                                        public void onErrorResponse(VolleyError error) {
+                                            Log.i("TEST", "onErrorResponse: " + error.getMessage());
+                                        }
+                                    });
+                                RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+                                requestQueue.add(stringRequest);
+
                                 alamatInovasiDetail.setText(object2.getString("alamat"));
                                 String urlInovator;
                                 if (!object2.isNull("foto_inovator")) {
@@ -225,45 +271,6 @@ public class InovasiDetailActivity extends AppCompatActivity {
                                             object2.getString("foto_inovator");
                                 } else {
                                     urlInovator = "https://tim1.koys.my.id/assets/images/upload/foto_inovator/default.png";
-                                }
-
-                                int idKategoriInovator = object2.getInt("id_kategori_inovator");
-
-                                switch (idKategoriInovator) {
-                                    case 1:
-                                        kategoriInovatorDet.setText("SD / MI / SEDERAJAT");
-                                        break;
-                                    case 2:
-                                        kategoriInovatorDet.setText("SMP/ MTS / SEDERAJAT");
-                                        break;
-                                    case 3:
-                                        kategoriInovatorDet.setText("SMA / SMK / MA/ SEDERAJAT");
-                                        break;
-                                    case 4:
-                                        kategoriInovatorDet.setText("Mahasiswa");
-                                        break;
-                                    case 5:
-                                        kategoriInovatorDet.setText("Dosen Peneliti");
-                                        break;
-                                    case 6:
-                                        kategoriInovatorDet.setText("Desa/Kelurahan");
-                                        break;
-                                    case 7:
-                                        kategoriInovatorDet.setText("Kecamatan");
-                                        break;
-                                    case 8:
-                                        kategoriInovatorDet.setText("Puskesmas");
-                                        break;
-                                    case 9:
-                                        kategoriInovatorDet.setText("Perangkat Daerah Instansi");
-                                        break;
-                                    case 10:
-                                        kategoriInovatorDet.setText("Masyarakat Umum");
-                                        break;
-                                    default:
-                                        kategoriInovatorDet.setText("Invalid");
-                                        break;
-
                                 }
                                 Picasso.get().load(urlInovator).into(fotoInovatorDet);
                         } catch (JSONException e) {
@@ -342,11 +349,6 @@ public class InovasiDetailActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        // set up RecyclerView Inovasi Terkait
-
-      /*  adapter = new ContentInovasi_in_InovatorAdapter(this,items);
-        recyclerView.setAdapter(adapter);*/
 
     }
 

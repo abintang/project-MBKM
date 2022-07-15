@@ -202,16 +202,15 @@ public class SortListCategory_InovatorActivity extends AppCompatActivity {
                             shimmerFrameLayout.setVisibility(View.GONE);
                             buttonNext.setVisibility(View.VISIBLE);
                             buttonPrev.setVisibility(View.VISIBLE);
-                            if (page == 1 ) {
+                            if (page == 1  && limit != 1) {
                                 buttonNext.setVisibility(View.VISIBLE);
                                 buttonPrev.setVisibility(View.GONE);
-                            } else {
-                                buttonPrev.setVisibility(View.VISIBLE);
-                            }
-
-                            if (page == limit) {
+                            } else if (page == limit && limit != 1) {
                                 buttonNext.setVisibility(View.INVISIBLE);
                                 buttonPrev.setVisibility(View.VISIBLE);
+                            } else if (limit == 1) {
+                                buttonNext.setVisibility(View.GONE);
+                                buttonPrev.setVisibility(View.GONE);
                             }
 
                             recyclerView.setVisibility(View.VISIBLE);

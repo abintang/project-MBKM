@@ -68,9 +68,17 @@ public class RegisterFragment extends Fragment {
 
         btnPanduan = rootView.findViewById(R.id.button_panduan);
         btnPendaftaran = rootView.findViewById(R.id.button_daftar);
-        String url = "http://bekoy.site/MBKM1/Login/Pendaftaran";
+        String url = "https://tim1.koys.my.id/Pendaftaran";
         String urlPanduan = "https://github.com/abintang";
 
+        btnPanduan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(url));
+                startActivity(intent);
+            }
+        });
 
         btnPendaftaran.setOnClickListener(new View.OnClickListener() {
             @Override

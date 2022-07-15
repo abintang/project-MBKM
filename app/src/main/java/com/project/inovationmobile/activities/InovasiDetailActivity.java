@@ -54,7 +54,7 @@ public class InovasiDetailActivity extends AppCompatActivity {
 
     Button detailInovator, detailInstansi;
     String url, urlTerkait, urlAnggota1, urlAnggota2, urlAnggota3, urlAnggota4;
-    int idInovator, idInovasi;
+    int idInovator, idInovasi, idInstansi;
     ShimmerFrameLayout shimmerFrame;
     OptRoundCardView content;
     RecyclerView recyclerView;
@@ -84,13 +84,6 @@ public class InovasiDetailActivity extends AppCompatActivity {
         detailInovator = findViewById(R.id.button_detail_inovator);
 
         detailInstansi = findViewById(R.id.button_detail_instansi);
-        detailInstansi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(InovasiDetailActivity.this, InstansiDetailActivity.class);
-                startActivity(intent);
-            }
-        });
 
         // variable yang udah di declare sesuai dengan id nya masing-masing
         fotoInovasiDetail = findViewById(R.id.iv_foto_inovasi_detail);
@@ -140,10 +133,6 @@ public class InovasiDetailActivity extends AppCompatActivity {
                         try {
                             JSONObject jsonObject = new JSONObject(response);
                             JSONArray jsonArray = jsonObject.getJSONArray("data");
-                            shimmerFrame.stopShimmer();
-                            shimmerFrame.setVisibility(View.GONE);
-                            content.setVisibility(View.VISIBLE);
-                            cardInovasi.setVisibility(View.VISIBLE);
                             JSONObject object = jsonArray.getJSONObject(0);
 
                                 if(!object.isNull("nama_anggota1") && object.isNull("nama_anggota2")
@@ -265,6 +254,7 @@ public class InovasiDetailActivity extends AppCompatActivity {
                                                 } else {
                                                     detailInstansi.setVisibility(View.VISIBLE);
                                                     JSONObject object2 = object.getJSONObject("instansi");
+                                                    idInstansi = object2.getInt("id_instansi");
                                                     instansiDet.setText(object2.getString("nama_instansi"));
                                                 }
                                             } catch (JSONException e) {
@@ -290,6 +280,10 @@ public class InovasiDetailActivity extends AppCompatActivity {
                                     urlInovator = "https://tim1.koys.my.id/assets/images/upload/foto_inovator/default.png";
                                 }
                                 Picasso.get().load(urlInovator).into(fotoInovatorDet);
+                            shimmerFrame.stopShimmer();
+                            shimmerFrame.setVisibility(View.GONE);
+                            content.setVisibility(View.VISIBLE);
+                            cardInovasi.setVisibility(View.VISIBLE);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -319,6 +313,15 @@ public class InovasiDetailActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(InovasiDetailActivity.this, InovatorDetailActivity.class);
                 intent.putExtra("tempInovatorId", idInovator);
+                startActivity(intent);
+            }
+        });
+
+        detailInstansi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(InovasiDetailActivity.this, InstansiDetailActivity.class);
+                intent.putExtra("tempId", idInstansi);
                 startActivity(intent);
             }
         });

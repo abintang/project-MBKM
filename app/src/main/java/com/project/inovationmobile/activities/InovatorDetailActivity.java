@@ -95,11 +95,6 @@ public class InovatorDetailActivity extends AppCompatActivity {
                         try {
                             JSONObject jsonObject = new JSONObject(response);
                             JSONArray jsonArray = jsonObject.getJSONArray("data");
-                                shimmerFrameLayout.stopShimmer();
-                                shimmerFrameLayout.setVisibility(View.GONE);
-                                cardImage.setVisibility(View.VISIBLE);
-                                cardBio.setVisibility(View.VISIBLE);
-                                cardCategory.setVisibility(View.VISIBLE);
                                 JSONObject object = jsonArray.getJSONObject(0);
 
                                 namaInovatorDetail.setText(object.getString("nama_inovator"));
@@ -147,6 +142,11 @@ public class InovatorDetailActivity extends AppCompatActivity {
                                     urlInovator = "https://tim1.koys.my.id/assets/images/upload/foto_inovator/default.png";
                                 }
                                 Picasso.get().load(urlInovator).into(fotoInovatorDetail);
+                            shimmerFrameLayout.stopShimmer();
+                            shimmerFrameLayout.setVisibility(View.GONE);
+                            cardImage.setVisibility(View.VISIBLE);
+                            cardBio.setVisibility(View.VISIBLE);
+                            cardCategory.setVisibility(View.VISIBLE);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

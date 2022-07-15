@@ -106,6 +106,7 @@ public class SortYearCategory_InovasiActivity extends AppCompatActivity {
             years.add(Integer.toString(i));
         }
 
+        powerSpinnerView.setHint("Tahun: "+ tahun);
         powerSpinnerView.setItems(years);
 
         powerSpinnerView.setOnSpinnerItemSelectedListener(new OnSpinnerItemSelectedListener<String>() {

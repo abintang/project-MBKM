@@ -33,6 +33,16 @@
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_inovator"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/d"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/placeholder_detail_inovator"/>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+
     <ScrollView
         app:layout_constraintTop_toBottomOf="@id/d"
         android:layout_width="match_parent"
@@ -51,6 +61,7 @@
                 android:background="@color/white"
                 app:cardCornerRadius="@dimen/_3sdp"
                 app:cardElevation="@dimen/_1sdp"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -72,6 +83,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardElevation="@dimen/_1sdp"
+                android:visibility="gone"
                 app:layout_constraintTop_toBottomOf="@id/cardNamaImage">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -225,7 +237,7 @@
                         android:id="@+id/tv_kecamatan_instansi_detail"
                         android:layout_width="@dimen/_130sdp"
                         android:layout_height="wrap_content"
-                        android:text="Dummy Kecamatan Text"
+                        android:text="-"
                         android:fontFamily="@font/montserrat_medium"
                         android:textColor="@color/gray_text"
                         android:layout_marginTop="@dimen/_2sdp"
@@ -258,7 +270,7 @@
                         android:id="@+id/tv_desa_instansi_detail"
                         android:layout_width="@dimen/_130sdp"
                         android:layout_height="wrap_content"
-                        android:text="Dummy Desa Text"
+                        android:text="-"
                         android:fontFamily="@font/montserrat_medium"
                         android:textColor="@color/gray_text"
                         android:layout_marginTop="@dimen/_2sdp"
@@ -268,7 +280,7 @@
 
                     <View
                         android:id="@+id/line5"
-                        android:layout_width="@dimen/_290sdp"
+                        android:layout_width="@dimen/_390sdp"
                         android:layout_height="@dimen/_2sdp"
                         android:layout_marginTop="@dimen/_3sdp"
                         android:background="@color/background"
@@ -288,9 +300,10 @@
             <View
                 android:background="@color/background"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_250sdp"
+                android:layout_height="@dimen/_340sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cardBio" />
 
